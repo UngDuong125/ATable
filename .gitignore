@@ -1,0 +1,57 @@
+# Unity generated (project lives in GameSrc/)
+GameSrc/[Ll]ibrary/
+GameSrc/[Tt]emp/
+GameSrc/[Oo]bj/
+GameSrc/[Bb]uild/
+GameSrc/[Bb]uilds/
+GameSrc/[Ll]ogs/
+GameSrc/[Uu]ser[Ss]ettings/
+GameSrc/[Mm]emoryCaptures/
+GameSrc/[Rr]ecordings/
+
+# Asset meta data should be committed (do NOT ignore *.meta)
+
+# IDE / generated project files
+GameSrc/.vs/
+GameSrc/.idea/
+GameSrc/.vscode/
+GameSrc/*.csproj
+GameSrc/*.unityproj
+GameSrc/*.sln
+GameSrc/*.suo
+GameSrc/*.user
+GameSrc/*.userprefs
+GameSrc/*.pidb
+GameSrc/*.booproj
+GameSrc/*.svd
+GameSrc/*.pdb
+GameSrc/*.mdb
+GameSrc/*.opendb
+GameSrc/*.VC.db
+GameSrc/UpgradeLog*.htm
+
+# Unity auto-generated misc
+GameSrc/Assets/AssetStoreTools*
+GameSrc/Assets/Plugins/Editor/JetBrains*
+GameSrc/sysinfo.txt
+GameSrc/crashlytics-build.properties
+
+# Builds
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Office temp files
+~$*

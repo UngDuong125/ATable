@@ -1,0 +1,252 @@
+{
+  "coord": {
+    "angleZero": "east_screen_right_ccw",
+    "radius": "0_center_1_inner_rim",
+    "singleGuestAnchorDeg": 270,
+    "dualGumihoAnchorDeg": 180,
+    "dualHoAnchorDeg": 0
+  },
+  "constants": {
+    "holdToMaxSeconds": 0.5,
+    "brakeTime": 0.35,
+    "feedbackLockSeconds": 0.35,
+    "meSlideSeconds": 0.4,
+    "swapBlinkSeconds": 0.4,
+    "foodVisualRadius": 0.08,
+    "hitTest": "food_center",
+    "emptyBiteConsumesCharge": true,
+    "resolvedBiteCountsForSwap": true,
+    "centerGapRadius": 0.15,
+    "trayWorldRadius": 2.5,
+    "orthoSize": 6.1,
+    "referenceWidth": 1080,
+    "referenceHeight": 1920,
+    "guestDrawRadius": 1.18,
+    "guestDrawRadiusDual": 1.42,
+    "gumiho": { "centerDistance": 0.62, "r0": 0.2, "rMax": 0.48, "rMaxDual": 0.47 },
+    "clearRingSeconds": 0.7,
+    "ho": { "w0": 0.08, "wMax": 0.28, "minAlong": 0, "minAlongDual": 0.15 },
+    "me": { "len0": 0.35, "lenMax": 0.95, "halfWidth": 0.1, "crossAt": 0.55, "swayIdle": 6, "swayMax": 18, "swayHz": 0.8 },
+    "co": { "radius": 0.13, "along0": 0.82, "alongMax": 0.32 },
+    "dokkaebi": { "radius": 0.14, "alongMin": 0, "alongMax": 1, "alongHz": 0.25, "sweepMax": 42 }
+  },
+  "levels": [
+    {
+      "id": 1,
+      "guestMode": "Gumiho",
+      "spinSpeed": 0,
+      "charges": 2,
+      "hearts": 3,
+      "foods": [
+        { "dishId": "songpyeon", "angleDeg": 270, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
+        { "dishId": "banh_mi", "angleDeg": 90, "radius": 0.58, "want": [], "forbid": ["Gumiho"] },
+        { "dishId": "bibimbap", "angleDeg": 20, "radius": 0.78, "want": [], "forbid": ["Gumiho"] }
+      ]
+    },
+    {
+      "id": 2,
+      "guestMode": "Gumiho",
+      "spinSpeed": 0,
+      "charges": 2,
+      "hearts": 3,
+      "foods": [
+        { "dishId": "tteokbokki", "angleDeg": 300, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
+        { "dishId": "pho", "angleDeg": 200, "radius": 0.38, "want": [], "forbid": ["Gumiho"] },
+        { "dishId": "goi_cuon", "angleDeg": 200, "radius": 0.78, "want": [], "forbid": ["Gumiho"] }
+      ]
+    },
+    {
+      "id": 3,
+      "guestMode": "Gumiho",
+      "spinSpeed": 28,
+      "charges": 2,
+      "hearts": 3,
+      "foods": [
+        { "dishId": "gimbap", "angleDeg": 200, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
+        { "dishId": "ca_phe", "angleDeg": 245, "radius": 0.58, "want": [], "forbid": ["Gumiho"] },
+        { "dishId": "banh_mi", "angleDeg": 40, "radius": 0.78, "want": [], "forbid": ["Gumiho"] }
+      ]
+    },
+    {
+      "id": 4,
+      "guestMode": "Gumiho",
+      "spinSpeed": 40,
+      "charges": 1,
+      "hearts": 3,
+      "brakeTime": 0.35,
+      "foods": [
+        { "dishId": "songpyeon", "angleDeg": 200, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
+        { "dishId": "tteokbokki", "angleDeg": 250, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
+        { "dishId": "pho", "angleDeg": 320, "radius": 0.58, "want": [], "forbid": ["Gumiho"] },
+        { "dishId": "goi_cuon", "angleDeg": 110, "radius": 0.78, "want": [], "forbid": ["Gumiho"] }
+      ]
+    },
+    {
+      "id": 5,
+      "guestMode": "Ho",
+      "spinSpeed": 0,
+      "charges": 2,
+      "hearts": 3,
+      "foods": [
+        { "dishId": "goi_cuon", "angleDeg": 270, "radius": 0.58, "want": ["Ho"], "forbid": [] },
+        { "dishId": "gimbap", "angleDeg": 248, "radius": 0.58, "want": [], "forbid": ["Ho"] },
+        { "dishId": "bibimbap", "angleDeg": 292, "radius": 0.58, "want": [], "forbid": ["Ho"] }
+      ]
+    },
+    {
+      "id": 6,
+      "guestMode": "Ho",
+      "spinSpeed": 24,
+      "charges": 2,
+      "hearts": 3,
+      "foods": [
+        { "dishId": "goi_cuon", "angleDeg": 250, "radius": 0.58, "want": ["Ho"], "forbid": [] },
+        { "dishId": "banh_mi", "angleDeg": 228, "radius": 0.58, "want": [], "forbid": ["Ho"] },
+        { "dishId": "gimbap", "angleDeg": 206, "radius": 0.58, "want": ["Ho"], "forbid": [] }
+      ]
+    },
+    {
+      "id": 7,
+      "guestMode": "Ho",
+      "spinSpeed": 36,
+      "charges": 1,
+      "hearts": 3,
+      "foods": [
+        { "dishId": "gimbap", "angleDeg": 262, "radius": 0.58, "want": ["Ho"], "forbid": [] },
+        { "dishId": "goi_cuon", "angleDeg": 278, "radius": 0.58, "want": ["Ho"], "forbid": [] },
+        { "dishId": "pho", "angleDeg": 300, "radius": 0.58, "want": [], "forbid": ["Ho"] },
+        { "dishId": "ca_phe", "angleDeg": 100, "radius": 0.78, "want": [], "forbid": ["Ho"] }
+      ]
+    },
+    {
+      "id": 8,
+      "guestMode": "Me",
+      "spinSpeed": 32,
+      "charges": 1,
+      "hearts": 3,
+      "crossAt": 0.55,
+      "foods": [
+        { "dishId": "bibimbap", "angleDeg": 270, "radius": 0.70, "want": ["Me"], "forbid": [] },
+        { "dishId": "songpyeon", "angleDeg": 90, "radius": 0.70, "want": [], "forbid": ["Me"] },
+        { "dishId": "tteokbokki", "angleDeg": 0, "radius": 0.50, "want": [], "forbid": ["Me"] }
+      ]
+    },
+    {
+      "id": 9,
+      "guestMode": "Me",
+      "spinSpeed": 34,
+      "charges": 2,
+      "hearts": 3,
+      "crossAt": 0.55,
+      "foods": [
+        { "dishId": "pho", "angleDeg": 270, "radius": 0.68, "want": ["Me"], "forbid": [] },
+        { "dishId": "ca_phe", "angleDeg": 125, "radius": 0.68, "want": ["Me"], "forbid": [] },
+        { "dishId": "banh_mi", "angleDeg": 105, "radius": 0.68, "want": [], "forbid": ["Me"] },
+        { "dishId": "gimbap", "angleDeg": 200, "radius": 0.50, "want": [], "forbid": ["Me"] }
+      ]
+    },
+    {
+      "id": 10,
+      "guestMode": "Gumiho",
+      "spinSpeed": 26,
+      "charges": 3,
+      "hearts": 3,
+      "foods": [
+        { "dishId": "songpyeon", "angleDeg": 250, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
+        { "dishId": "pho", "angleDeg": 160, "radius": 0.58, "want": [], "forbid": ["Gumiho"] },
+        { "dishId": "gimbap", "angleDeg": 70, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
+        { "dishId": "banh_mi", "angleDeg": 340, "radius": 0.58, "want": ["Gumiho"], "forbid": [] }
+      ]
+    },
+    {
+      "id": 11,
+      "guestMode": "GumihoHo",
+      "spinSpeed": 26,
+      "charges": 3,
+      "hearts": 3,
+      "foods": [
+        { "dishId": "songpyeon", "angleDeg": 175, "radius": 0.70, "want": ["Gumiho"], "forbid": ["Ho"] },
+        { "dishId": "gimbap", "angleDeg": 355, "radius": 0.70, "want": ["Ho"], "forbid": ["Gumiho"] },
+        { "dishId": "goi_cuon", "angleDeg": 15, "radius": 0.55, "want": ["Ho"], "forbid": ["Gumiho"] },
+        { "dishId": "pho", "angleDeg": 95, "radius": 0.45, "want": [], "forbid": ["Gumiho", "Ho"] }
+      ]
+    },
+    {
+      "id": 12,
+      "guestMode": "GumihoHo",
+      "spinSpeed": 38,
+      "charges": 3,
+      "hearts": 3,
+      "foods": [
+        { "dishId": "songpyeon", "angleDeg": 150, "radius": 0.70, "want": ["Gumiho"], "forbid": ["Ho"] },
+        { "dishId": "gimbap", "angleDeg": 10, "radius": 0.70, "want": ["Gumiho", "Ho"], "forbid": [] },
+        { "dishId": "banh_mi", "angleDeg": 190, "radius": 0.55, "want": [], "forbid": ["Gumiho", "Ho"] },
+        { "dishId": "goi_cuon", "angleDeg": 330, "radius": 0.55, "want": ["Ho"], "forbid": ["Gumiho"] }
+      ]
+    },
+    {
+      "id": 13,
+      "guestMode": "Ho",
+      "spinSpeed": 0,
+      "charges": 2,
+      "hearts": 3,
+      "foods": [
+        { "dishId": "goi_cuon", "angleDeg": 258, "radius": 0.58, "want": ["Ho"], "forbid": [] },
+        { "dishId": "gimbap", "angleDeg": 240, "radius": 0.52, "want": [], "forbid": ["Ho"] },
+        { "dishId": "bibimbap", "angleDeg": 222, "radius": 0.40, "want": [], "forbid": ["Ho"] }
+      ]
+    },
+    {
+      "id": 14,
+      "guestMode": "GumihoHo",
+      "spinSpeed": 0,
+      "charges": 2,
+      "hearts": 3,
+      "foods": [
+        { "dishId": "songpyeon", "angleDeg": 175, "radius": 0.72, "want": ["Gumiho"], "forbid": ["Ho"] },
+        { "dishId": "banh_mi", "angleDeg": 180, "radius": 0.35, "want": [], "forbid": ["Gumiho", "Ho"] },
+        { "dishId": "gimbap", "angleDeg": 0, "radius": 0.70, "want": ["Ho"], "forbid": ["Gumiho"] },
+        { "dishId": "pho", "angleDeg": 95, "radius": 0.45, "want": [], "forbid": ["Gumiho", "Ho"] }
+      ]
+    },
+    {
+      "id": 15,
+      "guestMode": "Co",
+      "spinSpeed": 28,
+      "charges": 2,
+      "hearts": 3,
+      "foods": [
+        { "dishId": "goi_cuon", "angleDeg": 270, "radius": 0.55, "want": ["Co"], "forbid": [] },
+        { "dishId": "banh_mi", "angleDeg": 270, "radius": 0.82, "want": [], "forbid": ["Co"] },
+        { "dishId": "pho", "angleDeg": 270, "radius": 0.34, "want": [], "forbid": ["Co"] }
+      ]
+    },
+    {
+      "id": 16,
+      "guestMode": "Dokkaebi",
+      "spinSpeed": 0,
+      "charges": 3,
+      "hearts": 3,
+      "swapAfterBite": 1,
+      "foods": [
+        { "dishId": "banh_mi", "angleDeg": 270, "radius": 0.84, "want": [], "forbid": ["Dokkaebi"], "wantAfterSwap": ["Dokkaebi"], "forbidAfterSwap": [] },
+        { "dishId": "gimbap", "angleDeg": 288, "radius": 0.56, "want": ["Dokkaebi"], "forbid": [], "wantAfterSwap": ["Dokkaebi"], "forbidAfterSwap": [] },
+        { "dishId": "bibimbap", "angleDeg": 312, "radius": 0.56, "want": [], "forbid": ["Dokkaebi"], "wantAfterSwap": [], "forbidAfterSwap": ["Dokkaebi"] }
+      ]
+    },
+    {
+      "id": 17,
+      "guestMode": "Dokkaebi",
+      "spinSpeed": 0,
+      "charges": 4,
+      "hearts": 3,
+      "swapAfterBite": 2,
+      "foods": [
+        { "dishId": "goi_cuon", "angleDeg": 290, "radius": 0.48, "want": ["Dokkaebi"], "forbid": [], "wantAfterSwap": [], "forbidAfterSwap": [] },
+        { "dishId": "ca_phe", "angleDeg": 296, "radius": 0.80, "want": ["Dokkaebi"], "forbid": [], "wantAfterSwap": [], "forbidAfterSwap": ["Dokkaebi"] },
+        { "dishId": "banh_mi", "angleDeg": 270, "radius": 0.80, "want": [], "forbid": ["Dokkaebi"], "wantAfterSwap": ["Dokkaebi"], "forbidAfterSwap": [] },
+        { "dishId": "bibimbap", "angleDeg": 312, "radius": 0.80, "want": [], "forbid": ["Dokkaebi"], "wantAfterSwap": [], "forbidAfterSwap": ["Dokkaebi"] }
+      ]
+    }
+  ]
+}

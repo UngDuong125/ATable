@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4988bd2d3f9e35419515d028e9a36bf, type: 3}
+  m_Name: Level01
+  m_EditorClassIdentifier: Assembly-CSharp::MotMam.LevelConfig
+  id: 1
+  guestMode: 0
+  spinSpeed: 0
+  charges: 2
+  hearts: 3
+  brakeTime: 0
+  foods:
+  - dishId: songpyeon
+    angleDeg: 270
+    radius: 0.58
+    want: 00000000
+    forbid: 
+  - dishId: banh_mi
+    angleDeg: 90
+    radius: 0.58
+    want: 
+    forbid: 00000000
+  - dishId: bibimbap
+    angleDeg: 20
+    radius: 0.78
+    want: 
+    forbid: 00000000

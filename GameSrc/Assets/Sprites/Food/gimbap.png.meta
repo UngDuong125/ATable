@@ -1,0 +1,2106 @@
+fileFormatVersion: 2
+guid: cd4a4d7058e518647a3b979d2e191263
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1444746765302301521
+    second: gimbap_0
+  - first:
+      213: -8600625034540549440
+    second: gimbap_1
+  - first:
+      213: 6289145540501668104
+    second: gimbap_2
+  - first:
+      213: 8325021840958893288
+    second: gimbap_3
+  - first:
+      213: -1750517449410424339
+    second: gimbap_4
+  - first:
+      213: 7000270113704998603
+    second: gimbap_5
+  - first:
+      213: 6509765330106156248
+    second: gimbap_6
+  - first:
+      213: 8636277875435131899
+    second: gimbap_7
+  - first:
+      213: 8283539497982318648
+    second: gimbap_8
+  - first:
+      213: -6068700241296935374
+    second: gimbap_9
+  - first:
+      213: -6763100553245759902
+    second: gimbap_10
+  - first:
+      213: 965380892809540443
+    second: gimbap_11
+  - first:
+      213: 5734451351860799222
+    second: gimbap_12
+  - first:
+      213: 1092030986885240686
+    second: gimbap_13
+  - first:
+      213: 3997080217003586007
+    second: gimbap_14
+  - first:
+      213: 744482061359391710
+    second: gimbap_15
+  - first:
+      213: -7952766781469364881
+    second: gimbap_16
+  - first:
+      213: 2503060622844797307
+    second: gimbap_17
+  - first:
+      213: 1085528628187667181
+    second: gimbap_18
+  - first:
+      213: -4152815440191973789
+    second: gimbap_19
+  - first:
+      213: 8021820075337464062
+    second: gimbap_20
+  - first:
+      213: -8233433387982630934
+    second: gimbap_21
+  - first:
+      213: 1584308241982183128
+    second: gimbap_22
+  - first:
+      213: -8124239260770481535
+    second: gimbap_23
+  - first:
+      213: -6172746088432690198
+    second: gimbap_24
+  - first:
+      213: 8328940469047791536
+    second: gimbap_25
+  - first:
+      213: -2299769534889442627
+    second: gimbap_26
+  - first:
+      213: -7358139103460946352
+    second: gimbap_27
+  - first:
+      213: -1345178683613608524
+    second: gimbap_28
+  - first:
+      213: -4563619256296811820
+    second: gimbap_29
+  - first:
+      213: 3574225631261979626
+    second: gimbap_30
+  - first:
+      213: -3468797981166951142
+    second: gimbap_31
+  - first:
+      213: -8837527789686942151
+    second: gimbap_32
+  - first:
+      213: 2108564725160868229
+    second: gimbap_33
+  - first:
+      213: -3178977189318779383
+    second: gimbap_34
+  - first:
+      213: -7350819450352981852
+    second: gimbap_35
+  - first:
+      213: 6265713964501557352
+    second: gimbap_36
+  - first:
+      213: 482094360802060482
+    second: gimbap_37
+  - first:
+      213: -2214447690589982366
+    second: gimbap_38
+  - first:
+      213: -3984835630996580708
+    second: gimbap_39
+  - first:
+      213: -4500179076883705356
+    second: gimbap_40
+  - first:
+      213: -6188275445382830890
+    second: gimbap_41
+  - first:
+      213: 4291184733924047601
+    second: gimbap_42
+  - first:
+      213: 5607732498345831915
+    second: gimbap_43
+  - first:
+      213: 8849514110968091051
+    second: gimbap_44
+  - first:
+      213: 8693428189325135484
+    second: gimbap_45
+  - first:
+      213: 1478456679679607477
+    second: gimbap_46
+  - first:
+      213: 620499991113512375
+    second: gimbap_47
+  - first:
+      213: 5772087870977551903
+    second: gimbap_48
+  - first:
+      213: -8370024594012100728
+    second: gimbap_49
+  - first:
+      213: 8686176299769124797
+    second: gimbap_50
+  - first:
+      213: -6865838834009036319
+    second: gimbap_51
+  - first:
+      213: -5951052115405583339
+    second: gimbap_52
+  - first:
+      213: -1673995952081226614
+    second: gimbap_53
+  - first:
+      213: 3314596974765622570
+    second: gimbap_54
+  - first:
+      213: 7342207465262256035
+    second: gimbap_55
+  - first:
+      213: -5936966666514041377
+    second: gimbap_56
+  - first:
+      213: 5286803370057621289
+    second: gimbap_57
+  - first:
+      213: -5268086657571534637
+    second: gimbap_58
+  - first:
+      213: 128167046685525458
+    second: gimbap_59
+  - first:
+      213: -5347933625943383389
+    second: gimbap_60
+  - first:
+      213: -7957335534114106419
+    second: gimbap_61
+  - first:
+      213: -9121861278488787227
+    second: gimbap_62
+  - first:
+      213: -6913389458506291167
+    second: gimbap_63
+  - first:
+      213: -2715725144672982675
+    second: gimbap_64
+  - first:
+      213: 8216532962105773136
+    second: gimbap_65
+  - first:
+      213: -4338485112960892335
+    second: gimbap_66
+  - first:
+      213: 5404904713615847657
+    second: gimbap_67
+  - first:
+      213: -3573921792371394071
+    second: gimbap_68
+  - first:
+      213: 128934679723610026
+    second: gimbap_69
+  - first:
+      213: 7291427455067527934
+    second: gimbap_70
+  - first:
+      213: -9145657559968787738
+    second: gimbap_71
+  - first:
+      213: -6318972663058284209
+    second: gimbap_72
+  - first:
+      213: 1618456546788298123
+    second: gimbap_73
+  - first:
+      213: 2171019847845429448
+    second: gimbap_74
+  - first:
+      213: 8108074084286565193
+    second: gimbap_75
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1280
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gimbap_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1042
+        width: 315
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: facf2c7b87a33fbe0800000000000000
+      internalID: -1444746765302301521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1116
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0caf0e1691174a880800000000000000
+      internalID: -8600625034540549440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_2
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1062
+        width: 739
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 801855a3c88874750800000000000000
+      internalID: 6289145540501668104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_3
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1110
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ec29b9a14b688370800000000000000
+      internalID: 8325021840958893288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_4
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 962
+        width: 131
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1d4c687a9e4b7e0800000000000000
+      internalID: -1750517449410424339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_5
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 1097
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc67b235494f52160800000000000000
+      internalID: 7000270113704998603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_6
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 1097
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d48128d315575a50800000000000000
+      internalID: 6509765330106156248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_7
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 1097
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf350e288f83ad770800000000000000
+      internalID: 8636277875435131899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_8
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 1097
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 838572c094b05f270800000000000000
+      internalID: 8283539497982318648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_9
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 1097
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2363b2da845a7cba0800000000000000
+      internalID: -6068700241296935374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_10
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 1080
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 266e98711e3a422a0800000000000000
+      internalID: -6763100553245759902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_11
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 74
+        width: 1192
+        height: 1005
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53bcd4aec8b56d00800000000000000
+      internalID: 965380892809540443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_12
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 970
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f6eb614f1dd49f40800000000000000
+      internalID: 5734451351860799222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_13
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 820
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e679301956ca72f00800000000000000
+      internalID: 1092030986885240686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_14
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 719
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d17d39a74b787730800000000000000
+      internalID: 3997080217003586007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_15
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 808
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed32af88d7ee45a00800000000000000
+      internalID: 744482061359391710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_16
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 935
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6dedf07fb812a190800000000000000
+      internalID: -7952766781469364881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_17
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 663
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b71aeebef58acb220800000000000000
+      internalID: 2503060622844797307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_18
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 815
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dea94a43982901f00800000000000000
+      internalID: 1085528628187667181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_19
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 872
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36699951c5c3e56c0800000000000000
+      internalID: -4152815440191973789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_20
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 662
+        width: 38
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef8369a6bda335f60800000000000000
+      internalID: 8021820075337464062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_21
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 944
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aef447bc4f7fcbd80800000000000000
+      internalID: -8233433387982630934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_22
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 915
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d6521ab3f79cf510800000000000000
+      internalID: 1584308241982183128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_23
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 690
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a4e77bf67e04f80800000000000000
+      internalID: -8124239260770481535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_24
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 823
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeb994e1320065aa0800000000000000
+      internalID: -6172746088432690198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_25
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 691
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf08fc5a37569370800000000000000
+      internalID: 8328940469047791536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_26
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 911
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db246afeac39510e0800000000000000
+      internalID: -2299769534889442627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_27
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 690
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e8c427873a2e990800000000000000
+      internalID: -7358139103460946352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_28
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 655
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b588c34d17f45de0800000000000000
+      internalID: -1345178683613608524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_29
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 911
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d2db4a2774caa0c0800000000000000
+      internalID: -4563619256296811820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_30
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 662
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae3777a46433a9130800000000000000
+      internalID: 3574225631261979626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_31
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 921
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a15a3f65d9a5cdfc0800000000000000
+      internalID: -3468797981166951142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_32
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 890
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 936111b6c4bca5580800000000000000
+      internalID: -8837527789686942151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_33
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 663
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 589f1252270234d10800000000000000
+      internalID: 2108564725160868229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_34
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 945
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90e9599d61102e3d0800000000000000
+      internalID: -3178977189318779383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_35
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 926
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a8adadf7a4acf990800000000000000
+      internalID: -7350819450352981852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_36
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 884
+        width: 10
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 860e15e47a944f650800000000000000
+      internalID: 6265713964501557352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_37
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 675
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c863d3544eb0b600800000000000000
+      internalID: 482094360802060482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_38
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 820
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26133bcde83b441e0800000000000000
+      internalID: -2214447690589982366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_39
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 690
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c96112e2b1503b8c0800000000000000
+      internalID: -3984835630996580708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_40
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 633
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f193b8f8f62c81c0800000000000000
+      internalID: -4500179076883705356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_41
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 663
+        width: 78
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d42fa1f444de1aa0800000000000000
+      internalID: -6188275445382830890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_42
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 881
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa3f13a7c95d8b30800000000000000
+      internalID: 4291184733924047601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_43
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 728
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bed21570ffaa2dd40800000000000000
+      internalID: 5607732498345831915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_44
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 715
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba15f0b723acfca70800000000000000
+      internalID: 8849514110968091051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_45
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 716
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7e8711e0e245a870800000000000000
+      internalID: 8693428189325135484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_46
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 663
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b24b185488848410800000000000000
+      internalID: 1478456679679607477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_47
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 648
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5347154757c9800800000000000000
+      internalID: 620499991113512375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_48
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 821
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1e25f936539a1050800000000000000
+      internalID: 5772087870977551903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_49
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 670
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88720a06af2b7db80800000000000000
+      internalID: -8370024594012100728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_50
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 628
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db7d724c25f7b8870800000000000000
+      internalID: 8686176299769124797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_51
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 627
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e92fcd05f3a7b0a0800000000000000
+      internalID: -6865838834009036319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_52
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 655
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51cc96d81ad996da0800000000000000
+      internalID: -5951052115405583339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_53
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 628
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a84b1c00d85c4c8e0800000000000000
+      internalID: -1673995952081226614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_54
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 605
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a254d761360dffd20800000000000000
+      internalID: 3314596974765622570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_55
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 628
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af8d2af9c2c4e560800000000000000
+      internalID: 7342207465262256035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_56
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 619
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd5781fa548ab9da0800000000000000
+      internalID: -5936966666514041377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_57
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 619
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92f5f9587af7e5940800000000000000
+      internalID: 5286803370057621289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_58
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 626
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d84971b81ff3e6b0800000000000000
+      internalID: -5268086657571534637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_59
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 617
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d50a99ff3757c100800000000000000
+      internalID: 128167046685525458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_60
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 583
+        width: 50
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a22747a3b258c5b0800000000000000
+      internalID: -5347933625943383389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_61
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 473
+        width: 46
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc31982dd7dd19190800000000000000
+      internalID: -7957335534114106419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_62
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 518
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e609453f73a86180800000000000000
+      internalID: -9121861278488787227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_63
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 396
+        width: 9
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1286dcb8ae4be00a0800000000000000
+      internalID: -6913389458506291167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_64
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 380
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d69ab249e5ecf4ad0800000000000000
+      internalID: -2715725144672982675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_65
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 364
+        width: 7
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c4a9b223df60270800000000000000
+      internalID: 8216532962105773136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_66
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 370
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15245aaa6ca9ac3c0800000000000000
+      internalID: -4338485112960892335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_67
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 362
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e038eb5334120b40800000000000000
+      internalID: 5404904713615847657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_68
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 220
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e9fca6b011e66ec0800000000000000
+      internalID: -3573921792371394071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_69
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 219
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf872878611ac100800000000000000
+      internalID: 128934679723610026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_70
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 213
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efa94d483aa503560800000000000000
+      internalID: 7291427455067527934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_71
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 97
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e2d1bca7e8141180800000000000000
+      internalID: -9145657559968787738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_72
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 105
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f41c101a7df7e48a0800000000000000
+      internalID: -6318972663058284209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_73
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 96
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8dc8b387a9e57610800000000000000
+      internalID: 1618456546788298123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_74
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 101
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c0462f8c03012e10800000000000000
+      internalID: 2171019847845429448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gimbap_75
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 100
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94b8376db6aa58070800000000000000
+      internalID: 8108074084286565193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      gimbap_0: -1444746765302301521
+      gimbap_1: -8600625034540549440
+      gimbap_10: -6763100553245759902
+      gimbap_11: 965380892809540443
+      gimbap_12: 5734451351860799222
+      gimbap_13: 1092030986885240686
+      gimbap_14: 3997080217003586007
+      gimbap_15: 744482061359391710
+      gimbap_16: -7952766781469364881
+      gimbap_17: 2503060622844797307
+      gimbap_18: 1085528628187667181
+      gimbap_19: -4152815440191973789
+      gimbap_2: 6289145540501668104
+      gimbap_20: 8021820075337464062
+      gimbap_21: -8233433387982630934
+      gimbap_22: 1584308241982183128
+      gimbap_23: -8124239260770481535
+      gimbap_24: -6172746088432690198
+      gimbap_25: 8328940469047791536
+      gimbap_26: -2299769534889442627
+      gimbap_27: -7358139103460946352
+      gimbap_28: -1345178683613608524
+      gimbap_29: -4563619256296811820
+      gimbap_3: 8325021840958893288
+      gimbap_30: 3574225631261979626
+      gimbap_31: -3468797981166951142
+      gimbap_32: -8837527789686942151
+      gimbap_33: 2108564725160868229
+      gimbap_34: -3178977189318779383
+      gimbap_35: -7350819450352981852
+      gimbap_36: 6265713964501557352
+      gimbap_37: 482094360802060482
+      gimbap_38: -2214447690589982366
+      gimbap_39: -3984835630996580708
+      gimbap_4: -1750517449410424339
+      gimbap_40: -4500179076883705356
+      gimbap_41: -6188275445382830890
+      gimbap_42: 4291184733924047601
+      gimbap_43: 5607732498345831915
+      gimbap_44: 8849514110968091051
+      gimbap_45: 8693428189325135484
+      gimbap_46: 1478456679679607477
+      gimbap_47: 620499991113512375
+      gimbap_48: 5772087870977551903
+      gimbap_49: -8370024594012100728
+      gimbap_5: 7000270113704998603
+      gimbap_50: 8686176299769124797
+      gimbap_51: -6865838834009036319
+      gimbap_52: -5951052115405583339
+      gimbap_53: -1673995952081226614
+      gimbap_54: 3314596974765622570
+      gimbap_55: 7342207465262256035
+      gimbap_56: -5936966666514041377
+      gimbap_57: 5286803370057621289
+      gimbap_58: -5268086657571534637
+      gimbap_59: 128167046685525458
+      gimbap_6: 6509765330106156248
+      gimbap_60: -5347933625943383389
+      gimbap_61: -7957335534114106419
+      gimbap_62: -9121861278488787227
+      gimbap_63: -6913389458506291167
+      gimbap_64: -2715725144672982675
+      gimbap_65: 8216532962105773136
+      gimbap_66: -4338485112960892335
+      gimbap_67: 5404904713615847657
+      gimbap_68: -3573921792371394071
+      gimbap_69: 128934679723610026
+      gimbap_7: 8636277875435131899
+      gimbap_70: 7291427455067527934
+      gimbap_71: -9145657559968787738
+      gimbap_72: -6318972663058284209
+      gimbap_73: 1618456546788298123
+      gimbap_74: 2171019847845429448
+      gimbap_75: 8108074084286565193
+      gimbap_8: 8283539497982318648
+      gimbap_9: -6068700241296935374
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
