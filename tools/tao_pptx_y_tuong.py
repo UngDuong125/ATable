@@ -35,6 +35,12 @@ ROW = RGBColor(0xFB, 0xF6, 0xEE)
 SOFT_RED = RGBColor(0xF3, 0xE4, 0xE2)
 SOFT_GREEN = RGBColor(0xE4, 0xEF, 0xE8)
 SOFT_BLUE = RGBColor(0xE4, 0xEB, 0xF3)
+DARK_GOLD = RGBColor(0x8A, 0x6A, 0x24)
+TEAL = RGBColor(0x3E, 0x6B, 0x66)
+FIRE = RGBColor(0xE2, 0x4A, 0x2A)
+SOFT_TEAL = RGBColor(0xE3, 0xEE, 0xEC)
+SOFT_FIRE = RGBColor(0xFB, 0xE6, 0xDF)
+SOFT_GOLD = RGBColor(0xF5, 0xEB, 0xD3)
 
 A_NS = "http://schemas.openxmlformats.org/drawingml/2006/main"
 SLIDE_W = Inches(13.333)
@@ -246,7 +252,7 @@ def new_slide(prs):
     return prs.slides.add_slide(prs.slide_layouts[6])
 
 
-TOTAL = 13
+TOTAL = 14
 
 
 def slide_cover(prs):
@@ -358,6 +364,86 @@ def slide_info(prs):
     notes(s, "Nhớ đăng ký trên link chính thức của BTC trước khi nộp. File này chỉ là hồ sơ ý tưởng.")
 
 
+def slide_inspiration(prs):
+    s = new_slide(prs)
+    content_bg(s)
+    title(s, "Cảm hứng", "Giữ nhịp một chạm và vật xoay của game ném dao vào vòng gỗ. Đổi ném thành canh miếng.")
+
+    # --- card trái: game gốc
+    add_round(s, Inches(0.45), Inches(1.5), Inches(5.7), Inches(2.5), WHITE, radius=0.06)
+    cx, cy, r = 1.75, 2.6, 0.65
+    add_oval(s, Inches(cx - r), Inches(cy - r), Inches(2 * r), Inches(2 * r), SOFT_GOLD, line=GOLD, line_pt=2.5)
+    for ang in (20, 80, 140, 200, 260, 320):
+        d = r + 0.12
+        import math
+        kx = cx + d * math.sin(math.radians(ang))
+        ky = cy - d * math.cos(math.radians(ang))
+        k = add_rect(s, Inches(kx - 0.03), Inches(ky - 0.22), Inches(0.06), Inches(0.44), INK)
+        k.rotation = ang
+    k = add_rect(s, Inches(cx - 0.03), Inches(cy + r + 0.22), Inches(0.06), Inches(0.38), MUTED)
+    write_lines(
+        s, Inches(3.15), Inches(1.7), Inches(2.9), Inches(2.2),
+        [
+            {"text": "Game gốc", "size": 12, "bold": True, "color": MUTED},
+            {"text": "Ném dao vào vòng xoay", "size": 17, "bold": True, "color": INK, "before": 2},
+            {"text": "Chạm để ném. Dao cắm vào vòng. Ném trúng dao đã cắm là thua.", "size": 14, "color": INK, "before": 8},
+        ],
+    )
+
+    # --- mũi tên
+    arrow = s.shapes.add_shape(MSO_SHAPE.RIGHT_ARROW, Inches(6.3), Inches(2.4), Inches(0.6), Inches(0.5))
+    arrow.fill.solid()
+    arrow.fill.fore_color.rgb = RED
+    arrow.line.fill.background()
+
+    # --- card phải: Một Mâm
+    add_round(s, Inches(7.05), Inches(1.5), Inches(5.8), Inches(2.5), WHITE, radius=0.06)
+    mx, my = 8.35, 2.4
+    add_oval(s, Inches(mx - r), Inches(my - r), Inches(2 * r), Inches(2 * r), CREAM, line=GOLD, line_pt=2.5)
+    for dx, dy, col in ((-0.28, -0.25, RED), (0.25, -0.28, GREEN), (0.32, 0.15, BLUE), (-0.08, 0.28, GOLD), (-0.36, 0.08, RED)):
+        add_oval(s, Inches(mx + dx - 0.12), Inches(my + dy - 0.12), Inches(0.24), Inches(0.24), col)
+    add_oval(s, Inches(mx - 0.45), Inches(my + r - 0.15), Inches(0.9), Inches(0.9), SOFT_RED, line=RED, line_pt=2)
+    add_oval(s, Inches(mx - 0.15), Inches(my + r + 0.15), Inches(0.3), Inches(0.3), RED)
+    write_lines(
+        s, Inches(9.65), Inches(1.7), Inches(3.1), Inches(2.2),
+        [
+            {"text": "Một Mâm", "size": 12, "bold": True, "color": RED},
+            {"text": "Giữ mâm xoay, thả để khách cắn", "size": 17, "bold": True, "color": INK, "before": 2},
+            {"text": "Cắn nhầm món chưa tới lượt là mất một mạng.", "size": 14, "color": INK, "before": 8},
+        ],
+    )
+
+    # --- bảng so sánh
+    rows = [
+        ("", "Game ném dao", "Một Mâm"),
+        ("Vật xoay", "Vòng gỗ", "Mâm tiệc có món Việt xen món Hàn"),
+        ("Một ngón", "Chạm là ném dao", "Giữ để phanh mâm và nạp vùng ăn, thả để cắn"),
+        ("Điều phải tránh", "Dao đã cắm trên vòng", "Món chưa tới lượt nằm sát món đang thèm"),
+        ("Phần thêm", "Một loại dao", "Mỗi khách một hình vùng ăn, món đổi nghĩa, hai khách một mâm"),
+    ]
+    tbl = s.shapes.add_table(5, 3, Inches(0.45), Inches(4.2), Inches(12.4), Inches(2.75)).table
+    for i, w in enumerate((2.2, 3.6, 6.6)):
+        tbl.columns[i].width = Inches(w)
+    for r_i, row in enumerate(rows):
+        for c_i, text in enumerate(row):
+            cell = tbl.cell(r_i, c_i)
+            if r_i == 0:
+                set_cell_fill(cell, RED)
+                set_cell_text(cell, text, 13, True, CREAM)
+            else:
+                set_cell_fill(cell, WHITE if r_i % 2 else ROW)
+                set_cell_text(cell, text, 14, c_i == 0, RED if c_i == 0 else INK)
+        tbl.rows[r_i].height = Inches(0.4 if r_i == 0 else 0.58)
+    footer(s, 3, TOTAL)
+    notes(
+        s,
+        "Ý tưởng lớn lên từ game ném dao vào vòng xoay: một ngón, vật xoay, canh thời điểm. "
+        "Mình giữ cái hay đó và đổi hai thứ. Một: không ném đồ vào vòng, mà để khách cắn món trên mâm xoay. "
+        "Hai: giữ không chỉ là chờ, giữ còn phanh mâm và làm vùng ăn lớn dần, nên có lúc phải kìm ngón. "
+        "Hình, nhân vật, luật thèm và chưa thèm đều là của đội.",
+    )
+
+
 def slide_idea(prs):
     s = new_slide(prs)
     content_bg(s)
@@ -417,7 +503,7 @@ def slide_idea(prs):
             },
         ],
     )
-    footer(s, 3, TOTAL)
+    footer(s, 4, TOTAL)
     notes(
         s,
         "Nhấn mạnh một cử chỉ cho mọi khách. Giữ làm hai việc: phanh mâm và nạp vùng ăn. "
@@ -438,7 +524,7 @@ def slide_setting(prs):
         (
             GREEN,
             "Nhịp chơi",
-            "Một màn dài khoảng 20–40 giây. Mười hai màn chơi liền khoảng 6–8 phút. Hợp casual trên điện thoại.",
+            "Hai mươi màn, mỗi màn khoảng 20–40 giây. Chơi liền một mạch hay chơi lẻ từng màn đều hợp casual trên điện thoại.",
         ),
         (
             BLUE,
@@ -469,75 +555,58 @@ def slide_setting(prs):
                 {"text": body, "size": 16, "color": INK, "before": 10},
             ],
         )
-    footer(s, 4, TOTAL)
+    footer(s, 5, TOTAL)
 
 
 def slide_cast(prs):
     s = new_slide(prs)
     content_bg(s)
-    title(s, "Nhân vật", "Ba khách trong bài nộp. Icon trên bảng khách mới là luật của từng màn. Món ký chỉ để dựng tính cách.")
+    title(s, "Nhân vật", "Năm khách, năm hình vùng ăn. Icon trên bảng khách mới là luật của từng màn.")
     cast = [
-        (
-            RED,
-            SOFT_RED,
-            "Gumiho",
-            "Khách chính  ·  Hàn Quốc",
-            "Hồ ly chín đuôi, vẽ gốc, dễ thương. Vùng ăn là vòng tròn neo ở mép mâm, giữ để bán kính lan vào bàn.",
-            "Món ký: songpyeon, bánh trôi.",
-        ),
-        (
-            GREEN,
-            SOFT_GREEN,
-            "Hổ",
-            "Khách chung hai nước",
-            "Hổ tranh dân gian, nét Đông Hồ trộn minhwa. Hổ có ở cả hai nước. Giữ để hai hàm tách ra. Khe quá rộng sẽ cuốn món nằm giữa.",
-            "Món ký: gỏi cuốn, gimbap.",
-        ),
-        (
-            BLUE,
-            SOFT_BLUE,
-            "Mê",
-            "Khách lướt  ·  Việt Nam",
-            "Chó trắng đội nón mê. Dải thẳng dài dần và luôn lắc. Nhát đủ dài thì Mê sang mép kia, nhát sau tính từ phía mới.",
-            "Món ký: thịt nướng, galbi.",
-        ),
+        (RED, "Gumiho", "Khách chính  ·  Hàn Quốc",
+         "Hồ ly chín đuôi, vẽ gốc. Vòng tròn neo ở mép mâm, giữ để bán kính lan vào bàn.",
+         "Món ký: songpyeon, bánh trôi."),
+        (GREEN, "Hổ", "Cầu nối hai nước",
+         "Hổ tranh dân gian, nét Đông Hồ trộn minhwa. Giữ để hai hàm tách ra. Khe quá rộng cuốn luôn món ở giữa.",
+         "Món ký: gỏi cuốn, gimbap."),
+        (BLUE, "Mê", "Khách lướt  ·  Việt Nam",
+         "Chó trắng đội nón mê. Dải thẳng dài dần và luôn lắc. Nhát đủ dài thì Mê sang mép kia.",
+         "Món ký: thịt nướng, galbi."),
+        (TEAL, "Cò", "Mỏ chọc sâu  ·  Việt Nam",
+         "Cò trắng. Vùng ăn là một chấm chạy từ mép vào tâm. Giữ để chấm đi sâu, chấm không to ra.",
+         "Câu đố: độ sâu, không phải bề rộng."),
+        (FIRE, "Dokkaebi", "Lửa ma  ·  Hàn Quốc",
+         "Yêu tinh sừng và chùy. Đốm lửa chạy từ tâm ra mép. Sau vài nhát, món đang thèm đổi.",
+         "Câu đố: icon đổi giữa màn."),
     ]
-    for i, (color, soft, name, role, body, food) in enumerate(cast):
-        x = Inches(0.42 + i * 4.28)
-        card = add_round(s, x, Inches(1.6), Inches(4.08), Inches(4.55), WHITE, radius=0.08)
-        add_rect(s, x, Inches(1.6), Inches(4.08), Inches(0.14), color)
+    for i, (color, name, role, body, food) in enumerate(cast):
+        x = Inches(0.42 + i * 2.5)
+        card = add_round(s, x, Inches(1.6), Inches(2.4), Inches(4.1), WHITE, radius=0.08)
+        add_rect(s, x, Inches(1.6), Inches(2.4), Inches(0.14), color)
         fill_shape_text(
             card,
             [
-                {"text": name, "size": 32, "bold": True, "color": color, "before": 8},
-                {"text": role, "size": 14, "bold": True, "color": MUTED, "before": 2},
-                {"text": body, "size": 15, "color": INK, "before": 12},
-                {"text": food, "size": 15, "bold": True, "color": INK, "before": 12},
+                {"text": name, "size": 26, "bold": True, "color": color, "before": 8},
+                {"text": role, "size": 12, "bold": True, "color": MUTED, "before": 2},
+                {"text": body, "size": 15, "color": INK, "before": 10},
+                {"text": food, "size": 14, "bold": True, "color": INK, "before": 10},
             ],
-            margin=0.18,
+            margin=0.14,
         )
-        # silence unused
-        del soft
-    write_lines(
-        s,
-        Inches(0.5),
-        Inches(6.3),
-        Inches(12.3),
-        Inches(0.7),
-        [
-            {
-                "text": "Tám món dùng suốt game: bánh mì, gỏi cuốn, phở, cà phê sữa đá, gimbap, songpyeon, tteokbokki, bibimbap.",
-                "size": 15,
-                "color": INK,
-            }
-        ],
+    strip = add_round(s, Inches(0.42), Inches(5.95), Inches(12.4), Inches(0.9), INK, radius=0.12)
+    fill_shape_text(
+        strip,
+        [{"text": "Tám món dùng suốt game: bánh mì, gỏi cuốn, phở, cà phê sữa đá, gimbap, songpyeon, tteokbokki, bibimbap.",
+          "size": 16, "color": CREAM}],
+        anchor=MSO_ANCHOR.MIDDLE, margin=0.3,
     )
-    footer(s, 5, TOTAL)
+    footer(s, 6, TOTAL)
     notes(
         s,
         "Vòng của Gumiho phải lệch tâm. Vòng đúng tâm mâm thì xoay bàn không đổi ai bị ăn. "
         "Đường của Mê là dải nửa bàn, không phải đường kính ăn cả hai phía một lúc. "
-        "Mê không vào màn hai khách vì lướt sẽ đổi mép đứng.",
+        "Mê không vào màn hai khách vì lướt sẽ đổi mép đứng. "
+        "Bài nộp vẫn kể được bằng ba khách đầu; Cò và Dokkaebi là phần thêm.",
     )
 
 
@@ -548,8 +617,8 @@ def slide_play(prs):
     rules = [
         ("Mâm tự xoay", "Món là con của mâm, nên trôi theo vòng. Vùng ăn đứng yên trên màn hình, neo ở mép chỗ khách ngồi."),
         ("Giữ để phanh và nạp", "Ngón giữ càng lâu, mâm càng chậm và vùng ăn càng lớn. Chạm thật nhanh thì vùng rất nhỏ."),
-        ("Thả để cắn", "Nhát sạch: ăn món thèm, trừ một lượt. Nhát dính món chưa tới lượt: mất một mạng, món ở lại, vẫn trừ một lượt."),
-        ("Ba mạng", "Hết mạng, hoặc hết lượt mà còn món thèm, thì chơi lại màn. Qua màn khi món thèm đã hết."),
+        ("Thả để cắn", "Nhát sạch: ăn món thèm, trừ một lượt. Nhát dính món chưa tới lượt: mất một mạng, món ở lại, không trừ lượt."),
+        ("Mạng và lượt", "Màn giới thiệu có 3 mạng, các màn sau có 2. Hết mạng, hoặc hết lượt mà còn món thèm, thì chơi lại màn."),
     ]
     for i, (head, body) in enumerate(rules):
         y = Inches(1.5 + i * 1.3)
@@ -574,63 +643,68 @@ def slide_play(prs):
                 {"text": body, "size": 15, "color": MUTED, "before": 2},
             ],
         )
-    footer(s, 6, TOTAL)
+    footer(s, 7, TOTAL)
 
 
 def slide_skills(prs):
     s = new_slide(prs)
     content_bg(s)
-    title(s, "Ba vùng ăn", "Aim bằng mâm xoay. Skill cố định trên màn hình. Giữ chỉ làm vùng đó lớn ra.")
-    # Gumiho diagram
+    title(s, "Năm vùng ăn", "Aim bằng mâm xoay. Vùng ăn cố định trên màn hình. Giữ chỉ làm vùng đó lớn ra hoặc đi sâu.")
     cards = [
-        (RED, "Gumiho  ·  vòng mép", "Vòng neo trước mặt Gumiho, lan vào mâm. Dùng khi món thèm nằm thành cụm tròn."),
-        (GREEN, "Hổ  ·  khe hai hàm", "Hai hàm tách dần. Món cấm nằm giữa thì phải hai nhát hẹp, không được một nhát rộng."),
-        (BLUE, "Mê  ·  dải và lướt", "Dải lắc khi chưa giữ. Nhấn giữ thì dải đóng băng và mâm chậm lại. Qua nửa mâm thì Mê sang mép kia."),
+        (RED, "Gumiho  ·  vòng mép", "Vòng neo trước mặt Gumiho, lan vào mâm. Hợp khi món thèm nằm thành cụm tròn."),
+        (GREEN, "Hổ  ·  khe hai hàm", "Hai hàm tách dần. Món cấm nằm giữa thì phải hai nhát hẹp."),
+        (BLUE, "Mê  ·  dải và lướt", "Dải lắc khi chưa giữ. Giữ thì đóng băng. Nhát đủ dài thì Mê sang mép kia."),
+        (TEAL, "Cò  ·  chấm sâu", "Một chấm chạy từ mép vào tâm. Giữ để đi sâu, chấm không to ra."),
+        (FIRE, "Dokkaebi  ·  đốm lửa", "Đốm chạy tâm–mép. Giữ thì khóa độ sâu và quét ngang. Sau vài nhát, icon đổi."),
     ]
     for i, (color, head, body) in enumerate(cards):
-        x = Inches(0.42 + i * 4.28)
-        add_round(s, x, Inches(1.55), Inches(4.08), Inches(5.3), WHITE, radius=0.08)
-        stage_x = x + Inches(0.7)
-        stage_y = Inches(1.8)
-        add_oval(s, stage_x, stage_y, Inches(2.65), Inches(2.65), CREAM, line=GOLD, line_pt=2)
+        x = Inches(0.42 + i * 2.5)
+        add_round(s, x, Inches(1.55), Inches(2.4), Inches(4.4), WHITE, radius=0.08)
+        sx = x + Inches(0.35)
+        sy = Inches(1.85)
+        add_oval(s, sx, sy, Inches(1.7), Inches(1.7), CREAM, line=GOLD, line_pt=2)
         if i == 0:
-            add_oval(s, stage_x + Inches(0.15), stage_y + Inches(0.7), Inches(1.15), Inches(1.15), SOFT_RED, line=RED, line_pt=2)
+            add_oval(s, sx + Inches(0.1), sy + Inches(0.45), Inches(0.8), Inches(0.8), SOFT_RED, line=RED, line_pt=2)
         elif i == 1:
-            add_rect(s, stage_x + Inches(0.85), stage_y + Inches(0.35), Inches(0.08), Inches(1.95), GREEN)
-            add_rect(s, stage_x + Inches(1.55), stage_y + Inches(0.35), Inches(0.08), Inches(1.95), GREEN)
-        else:
-            add_round(s, stage_x + Inches(0.35), stage_y + Inches(1.55), Inches(1.95), Inches(0.26), SOFT_BLUE, line=BLUE, radius=0.4)
+            add_rect(s, sx + Inches(0.55), sy + Inches(0.25), Inches(0.06), Inches(1.2), GREEN)
+            add_rect(s, sx + Inches(1.05), sy + Inches(0.25), Inches(0.06), Inches(1.2), GREEN)
+        elif i == 2:
+            add_round(s, sx + Inches(0.2), sy + Inches(1.0), Inches(1.3), Inches(0.2), SOFT_BLUE, line=BLUE, radius=0.4)
             write_lines(
-                s,
-                stage_x + Inches(0.2),
-                stage_y + Inches(1.88),
-                Inches(2.25),
-                Inches(0.32),
-                [{"text": "sang mép kia", "size": 11, "bold": True, "color": BLUE, "align": PP_ALIGN.CENTER}],
+                s, sx, sy + Inches(1.25), Inches(1.7), Inches(0.25),
+                [{"text": "sang mép kia", "size": 10, "bold": True, "color": BLUE, "align": PP_ALIGN.CENTER}],
             )
+        elif i == 3:
+            add_rect(s, sx + Inches(0.83), sy + Inches(0.15), Inches(0.04), Inches(1.4), SOFT_TEAL)
+            add_oval(s, sx + Inches(0.73), sy + Inches(0.95), Inches(0.24), Inches(0.24), TEAL)
+        else:
+            add_rect(s, sx + Inches(0.85), sy + Inches(0.83), Inches(0.7), Inches(0.04), SOFT_FIRE)
+            add_oval(s, sx + Inches(1.2), sy + Inches(0.72), Inches(0.26), Inches(0.26), FIRE)
         write_lines(
-            s,
-            x + Inches(0.25),
-            Inches(4.6),
-            Inches(3.6),
-            Inches(2.0),
+            s, x + Inches(0.18), Inches(3.8), Inches(2.1), Inches(2.9),
             [
-                {"text": head, "size": 18, "bold": True, "color": color},
-                {"text": body, "size": 14, "color": INK, "before": 8},
+                {"text": head, "size": 16, "bold": True, "color": color},
+                {"text": body, "size": 15, "color": INK, "before": 8},
             ],
         )
-    footer(s, 7, TOTAL)
+    strip = add_round(s, Inches(0.42), Inches(6.1), Inches(12.4), Inches(0.8), INK, radius=0.12)
+    fill_shape_text(
+        strip,
+        [{"text": "Cùng một cử chỉ cho cả năm khách: giữ để phanh và nạp, thả để cắn.", "size": 16, "bold": True, "color": CREAM}],
+        anchor=MSO_ANCHOR.MIDDLE, margin=0.3,
+    )
+    footer(s, 8, TOTAL)
     notes(
         s,
         "Mê: dải lắc khi chưa giữ. Nhấn giữ thì góc dải đóng băng và mâm giảm tốc. Thả trước ngưỡng giữa bàn thì đứng yên, dải không đổi phía. "
-        "Thả sau ngưỡng thì lướt và đổi phía. Màn 9 bắt buộc phải lướt, vì món thứ hai chỉ đi vào dải phía kia.",
+        "Thả sau ngưỡng thì lướt và đổi phía. Cò và Dokkaebi dùng cùng cử chỉ: chỉ đổi hình vùng ăn, một chấm và một đốm lửa.",
     )
 
 
 def slide_duo(prs):
     s = new_slide(prs)
     content_bg(s)
-    title(s, "Màn hai khách", "Gumiho bên trái, Hổ bên phải. Một ngón chọn một phía. Mê không vào màn này.")
+    title(s, "Màn hai khách", "Gumiho bên trái, Hổ bên phải. Một ngón chọn một phía. Dùng ở màn 18, 19 và 20.")
     add_round(s, Inches(0.45), Inches(1.55), Inches(7.35), Inches(5.25), WHITE, radius=0.08)
     # screen split diagram
     add_round(s, Inches(0.75), Inches(1.85), Inches(6.75), Inches(3.55), CREAM, line=GOLD, radius=0.06)
@@ -678,7 +752,7 @@ def slide_duo(prs):
     points = [
         ("Cùng một mâm", "Món trôi từ vùng Gumiho sang vùng Hổ. Aim vẫn là việc chờ và phanh."),
         ("Món đổi nghĩa", "Món Gumiho thèm có thể là món Hổ chưa thèm. Phải cắn trước khi nó tới phía kia."),
-        ("Màn 11 rồi màn 12", "Màn 11 mỗi món chỉ vào đúng vùng của người thèm. Màn 12 mới có món xung đột."),
+        ("Ba màn, ba bước", "Màn 18 làm quen hai vùng. Màn 19 mỗi món chỉ vào đúng vùng người thèm. Màn 20 mới có món xung đột."),
         ("Tay không che mâm", "Ngón đặt trên hình khách ở mép. Mắt nhìn mâm ở giữa."),
     ]
     for i, (head, body) in enumerate(points):
@@ -692,10 +766,10 @@ def slide_duo(prs):
             ],
             margin=0.12,
         )
-    footer(s, 8, TOTAL)
+    footer(s, 9, TOTAL)
     notes(
         s,
-        "Màn hai khách là màn người xem nhớ. Chỉ dùng ở màn 11 và 12. "
+        "Màn hai khách là màn người xem nhớ. Chỉ dùng ở màn 18, 19 và 20. Mê không vào các màn này. "
         "Một ngón, không bấm hai tay cùng lúc trong bản nộp.",
     )
 
@@ -703,53 +777,55 @@ def slide_duo(prs):
 def slide_levels(prs):
     s = new_slide(prs)
     content_bg(s)
-    title(s, "Mười hai màn", "Mỗi màn có một lời giải đã định. Số lượt là số nhát của lời giải đó.")
-    levels = [
-        ("1", "Gumiho", "Đứng", "Thả một nhát. Vòng nhỏ đã phủ đúng món thèm.", "2"),
-        ("2", "Gumiho", "Đứng", "Giữ vừa bán kính. Món cấm nằm sát phía ngoài.", "2"),
-        ("3", "Gumiho", "Chậm", "Chờ món thèm vào vòng, thả trước món cấm.", "2"),
-        ("4", "Gumiho", "Xoay", "Một lượt. Phải giữ để phanh và ôm cụm hai món.", "1"),
-        ("5", "Hổ", "Đứng", "Thả khe hẹp. Món cấm nằm hai bên, ngoài khe.", "2"),
-        ("6", "Hổ", "Chậm", "Ba món bên trái. Hai nhát hẹp, món cấm nằm giữa.", "2"),
-        ("7", "Hổ", "Xoay", "Một lượt. Phanh và nới khe vừa khít cụm hai món.", "1"),
-        ("8", "Mê", "Xoay", "Một nhát dài, lướt sang mép kia, dải mới đang sạch.", "1"),
-        ("9", "Mê", "Xoay", "Phải lướt. Món thứ hai chỉ vào dải phía bên kia.", "2"),
-        ("10", "Gumiho", "Chậm", "Bốn món cách xa. Mỗi nhát chỉ ăn được một món.", "3"),
-        ("11", "Hai khách", "Chậm", "Tay trái đãi Gumiho, tay phải đãi Hổ. Chưa có xung đột.", "3"),
-        ("12", "Hai khách", "Xoay", "Cắn món xung đột trước khi nó tới miệng người kia.", "3"),
+    title(s, "Hai mươi màn", "Mỗi khách có một màn giới thiệu, mâm đứng yên. Màn 1–11 là phần thi, màn 12–20 là phần thêm.")
+    lv = [
+        ("1", "Gumiho", "Đứng", "Dạy vòng. Món cấm nằm sát món thèm.", "2", RED),
+        ("2", "Gumiho", "Đứng", "Thêm món cấm. Đọc vòng trước khi thả.", "2", RED),
+        ("3", "Gumiho", "10°/s", "Mâm xoay chậm. Chờ món vào vòng.", "3", RED),
+        ("4", "Gumiho", "16°/s", "Hai món thèm, phải cắn hai lần.", "2", RED),
+        ("5", "Hổ", "Đứng", "Dạy khe: hẹp khi chạm, rộng khi giữ.", "2", GREEN),
+        ("6", "Hổ", "14°/s", "Món cấm gần món thèm, khe vừa đủ.", "2", GREEN),
+        ("7", "Hổ", "20°/s", "Chờ món vào đúng đường tâm.", "3", GREEN),
+        ("8", "Mê", "Đứng", "Dạy Mê. Giữ quá nửa thì lướt.", "3", BLUE),
+        ("9", "Mê", "16°/s", "Mỗi nhát dài đổi mép đứng.", "3", BLUE),
+        ("10", "Mê", "22°/s", "Tính trước nhát nào lướt, nhát nào đứng.", "4", BLUE),
+        ("11", "Gumiho", "38°/s", "Mâm nhanh. Bốn món, mỗi nhát một món.", "4", RED),
+        ("12", "Hổ", "40°/s", "Bốn món rải khắp mâm, khe đúng nhịp.", "5", GREEN),
+        ("13", "Cò", "Đứng", "Dạy Cò. Chấm là độ sâu, không phải bề rộng.", "3", TEAL),
+        ("14", "Cò", "24°/s", "Cò ngồi lệch. Bốn món đi qua mỏ.", "4", TEAL),
+        ("15", "Dokkaebi", "Đứng", "Dạy Dokkaebi. Icon đổi sau nhát đầu.", "5", FIRE),
+        ("16", "Dokkaebi", "20°/s", "Đổi sau nhát đầu: món cấm thành món thèm.", "5", FIRE),
+        ("17", "Dokkaebi", "26°/s", "Đổi sau nhát thứ hai.", "4", FIRE),
+        ("18", "Gumiho + Hổ", "Đứng", "Dạy hai khách. Món người này là món cấm của người kia.", "3", GOLD),
+        ("19", "Gumiho + Hổ", "22°/s", "Bốn nhát luân phiên giữa hai khách.", "4", GOLD),
+        ("20", "Gumiho + Hổ", "32°/s", "Có món chung, và món chỉ một người được ăn.", "4", GOLD),
     ]
-    rows, cols = 13, 5
-    table_shape = s.shapes.add_table(rows, cols, Inches(0.4), Inches(1.48), Inches(12.55), Inches(5.55))
-    table = table_shape.table
-    widths = [0.7, 1.35, 1.15, 8.15, 1.2]
-    for i, w in enumerate(widths):
-        table.columns[i].width = Inches(w)
-    headers = ["Màn", "Khách", "Mâm", "Lời giải", "Lượt"]
-    for j, text in enumerate(headers):
-        cell = table.cell(0, j)
-        set_cell_fill(cell, RED)
-        set_cell_text(cell, text, 12, True, CREAM, PP_ALIGN.LEFT if j == 3 else PP_ALIGN.CENTER)
-    for r, row in enumerate(levels, start=1):
-        bg = WHITE if r % 2 else ROW
-        if r >= 11:
-            bg = SOFT_RED
-        elif r >= 8:
-            bg = SOFT_BLUE
-        elif r >= 5:
-            bg = SOFT_GREEN
-        aligns = [PP_ALIGN.CENTER, PP_ALIGN.CENTER, PP_ALIGN.CENTER, PP_ALIGN.LEFT, PP_ALIGN.CENTER]
-        for c, text in enumerate(row):
-            cell = table.cell(r, c)
-            set_cell_fill(cell, bg)
-            set_cell_text(cell, text, 11, c == 0, INK, aligns[c])
-        table.rows[r].height = Inches(0.40)
-    table.rows[0].height = Inches(0.36)
-    footer(s, 9, TOTAL)
+    softs = {RED: SOFT_RED, GREEN: SOFT_GREEN, BLUE: SOFT_BLUE, TEAL: SOFT_TEAL, FIRE: SOFT_FIRE, GOLD: SOFT_GOLD}
+    widths = [0.5, 1.35, 0.75, 3.1, 0.55]
+    for half in range(2):
+        rows = lv[half * 10:(half + 1) * 10]
+        x0 = Inches(0.4 + half * 6.35)
+        table = s.shapes.add_table(11, 5, x0, Inches(1.55), Inches(6.25), Inches(5.4)).table
+        for i, w in enumerate(widths):
+            table.columns[i].width = Inches(w)
+        for j, text in enumerate(["Màn", "Khách", "Mâm", "Ý đồ", "Lượt"]):
+            cell = table.cell(0, j)
+            set_cell_fill(cell, INK)
+            set_cell_text(cell, text, 11, True, CREAM, PP_ALIGN.LEFT if j == 3 else PP_ALIGN.CENTER)
+        table.rows[0].height = Inches(0.34)
+        for r, (num, guest, spin, aim, charges, col) in enumerate(rows, start=1):
+            aligns = [PP_ALIGN.CENTER, PP_ALIGN.LEFT, PP_ALIGN.CENTER, PP_ALIGN.LEFT, PP_ALIGN.CENTER]
+            for c, text in enumerate([num, guest, spin, aim, charges]):
+                cell = table.cell(r, c)
+                set_cell_fill(cell, softs[col])
+                set_cell_text(cell, text, 11, c in (0, 1), (DARK_GOLD if col == GOLD else col) if c == 1 else INK, aligns[c])
+            table.rows[r].height = Inches(0.5)
+    footer(s, 10, TOTAL)
     notes(
         s,
-        "Xếp cụm món trước, gán thèm và chưa thèm sau. "
-        "Màn 4 và màn 7 chỉ một lượt. Màn 10 không đổi icon; các món đứng cách nhau. "
-        "Tiêu chí: người lạ qua màn 1 trong khoảng 20 giây, không cần đoạn văn hướng dẫn.",
+        "Xếp cụm món trước, gán thèm và chưa thèm sau. Mỗi màn có một lời giải đã tính sẵn; số lượt bằng số nhát của lời giải, "
+        "hoặc dư một lượt ở màn giới thiệu. Mạng là 3 ở màn giới thiệu, 2 ở các màn còn lại. "
+        "Đổi món chỉ có ở màn Dokkaebi. Tiêu chí: người lạ qua màn 1 trong khoảng 20 giây, không cần đoạn văn hướng dẫn.",
     )
 
 
@@ -760,7 +836,7 @@ def slide_culture(prs):
     left = [
         ("Mâm xoay là cách chơi", "Người chơi đãi khách bằng cách canh miếng, đúng với mâm xoay và bàn ăn chung."),
         ("Hổ là nhân vật cầu nối", "Hổ có trong tranh dân gian cả Việt và Hàn. Khe hai hàm là câu đố mà vòng tròn không làm được."),
-        ("Gumiho, Hổ, Mê tự vẽ", "Hồ ly, hổ tranh dân gian, chó trắng đội nón mê. Không lấy hình từ phim, webtoon hay game có sẵn."),
+        ("Khách tự vẽ", "Hồ ly, hổ tranh dân gian, chó đội nón mê, cò, dokkaebi. Cơ chế vật xoay quen thuộc, nhưng hình, nhân vật và luật thèm đều của đội."),
     ]
     for i, (head, body) in enumerate(left):
         y = Inches(1.55 + i * 1.7)
@@ -789,7 +865,7 @@ def slide_culture(prs):
             {"text": "Sketch tay dán ở slide sau. BTC tính đây là một lợi thế.", "size": 15, "bold": True, "color": GOLD, "before": 14},
         ],
     )
-    footer(s, 10, TOTAL)
+    footer(s, 11, TOTAL)
 
 
 def slide_scope(prs):
@@ -797,11 +873,11 @@ def slide_scope(prs):
     content_bg(s)
     title(s, "Phạm vi bài nộp", "Unity 2D, một scene. Bản chơi được trên Android và trên máy tính bằng chuột.")
     have = [
-        "3 khách: Gumiho, Hổ, Mê. Vùng ăn đúng như slide trước.",
-        "8 món, 12 màn xếp tay, đúng bảng lời giải.",
+        "5 khách: Gumiho, Hổ, Mê, Cò, Dokkaebi. Vùng ăn đúng như slide trước.",
+        "8 món, 20 màn xếp tay, đúng bảng lời giải.",
         "Màn hình tiêu đề, qua màn, và chơi lại.",
         "APK Android, bản chạy bằng chuột trên máy tính.",
-        "Video 45–75 giây: màn 1, một lần phanh, một lần Mê lướt, màn 12.",
+        "Video 45–75 giây: màn 1, một lần phanh, một lần Mê lướt, màn 20.",
         "PowerPoint này, sau khi điền tên và dán sketch.",
     ]
     later = [
@@ -844,10 +920,10 @@ def slide_scope(prs):
         Inches(3.8),
         [{"text": "•  " + line, "size": 15, "color": INK, "before": 10} for line in later],
     )
-    footer(s, 11, TOTAL)
+    footer(s, 12, TOTAL)
     notes(
         s,
-        "Nếu trễ lịch, giảm animation trước khi bỏ màn. Giữ màn 12. "
+        "Nếu trễ lịch, giảm animation trước khi bỏ màn. Giữ màn 20. "
         "Đó là màn hai nước ngồi cùng bàn.",
     )
 
@@ -885,7 +961,7 @@ def slide_sketch(prs):
             Inches(0.85),
             [{"text": hint, "size": 13, "color": INK, "align": PP_ALIGN.CENTER}],
         )
-    footer(s, 12, TOTAL)
+    footer(s, 13, TOTAL)
 
 
 def slide_end(prs):
@@ -913,8 +989,8 @@ def slide_end(prs):
         "1    Đăng ký đúng link chính thức của BTC.",
         "2    Điền tên đội, thành viên, email ở slide thông tin.",
         "3    Vẽ tay và dán vào slide phác thảo.",
-        "4    Làm 12 màn trong Unity, xuất APK và bản chơi trên máy tính.",
-        "5    Quay video 45–75 giây, thấy đủ Gumiho, Hổ, Mê và màn hai khách.",
+        "4    Hoàn thiện 20 màn trong Unity, xuất APK và bản chơi trên máy tính.",
+        "5    Quay video 45–75 giây, thấy đủ Gumiho, Hổ, Mê và màn 20 hai khách.",
         "6    Gửi pptx kèm video hoặc APK trước hết ngày 11/11/2026.",
     ]
     write_lines(
@@ -942,7 +1018,7 @@ def slide_end(prs):
     )
     notes(
         s,
-        "Bài nói hai phút nằm trong tài liệu thiết kế, mục 15. "
+        "Bài nói hai phút nằm trong tài liệu thiết kế, mục 13. "
         "Khi ban giám khảo đổi đề, giữ cử chỉ giữ và thả, chỉ đổi hình vùng ăn hoặc tốc độ mâm.",
     )
 
@@ -956,6 +1032,7 @@ def build():
     prs.core_properties.category = "Game design"
     slide_cover(prs)
     slide_info(prs)
+    slide_inspiration(prs)
     slide_idea(prs)
     slide_setting(prs)
     slide_cast(prs)

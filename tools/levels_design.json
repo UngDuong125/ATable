@@ -1,0 +1,2741 @@
+{
+ "1": {
+  "score": 5.8866000000000005,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "gimbap",
+    "ang": 275.1,
+    "rad": 0.78
+   },
+   {
+    "role": "want",
+    "dish": "pho",
+    "ang": 257.3,
+    "rad": 0.8
+   },
+   {
+    "role": "want",
+    "dish": "gimbap",
+    "ang": 248.3,
+    "rad": 0.38
+   },
+   {
+    "role": "forbid",
+    "dish": "bibimbap",
+    "ang": 223.2,
+    "rad": 0.54
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 77.0,
+    "rad": 0.83
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 327.1,
+    "rad": 0.31
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 166.0,
+    "rad": 0.7
+   },
+   {
+    "role": "deco",
+    "dish": "tteokbokki",
+    "ang": 6.4,
+    "rad": 0.84
+   },
+   {
+    "role": "deco",
+    "dish": "ca_phe",
+    "ang": 125.9,
+    "rad": 0.49
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 28.8,
+    "rad": 0.76
+   }
+  ],
+  "bites": 1,
+  "time": 0.67,
+  "hist": [
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 0.0,
+    "hold": 0.31999999999999995,
+    "win_w": 99.0,
+    "win_h": 0.3,
+    "hit": [
+     0,
+     1,
+     2
+    ],
+    "eat": [
+     0,
+     1,
+     2
+    ],
+    "tray": 0.0,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "2": {
+  "score": 6.2802,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "tteokbokki",
+    "ang": 304.7,
+    "rad": 0.43
+   },
+   {
+    "role": "want",
+    "dish": "goi_cuon",
+    "ang": 258.8,
+    "rad": 0.78
+   },
+   {
+    "role": "want",
+    "dish": "tteokbokki",
+    "ang": 240.6,
+    "rad": 0.62
+   },
+   {
+    "role": "forbid",
+    "dish": "songpyeon",
+    "ang": 219.7,
+    "rad": 0.65
+   },
+   {
+    "role": "forbid",
+    "dish": "ca_phe",
+    "ang": 341.2,
+    "rad": 0.28
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 145.7,
+    "rad": 0.82
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 73.2,
+    "rad": 0.41
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 13.8,
+    "rad": 0.77
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 179.4,
+    "rad": 0.73
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 116.7,
+    "rad": 0.52
+   }
+  ],
+  "bites": 1,
+  "time": 0.99,
+  "hist": [
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 0.0,
+    "hold": 0.6399999999999999,
+    "win_w": 99.0,
+    "win_h": 0.72,
+    "hit": [
+     0,
+     1,
+     2
+    ],
+    "eat": [
+     0,
+     1,
+     2
+    ],
+    "tray": 0.0,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "3": {
+  "score": 6.0312,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "bibimbap",
+    "ang": 163.6,
+    "rad": 0.56
+   },
+   {
+    "role": "want",
+    "dish": "ca_phe",
+    "ang": 112.5,
+    "rad": 0.41
+   },
+   {
+    "role": "forbid",
+    "dish": "songpyeon",
+    "ang": 97.6,
+    "rad": 0.65
+   },
+   {
+    "role": "forbid",
+    "dish": "pho",
+    "ang": 74.8,
+    "rad": 0.35
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 300.5,
+    "rad": 0.66
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 258.8,
+    "rad": 0.77
+   },
+   {
+    "role": "deco",
+    "dish": "tteokbokki",
+    "ang": 348.6,
+    "rad": 0.68
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 203.9,
+    "rad": 0.58
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 24.9,
+    "rad": 0.79
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 241.1,
+    "rad": 0.55
+   }
+  ],
+  "bites": 2,
+  "time": 13.44,
+  "hist": [
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 6.8500000000000005,
+    "hold": 0.6599999999999999,
+    "win_w": 2.3000000000000003,
+    "win_h": 0.7000000000000001,
+    "hit": [
+     0,
+     7,
+     9
+    ],
+    "eat": [
+     0
+    ],
+    "tray": 70.25,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 4.55,
+    "hold": 0.6799999999999999,
+    "win_w": 2.15,
+    "win_h": 0.64,
+    "hit": [
+     1
+    ],
+    "eat": [
+     1
+    ],
+    "tray": 117.5,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "4": {
+  "score": 6.455,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "bibimbap",
+    "ang": 55.7,
+    "rad": 0.35
+   },
+   {
+    "role": "want",
+    "dish": "goi_cuon",
+    "ang": 164.3,
+    "rad": 0.37
+   },
+   {
+    "role": "forbid",
+    "dish": "tteokbokki",
+    "ang": 204.9,
+    "rad": 0.47
+   },
+   {
+    "role": "forbid",
+    "dish": "pho",
+    "ang": 37.9,
+    "rad": 0.6
+   },
+   {
+    "role": "forbid",
+    "dish": "tteokbokki",
+    "ang": 204.7,
+    "rad": 0.28
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 312.5,
+    "rad": 0.72
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 113.5,
+    "rad": 0.38
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 237.5,
+    "rad": 0.64
+   },
+   {
+    "role": "deco",
+    "dish": "ca_phe",
+    "ang": 340.3,
+    "rad": 0.7
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 266.0,
+    "rad": 0.49
+   }
+  ],
+  "bites": 2,
+  "time": 12.25,
+  "hist": [
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 7.0,
+    "hold": 0.29999999999999993,
+    "win_w": 1.85,
+    "win_h": 0.38,
+    "hit": [
+     1
+    ],
+    "eat": [
+     1
+    ],
+    "tray": 114.74285714285715,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 3.5500000000000003,
+    "hold": 0.7,
+    "win_w": 1.4000000000000001,
+    "win_h": 0.62,
+    "hit": [
+     0,
+     6
+    ],
+    "eat": [
+     0
+    ],
+    "tray": 174.34285714285716,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "6": {
+  "score": 6.900533333333333,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "gimbap",
+    "ang": 211.4,
+    "rad": 0.35
+   },
+   {
+    "role": "want",
+    "dish": "ca_phe",
+    "ang": 122.3,
+    "rad": 0.81
+   },
+   {
+    "role": "want",
+    "dish": "gimbap",
+    "ang": 213.1,
+    "rad": 0.63
+   },
+   {
+    "role": "forbid",
+    "dish": "bibimbap",
+    "ang": 244.9,
+    "rad": 0.47
+   },
+   {
+    "role": "forbid",
+    "dish": "banh_mi",
+    "ang": 192.8,
+    "rad": 0.76
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 333.1,
+    "rad": 0.34
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 75.5,
+    "rad": 0.4
+   },
+   {
+    "role": "deco",
+    "dish": "tteokbokki",
+    "ang": 15.3,
+    "rad": 0.43
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 290.1,
+    "rad": 0.44
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 169.6,
+    "rad": 0.47
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 51.2,
+    "rad": 0.55
+   }
+  ],
+  "bites": 2,
+  "time": 11.64,
+  "hist": [
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 3.8000000000000003,
+    "hold": 0.21999999999999997,
+    "win_w": 1.3,
+    "win_h": 0.38,
+    "hit": [
+     0,
+     2
+    ],
+    "eat": [
+     0,
+     2
+    ],
+    "tray": 55.312000000000005,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 6.4,
+    "hold": 0.5199999999999999,
+    "win_w": 2.9000000000000004,
+    "win_h": 0.98,
+    "hit": [
+     1
+    ],
+    "eat": [
+     1
+    ],
+    "tray": 147.362,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "7": {
+  "score": 6.3558,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "tteokbokki",
+    "ang": 41.2,
+    "rad": 0.55
+   },
+   {
+    "role": "want",
+    "dish": "pho",
+    "ang": 315.0,
+    "rad": 0.58
+   },
+   {
+    "role": "want",
+    "dish": "tteokbokki",
+    "ang": 120.9,
+    "rad": 0.8
+   },
+   {
+    "role": "forbid",
+    "dish": "gimbap",
+    "ang": 16.7,
+    "rad": 0.55
+   },
+   {
+    "role": "forbid",
+    "dish": "banh_mi",
+    "ang": 138.5,
+    "rad": 0.86
+   },
+   {
+    "role": "forbid",
+    "dish": "gimbap",
+    "ang": 64.9,
+    "rad": 0.67
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 196.7,
+    "rad": 0.39
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 268.9,
+    "rad": 0.43
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 233.7,
+    "rad": 0.76
+   },
+   {
+    "role": "deco",
+    "dish": "ca_phe",
+    "ang": 334.2,
+    "rad": 0.66
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 171.9,
+    "rad": 0.81
+   }
+  ],
+  "bites": 3,
+  "time": 17.21,
+  "hist": [
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 7.3500000000000005,
+    "hold": 0.13999999999999999,
+    "win_w": 0.9,
+    "win_h": 0.98,
+    "hit": [
+     2
+    ],
+    "eat": [
+     2
+    ],
+    "tray": 149.24,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 3.8000000000000003,
+    "hold": 0.19999999999999998,
+    "win_w": 0.9,
+    "win_h": 0.34,
+    "hit": [
+     0
+    ],
+    "eat": [
+     0
+    ],
+    "tray": 228.09714285714287,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 4.15,
+    "hold": 0.5199999999999999,
+    "win_w": 2.9000000000000004,
+    "win_h": 0.98,
+    "hit": [
+     1,
+     9
+    ],
+    "eat": [
+     1
+    ],
+    "tray": 314.5971428571429,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "8": {
+  "score": 6.676733333333333,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "bibimbap",
+    "ang": 265.4,
+    "rad": 0.71
+   },
+   {
+    "role": "want",
+    "dish": "banh_mi",
+    "ang": 266.2,
+    "rad": 0.39
+   },
+   {
+    "role": "want",
+    "dish": "bibimbap",
+    "ang": 84.2,
+    "rad": 0.44
+   },
+   {
+    "role": "forbid",
+    "dish": "gimbap",
+    "ang": 286.9,
+    "rad": 0.72
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 156.5,
+    "rad": 0.53
+   },
+   {
+    "role": "deco",
+    "dish": "tteokbokki",
+    "ang": 15.8,
+    "rad": 0.51
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 198.1,
+    "rad": 0.79
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 326.0,
+    "rad": 0.68
+   },
+   {
+    "role": "deco",
+    "dish": "ca_phe",
+    "ang": 116.8,
+    "rad": 0.8
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 40.1,
+    "rad": 0.53
+   },
+   {
+    "role": "deco",
+    "dish": "tteokbokki",
+    "ang": 235.4,
+    "rad": 0.61
+   }
+  ],
+  "bites": 2,
+  "time": 2.83,
+  "hist": [
+   {
+    "who": "M",
+    "dir": 0,
+    "wait": 0.8500000000000001,
+    "hold": 0.6,
+    "win_w": 1.75,
+    "win_h": 0.8,
+    "hit": [
+     0,
+     1
+    ],
+    "eat": [
+     0,
+     1
+    ],
+    "tray": 0.0,
+    "sway": -0.31395259764656674,
+    "along": 0.5,
+    "meK": 0,
+    "slide": true,
+    "swapAfter": false
+   },
+   {
+    "who": "M",
+    "dir": 0,
+    "wait": 0.0,
+    "hold": 0.58,
+    "win_w": 1.75,
+    "win_h": 0.84,
+    "hit": [
+     2
+    ],
+    "eat": [
+     2
+    ],
+    "tray": 0.0,
+    "sway": -0.31395259764656674,
+    "along": 0.5,
+    "meK": 1,
+    "slide": true,
+    "swapAfter": false
+   }
+  ]
+ },
+ "9": {
+  "score": 5.66611111111111,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "bibimbap",
+    "ang": 106.3,
+    "rad": 0.76
+   },
+   {
+    "role": "want",
+    "dish": "banh_mi",
+    "ang": 356.8,
+    "rad": 0.4
+   },
+   {
+    "role": "want",
+    "dish": "bibimbap",
+    "ang": 271.7,
+    "rad": 0.67
+   },
+   {
+    "role": "forbid",
+    "dish": "gimbap",
+    "ang": 296.4,
+    "rad": 0.72
+   },
+   {
+    "role": "forbid",
+    "dish": "ca_phe",
+    "ang": 36.7,
+    "rad": 0.42
+   },
+   {
+    "role": "deco",
+    "dish": "tteokbokki",
+    "ang": 156.2,
+    "rad": 0.82
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 196.1,
+    "rad": 0.58
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 246.2,
+    "rad": 0.4
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 82.5,
+    "rad": 0.78
+   },
+   {
+    "role": "deco",
+    "dish": "tteokbokki",
+    "ang": 329.2,
+    "rad": 0.64
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 216.3,
+    "rad": 0.84
+   }
+  ],
+  "bites": 3,
+  "time": 12.25,
+  "hist": [
+   {
+    "who": "M",
+    "dir": 0,
+    "wait": 0.30000000000000004,
+    "hold": 0.5599999999999999,
+    "win_w": 0.65,
+    "win_h": 0.88,
+    "hit": [
+     2
+    ],
+    "eat": [
+     2
+    ],
+    "tray": 7.6000000000000005,
+    "sway": 4.524135262330098,
+    "along": 0.5,
+    "meK": 0,
+    "slide": true,
+    "swapAfter": false
+   },
+   {
+    "who": "M",
+    "dir": 0,
+    "wait": 5.0,
+    "hold": 0.6,
+    "win_w": 2.15,
+    "win_h": 0.8,
+    "hit": [
+     1
+    ],
+    "eat": [
+     1
+    ],
+    "tray": 90.39999999999999,
+    "sway": 4.52413526233009,
+    "along": 0.5,
+    "meK": 1,
+    "slide": true,
+    "swapAfter": false
+   },
+   {
+    "who": "M",
+    "dir": 0,
+    "wait": 4.6000000000000005,
+    "hold": 0.04,
+    "win_w": 1.5,
+    "win_h": 0.1,
+    "hit": [
+     0
+    ],
+    "eat": [
+     0
+    ],
+    "tray": 164.60342857142857,
+    "sway": -1.8406227634233865,
+    "along": 0.5,
+    "meK": 2,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "10": {
+  "score": 6.132266666666667,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "gimbap",
+    "ang": 70.4,
+    "rad": 0.69
+   },
+   {
+    "role": "want",
+    "dish": "banh_mi",
+    "ang": 18.7,
+    "rad": 0.47
+   },
+   {
+    "role": "want",
+    "dish": "gimbap",
+    "ang": 154.9,
+    "rad": 0.56
+   },
+   {
+    "role": "want",
+    "dish": "banh_mi",
+    "ang": 227.7,
+    "rad": 0.37
+   },
+   {
+    "role": "forbid",
+    "dish": "songpyeon",
+    "ang": 343.5,
+    "rad": 0.28
+   },
+   {
+    "role": "forbid",
+    "dish": "ca_phe",
+    "ang": 52.4,
+    "rad": 0.86
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 297.2,
+    "rad": 0.79
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 126.1,
+    "rad": 0.72
+   },
+   {
+    "role": "deco",
+    "dish": "tteokbokki",
+    "ang": 204.3,
+    "rad": 0.71
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 262.6,
+    "rad": 0.64
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 88.7,
+    "rad": 0.55
+   }
+  ],
+  "bites": 4,
+  "time": 16.72,
+  "hist": [
+   {
+    "who": "M",
+    "dir": 0,
+    "wait": 1.7000000000000002,
+    "hold": 0.62,
+    "win_w": 1.8,
+    "win_h": 0.78,
+    "hit": [
+     3
+    ],
+    "eat": [
+     3
+    ],
+    "tray": 41.25000000000001,
+    "sway": 0.6266661678215208,
+    "along": 0.5,
+    "meK": 0,
+    "slide": true,
+    "swapAfter": false
+   },
+   {
+    "who": "M",
+    "dir": 0,
+    "wait": 0.9,
+    "hold": 0.58,
+    "win_w": 0.7000000000000001,
+    "win_h": 0.86,
+    "hit": [
+     1
+    ],
+    "eat": [
+     1
+    ],
+    "tray": 64.9,
+    "sway": -1.8406227634233863,
+    "along": 0.5,
+    "meK": 1,
+    "slide": true,
+    "swapAfter": false
+   },
+   {
+    "who": "M",
+    "dir": 0,
+    "wait": 5.8500000000000005,
+    "hold": 0.5599999999999999,
+    "win_w": 1.25,
+    "win_h": 0.88,
+    "hit": [
+     0
+    ],
+    "eat": [
+     0
+    ],
+    "tray": 197.45000000000002,
+    "sway": 2.1288964578253626,
+    "along": 0.5,
+    "meK": 2,
+    "slide": true,
+    "swapAfter": false
+   },
+   {
+    "who": "M",
+    "dir": 0,
+    "wait": 4.3500000000000005,
+    "hold": 0.5599999999999999,
+    "win_w": 1.05,
+    "win_h": 0.88,
+    "hit": [
+     2
+    ],
+    "eat": [
+     2
+    ],
+    "tray": 297.00000000000006,
+    "sway": -4.524135262330088,
+    "along": 0.5,
+    "meK": 3,
+    "slide": true,
+    "swapAfter": false
+   }
+  ]
+ },
+ "11": {
+  "score": 6.098584615384615,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "tteokbokki",
+    "ang": 192.2,
+    "rad": 0.74
+   },
+   {
+    "role": "want",
+    "dish": "ca_phe",
+    "ang": 32.1,
+    "rad": 0.67
+   },
+   {
+    "role": "want",
+    "dish": "tteokbokki",
+    "ang": 122.7,
+    "rad": 0.49
+   },
+   {
+    "role": "want",
+    "dish": "ca_phe",
+    "ang": 221.1,
+    "rad": 0.36
+   },
+   {
+    "role": "forbid",
+    "dish": "songpyeon",
+    "ang": 156.4,
+    "rad": 0.28
+   },
+   {
+    "role": "forbid",
+    "dish": "pho",
+    "ang": 215.2,
+    "rad": 0.86
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 283.8,
+    "rad": 0.68
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 331.2,
+    "rad": 0.5
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 87.2,
+    "rad": 0.71
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 259.1,
+    "rad": 0.73
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 10.8,
+    "rad": 0.33
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 68.4,
+    "rad": 0.6
+   }
+  ],
+  "bites": 4,
+  "time": 8.34,
+  "hist": [
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 0.25,
+    "hold": 0.41999999999999993,
+    "win_w": 0.55,
+    "win_h": 0.7000000000000001,
+    "hit": [
+     3,
+     6,
+     9
+    ],
+    "eat": [
+     3
+    ],
+    "tray": 16.15,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 1.55,
+    "hold": 0.19999999999999998,
+    "win_w": 0.8500000000000001,
+    "win_h": 0.34,
+    "hit": [
+     0
+    ],
+    "eat": [
+     0
+    ],
+    "tray": 80.47857142857143,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 1.6,
+    "hold": 0.19999999999999998,
+    "win_w": 1.55,
+    "win_h": 0.36,
+    "hit": [
+     2
+    ],
+    "eat": [
+     2
+    ],
+    "tray": 146.70714285714286,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 2.2,
+    "hold": 0.5199999999999999,
+    "win_w": 2.3000000000000003,
+    "win_h": 0.98,
+    "hit": [
+     1,
+     10,
+     11
+    ],
+    "eat": [
+     1
+    ],
+    "tray": 236.95714285714288,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "12": {
+  "score": 6.547180952380953,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "gimbap",
+    "ang": 211.5,
+    "rad": 0.59
+   },
+   {
+    "role": "want",
+    "dish": "goi_cuon",
+    "ang": 86.3,
+    "rad": 0.47
+   },
+   {
+    "role": "want",
+    "dish": "gimbap",
+    "ang": 304.8,
+    "rad": 0.83
+   },
+   {
+    "role": "want",
+    "dish": "goi_cuon",
+    "ang": 173.2,
+    "rad": 0.44
+   },
+   {
+    "role": "forbid",
+    "dish": "tteokbokki",
+    "ang": 184.7,
+    "rad": 0.69
+   },
+   {
+    "role": "forbid",
+    "dish": "banh_mi",
+    "ang": 102.3,
+    "rad": 0.52
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 3.5,
+    "rad": 0.4
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 256.6,
+    "rad": 0.39
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 58.2,
+    "rad": 0.79
+   },
+   {
+    "role": "deco",
+    "dish": "ca_phe",
+    "ang": 138.9,
+    "rad": 0.63
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 342.8,
+    "rad": 0.44
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 34.3,
+    "rad": 0.67
+   }
+  ],
+  "bites": 4,
+  "time": 10.26,
+  "hist": [
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 1.05,
+    "hold": 0.5599999999999999,
+    "win_w": 0.7000000000000001,
+    "win_h": 0.9,
+    "hit": [
+     0,
+     7
+    ],
+    "eat": [
+     0
+    ],
+    "tray": 49.0,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 1.25,
+    "hold": 0.04,
+    "win_w": 0.4,
+    "win_h": 0.38,
+    "hit": [
+     3
+    ],
+    "eat": [
+     3
+    ],
+    "tray": 100.50857142857143,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 2.1,
+    "hold": 0.04,
+    "win_w": 0.4,
+    "win_h": 0.3,
+    "hit": [
+     1
+    ],
+    "eat": [
+     1
+    ],
+    "tray": 186.01714285714286,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 3.3000000000000003,
+    "hold": 0.5199999999999999,
+    "win_w": 0.9500000000000001,
+    "win_h": 0.98,
+    "hit": [
+     2,
+     10
+    ],
+    "eat": [
+     2
+    ],
+    "tray": 325.01714285714286,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "13": {
+  "score": 6.890184615384615,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "bibimbap",
+    "ang": 273.5,
+    "rad": 0.39
+   },
+   {
+    "role": "want",
+    "dish": "ca_phe",
+    "ang": 275.5,
+    "rad": 0.67
+   },
+   {
+    "role": "want",
+    "dish": "bibimbap",
+    "ang": 264.0,
+    "rad": 0.56
+   },
+   {
+    "role": "forbid",
+    "dish": "tteokbokki",
+    "ang": 250.9,
+    "rad": 0.37
+   },
+   {
+    "role": "forbid",
+    "dish": "banh_mi",
+    "ang": 287.9,
+    "rad": 0.59
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 47.1,
+    "rad": 0.38
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 171.0,
+    "rad": 0.8
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 121.3,
+    "rad": 0.8
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 336.4,
+    "rad": 0.73
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 200.6,
+    "rad": 0.42
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 71.3,
+    "rad": 0.47
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 18.6,
+    "rad": 0.82
+   }
+  ],
+  "bites": 2,
+  "time": 1.26,
+  "hist": [
+   {
+    "who": "C",
+    "dir": 0,
+    "wait": 0.0,
+    "hold": 0.19999999999999998,
+    "win_w": 99.0,
+    "win_h": 0.12,
+    "hit": [
+     1,
+     2
+    ],
+    "eat": [
+     1,
+     2
+    ],
+    "tray": 0.0,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "C",
+    "dir": 0,
+    "wait": 0.0,
+    "hold": 0.35999999999999993,
+    "win_w": 99.0,
+    "win_h": 0.12,
+    "hit": [
+     0
+    ],
+    "eat": [
+     0
+    ],
+    "tray": 0.0,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "14": {
+  "score": 7.652780952380954,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "tteokbokki",
+    "ang": 220.9,
+    "rad": 0.66
+   },
+   {
+    "role": "want",
+    "dish": "ca_phe",
+    "ang": 203.4,
+    "rad": 0.42
+   },
+   {
+    "role": "want",
+    "dish": "tteokbokki",
+    "ang": 68.7,
+    "rad": 0.43
+   },
+   {
+    "role": "want",
+    "dish": "ca_phe",
+    "ang": 265.9,
+    "rad": 0.41
+   },
+   {
+    "role": "forbid",
+    "dish": "bibimbap",
+    "ang": 231.8,
+    "rad": 0.32
+   },
+   {
+    "role": "forbid",
+    "dish": "pho",
+    "ang": 45.7,
+    "rad": 0.4
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 337.3,
+    "rad": 0.47
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 151.4,
+    "rad": 0.73
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 112.9,
+    "rad": 0.42
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 290.9,
+    "rad": 0.39
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 19.2,
+    "rad": 0.73
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 180.1,
+    "rad": 0.31
+   }
+  ],
+  "bites": 4,
+  "time": 17.48,
+  "hist": [
+   {
+    "who": "C",
+    "dir": 0,
+    "wait": 1.4000000000000001,
+    "hold": 0.15999999999999998,
+    "win_w": 0.9,
+    "win_h": 0.26,
+    "hit": [
+     0
+    ],
+    "eat": [
+     0
+    ],
+    "tray": 36.562285714285714,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "C",
+    "dir": 0,
+    "wait": 0.6000000000000001,
+    "hold": 0.6399999999999999,
+    "win_w": 0.7000000000000001,
+    "win_h": 0.74,
+    "hit": [
+     1,
+     11
+    ],
+    "eat": [
+     1
+    ],
+    "tray": 55.16228571428573,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "C",
+    "dir": 0,
+    "wait": 5.15,
+    "hold": 0.6399999999999999,
+    "win_w": 0.75,
+    "win_h": 0.74,
+    "hit": [
+     2
+    ],
+    "eat": [
+     2
+    ],
+    "tray": 182.9622857142857,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "C",
+    "dir": 0,
+    "wait": 6.8500000000000005,
+    "hold": 0.6399999999999999,
+    "win_w": 1.1,
+    "win_h": 0.72,
+    "hit": [
+     3
+    ],
+    "eat": [
+     3
+    ],
+    "tray": 351.56228571428574,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "15": {
+  "score": 7.893514285714286,
+  "foods": [
+   {
+    "role": "dA",
+    "dish": "songpyeon",
+    "ang": 303.2,
+    "rad": 0.77
+   },
+   {
+    "role": "dA",
+    "dish": "goi_cuon",
+    "ang": 230.2,
+    "rad": 0.31
+   },
+   {
+    "role": "dA",
+    "dish": "songpyeon",
+    "ang": 240.0,
+    "rad": 0.81
+   },
+   {
+    "role": "dB",
+    "dish": "tteokbokki",
+    "ang": 271.1,
+    "rad": 0.44
+   },
+   {
+    "role": "dB",
+    "dish": "banh_mi",
+    "ang": 298.3,
+    "rad": 0.61
+   },
+   {
+    "role": "dB",
+    "dish": "tteokbokki",
+    "ang": 284.3,
+    "rad": 0.83
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 102.5,
+    "rad": 0.34
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 46.9,
+    "rad": 0.41
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 179.7,
+    "rad": 0.47
+   },
+   {
+    "role": "deco",
+    "dish": "ca_phe",
+    "ang": 342.6,
+    "rad": 0.59
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 153.4,
+    "rad": 0.41
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 18.1,
+    "rad": 0.8
+   }
+  ],
+  "bites": 4,
+  "time": 4.61,
+  "hist": [
+   {
+    "who": "D",
+    "dir": -1,
+    "wait": 0.25,
+    "hold": 0.72,
+    "win_w": 0.35000000000000003,
+    "win_h": 0.38,
+    "hit": [
+     2
+    ],
+    "eat": [
+     2
+    ],
+    "tray": 0.0,
+    "sway": 0.0,
+    "along": 0.7938926261462366,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": true
+   },
+   {
+    "who": "D",
+    "dir": 1,
+    "wait": 0.0,
+    "hold": 0.41999999999999993,
+    "win_w": 0.25,
+    "win_h": 0.36,
+    "hit": [
+     5
+    ],
+    "eat": [
+     5
+    ],
+    "tray": 0.0,
+    "sway": 0.0,
+    "along": 0.7938926261462366,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "D",
+    "dir": 1,
+    "wait": 0.9,
+    "hold": 0.6799999999999999,
+    "win_w": 0.25,
+    "win_h": 0.48,
+    "hit": [
+     4
+    ],
+    "eat": [
+     4
+    ],
+    "tray": 0.0,
+    "sway": 0.0,
+    "along": 0.6243449435824276,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "D",
+    "dir": -1,
+    "wait": 0.15000000000000002,
+    "hold": 0.04,
+    "win_w": 0.25,
+    "win_h": 0.46,
+    "hit": [
+     3
+    ],
+    "eat": [
+     3
+    ],
+    "tray": 0.0,
+    "sway": 0.0,
+    "along": 0.4373333832178483,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "17": {
+  "score": 7.927099999999999,
+  "foods": [
+   {
+    "role": "dA",
+    "dish": "tteokbokki",
+    "ang": 200.2,
+    "rad": 0.77
+   },
+   {
+    "role": "dA",
+    "dish": "pho",
+    "ang": 239.8,
+    "rad": 0.38
+   },
+   {
+    "role": "dB",
+    "dish": "songpyeon",
+    "ang": 5.1,
+    "rad": 0.57
+   },
+   {
+    "role": "dB",
+    "dish": "ca_phe",
+    "ang": 25.8,
+    "rad": 0.71
+   },
+   {
+    "role": "dC",
+    "dish": "gimbap",
+    "ang": 217.6,
+    "rad": 0.68
+   },
+   {
+    "role": "dC",
+    "dish": "goi_cuon",
+    "ang": 185.9,
+    "rad": 0.86
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 85.6,
+    "rad": 0.76
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 283.7,
+    "rad": 0.35
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 119.1,
+    "rad": 0.61
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 313.4,
+    "rad": 0.6
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 145.3,
+    "rad": 0.82
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 50.1,
+    "rad": 0.56
+   }
+  ],
+  "bites": 4,
+  "time": 11.77,
+  "hist": [
+   {
+    "who": "D",
+    "dir": -1,
+    "wait": 1.35,
+    "hold": 0.04,
+    "win_w": 0.25,
+    "win_h": 0.34,
+    "hit": [
+     1
+    ],
+    "eat": [
+     1
+    ],
+    "tray": 36.08057142857143,
+    "sway": 0.0,
+    "along": 0.37565505641757246,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "D",
+    "dir": 1,
+    "wait": 1.4000000000000001,
+    "hold": 0.27999999999999997,
+    "win_w": 0.25,
+    "win_h": 0.46,
+    "hit": [
+     0
+    ],
+    "eat": [
+     0
+    ],
+    "tray": 76.84857142857143,
+    "sway": 0.0,
+    "along": 0.7938926261462368,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": true
+   },
+   {
+    "who": "D",
+    "dir": -1,
+    "wait": 4.95,
+    "hold": 0.7399999999999999,
+    "win_w": 0.25,
+    "win_h": 0.42,
+    "hit": [
+     3
+    ],
+    "eat": [
+     3
+    ],
+    "tray": 210.09857142857146,
+    "sway": 0.0,
+    "along": 0.7408768370508576,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "D",
+    "dir": -1,
+    "wait": 1.0,
+    "hold": 0.5599999999999999,
+    "win_w": 0.25,
+    "win_h": 0.54,
+    "hit": [
+     2
+    ],
+    "eat": [
+     2
+    ],
+    "tray": 240.64857142857144,
+    "sway": 0.0,
+    "along": 0.5626666167821522,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "18": {
+  "score": 10.054514285714285,
+  "foods": [
+   {
+    "role": "wG",
+    "dish": "songpyeon",
+    "ang": 158.3,
+    "rad": 0.82
+   },
+   {
+    "role": "wG",
+    "dish": "pho",
+    "ang": 159.0,
+    "rad": 0.34
+   },
+   {
+    "role": "wH",
+    "dish": "bibimbap",
+    "ang": 2.4,
+    "rad": 0.83
+   },
+   {
+    "role": "wH",
+    "dish": "ca_phe",
+    "ang": 0.4,
+    "rad": 0.51
+   },
+   {
+    "role": "fX",
+    "dish": "gimbap",
+    "ang": 19.0,
+    "rad": 0.86
+   },
+   {
+    "role": "fX",
+    "dish": "goi_cuon",
+    "ang": 342.6,
+    "rad": 0.86
+   },
+   {
+    "role": "deco",
+    "dish": "tteokbokki",
+    "ang": 260.2,
+    "rad": 0.33
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 99.0,
+    "rad": 0.66
+   },
+   {
+    "role": "deco",
+    "dish": "tteokbokki",
+    "ang": 217.0,
+    "rad": 0.4
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 311.6,
+    "rad": 0.41
+   },
+   {
+    "role": "deco",
+    "dish": "tteokbokki",
+    "ang": 46.7,
+    "rad": 0.84
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 137.2,
+    "rad": 0.82
+   },
+   {
+    "role": "deco",
+    "dish": "tteokbokki",
+    "ang": 187.8,
+    "rad": 0.55
+   }
+  ],
+  "bites": 2,
+  "time": 1.56,
+  "hist": [
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 0.0,
+    "hold": 0.23999999999999996,
+    "win_w": 99.0,
+    "win_h": 0.42,
+    "hit": [
+     2,
+     3
+    ],
+    "eat": [
+     2,
+     3
+    ],
+    "tray": 0.0,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 0.0,
+    "hold": 0.62,
+    "win_w": 99.0,
+    "win_h": 0.76,
+    "hit": [
+     0,
+     1,
+     8,
+     12
+    ],
+    "eat": [
+     0,
+     1
+    ],
+    "tray": 0.0,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "19": {
+  "score": 7.265914285714286,
+  "foods": [
+   {
+    "role": "wG",
+    "dish": "bibimbap",
+    "ang": 102.5,
+    "rad": 0.35
+   },
+   {
+    "role": "wG",
+    "dish": "goi_cuon",
+    "ang": 226.6,
+    "rad": 0.51
+   },
+   {
+    "role": "wH",
+    "dish": "gimbap",
+    "ang": 143.7,
+    "rad": 0.39
+   },
+   {
+    "role": "wH",
+    "dish": "ca_phe",
+    "ang": 44.1,
+    "rad": 0.7
+   },
+   {
+    "role": "fX",
+    "dish": "tteokbokki",
+    "ang": 31.8,
+    "rad": 0.86
+   },
+   {
+    "role": "fX",
+    "dish": "banh_mi",
+    "ang": 159.9,
+    "rad": 0.48
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 295.7,
+    "rad": 0.68
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 356.1,
+    "rad": 0.56
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 273.6,
+    "rad": 0.82
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 200.4,
+    "rad": 0.38
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 319.3,
+    "rad": 0.31
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 67.1,
+    "rad": 0.31
+   },
+   {
+    "role": "deco",
+    "dish": "songpyeon",
+    "ang": 256.6,
+    "rad": 0.8
+   }
+  ],
+  "bites": 4,
+  "time": 15.99,
+  "hist": [
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 3.5,
+    "hold": 0.27999999999999997,
+    "win_w": 1.7000000000000002,
+    "win_h": 0.32,
+    "hit": [
+     0
+    ],
+    "eat": [
+     0
+    ],
+    "tray": 80.696,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 6.3500000000000005,
+    "hold": 0.15999999999999998,
+    "win_w": 0.9,
+    "win_h": 0.26,
+    "hit": [
+     2
+    ],
+    "eat": [
+     2
+    ],
+    "tray": 223.11142857142858,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 3.25,
+    "hold": 0.5199999999999999,
+    "win_w": 3.0,
+    "win_h": 0.98,
+    "hit": [
+     1,
+     8,
+     9,
+     12
+    ],
+    "eat": [
+     1
+    ],
+    "tray": 298.4614285714286,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 0.25,
+    "hold": 0.27999999999999997,
+    "win_w": 0.6000000000000001,
+    "win_h": 0.9,
+    "hit": [
+     3,
+     11
+    ],
+    "eat": [
+     3
+    ],
+    "tray": 307.65742857142857,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "20": {
+  "score": 7.560714285714286,
+  "foods": [
+   {
+    "role": "wG",
+    "dish": "tteokbokki",
+    "ang": 213.3,
+    "rad": 0.83
+   },
+   {
+    "role": "wG",
+    "dish": "pho",
+    "ang": 117.2,
+    "rad": 0.38
+   },
+   {
+    "role": "wH",
+    "dish": "songpyeon",
+    "ang": 7.8,
+    "rad": 0.42
+   },
+   {
+    "role": "wH",
+    "dish": "goi_cuon",
+    "ang": 237.0,
+    "rad": 0.38
+   },
+   {
+    "role": "wB",
+    "dish": "bibimbap",
+    "ang": 134.9,
+    "rad": 0.54
+   },
+   {
+    "role": "fX",
+    "dish": "ca_phe",
+    "ang": 156.7,
+    "rad": 0.63
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 276.5,
+    "rad": 0.75
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 63.2,
+    "rad": 0.74
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 315.8,
+    "rad": 0.52
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 181.9,
+    "rad": 0.4
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 35.0,
+    "rad": 0.34
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 83.4,
+    "rad": 0.57
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 347.0,
+    "rad": 0.46
+   }
+  ],
+  "bites": 4,
+  "time": 12.5,
+  "hist": [
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 0.0,
+    "hold": 0.5199999999999999,
+    "win_w": 0.9,
+    "win_h": 0.98,
+    "hit": [
+     2,
+     10,
+     12
+    ],
+    "eat": [
+     2
+    ],
+    "tray": 5.6,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 1.6,
+    "hold": 0.23999999999999996,
+    "win_w": 0.75,
+    "win_h": 0.34,
+    "hit": [
+     1,
+     4
+    ],
+    "eat": [
+     1,
+     4
+    ],
+    "tray": 61.84685714285715,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 1.05,
+    "hold": 0.58,
+    "win_w": 1.6500000000000001,
+    "win_h": 0.84,
+    "hit": [
+     3,
+     6
+    ],
+    "eat": [
+     3
+    ],
+    "tray": 101.04685714285714,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "G",
+    "dir": 0,
+    "wait": 6.550000000000001,
+    "hold": 0.5599999999999999,
+    "win_w": 1.4500000000000002,
+    "win_h": 0.9,
+    "hit": [
+     0,
+     9
+    ],
+    "eat": [
+     0
+    ],
+    "tray": 316.2468571428572,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "5": {
+  "score": 6.721533333333333,
+  "foods": [
+   {
+    "role": "want",
+    "dish": "tteokbokki",
+    "ang": 271.3,
+    "rad": 0.72
+   },
+   {
+    "role": "want",
+    "dish": "ca_phe",
+    "ang": 278.9,
+    "rad": 0.48
+   },
+   {
+    "role": "want",
+    "dish": "tteokbokki",
+    "ang": 263.2,
+    "rad": 0.59
+   },
+   {
+    "role": "forbid",
+    "dish": "songpyeon",
+    "ang": 287.8,
+    "rad": 0.85
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 116.0,
+    "rad": 0.57
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 11.5,
+    "rad": 0.83
+   },
+   {
+    "role": "deco",
+    "dish": "banh_mi",
+    "ang": 216.8,
+    "rad": 0.33
+   },
+   {
+    "role": "deco",
+    "dish": "bibimbap",
+    "ang": 45.0,
+    "rad": 0.6
+   },
+   {
+    "role": "deco",
+    "dish": "goi_cuon",
+    "ang": 164.3,
+    "rad": 0.82
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 335.7,
+    "rad": 0.36
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 77.9,
+    "rad": 0.69
+   }
+  ],
+  "bites": 1,
+  "time": 0.59,
+  "hist": [
+   {
+    "who": "H",
+    "dir": 0,
+    "wait": 0.0,
+    "hold": 0.23999999999999996,
+    "win_w": 99.0,
+    "win_h": 0.42,
+    "hit": [
+     0,
+     1,
+     2
+    ],
+    "eat": [
+     0,
+     1,
+     2
+    ],
+    "tray": 0.0,
+    "sway": 0.0,
+    "along": 0.5,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ },
+ "16": {
+  "score": 7.2796,
+  "foods": [
+   {
+    "role": "dA",
+    "dish": "tteokbokki",
+    "ang": 178.7,
+    "rad": 0.67
+   },
+   {
+    "role": "dA",
+    "dish": "banh_mi",
+    "ang": 226.0,
+    "rad": 0.63
+   },
+   {
+    "role": "dB",
+    "dish": "bibimbap",
+    "ang": 189.7,
+    "rad": 0.43
+   },
+   {
+    "role": "dB",
+    "dish": "goi_cuon",
+    "ang": 206.5,
+    "rad": 0.54
+   },
+   {
+    "role": "dB",
+    "dish": "bibimbap",
+    "ang": 132.4,
+    "rad": 0.84
+   },
+   {
+    "role": "dC",
+    "dish": "songpyeon",
+    "ang": 166.8,
+    "rad": 0.62
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 332.1,
+    "rad": 0.47
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 52.7,
+    "rad": 0.57
+   },
+   {
+    "role": "deco",
+    "dish": "ca_phe",
+    "ang": 269.3,
+    "rad": 0.82
+   },
+   {
+    "role": "deco",
+    "dish": "pho",
+    "ang": 17.5,
+    "rad": 0.44
+   },
+   {
+    "role": "deco",
+    "dish": "gimbap",
+    "ang": 81.6,
+    "rad": 0.45
+   },
+   {
+    "role": "deco",
+    "dish": "ca_phe",
+    "ang": 312.1,
+    "rad": 0.36
+   }
+  ],
+  "bites": 4,
+  "time": 8.52,
+  "hist": [
+   {
+    "who": "D",
+    "dir": -1,
+    "wait": 1.1500000000000001,
+    "hold": 0.4399999999999999,
+    "win_w": 0.25,
+    "win_h": 0.4,
+    "hit": [
+     1
+    ],
+    "eat": [
+     1
+    ],
+    "tray": 26.500000000000004,
+    "sway": 0.0,
+    "along": 0.6243449435824272,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": true
+   },
+   {
+    "who": "D",
+    "dir": -1,
+    "wait": 1.3,
+    "hold": 0.6,
+    "win_w": 0.25,
+    "win_h": 0.5,
+    "hit": [
+     2
+    ],
+    "eat": [
+     2
+    ],
+    "tray": 56.0,
+    "sway": 0.0,
+    "along": 0.4373333832178481,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "D",
+    "dir": 1,
+    "wait": 0.05,
+    "hold": 0.19999999999999998,
+    "win_w": 0.2,
+    "win_h": 0.34,
+    "hit": [
+     3
+    ],
+    "eat": [
+     3
+    ],
+    "tray": 59.857142857142854,
+    "sway": 0.0,
+    "along": 0.4999999999999999,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   },
+   {
+    "who": "D",
+    "dir": -1,
+    "wait": 2.85,
+    "hold": 0.4799999999999999,
+    "win_w": 0.30000000000000004,
+    "win_h": 0.34,
+    "hit": [
+     4
+    ],
+    "eat": [
+     4
+    ],
+    "tray": 120.35714285714286,
+    "sway": 0.0,
+    "along": 0.8852566213878945,
+    "meK": 0,
+    "slide": false,
+    "swapAfter": false
+   }
+  ]
+ }
+}
