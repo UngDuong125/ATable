@@ -55,3 +55,9 @@ desktop.ini
 
 # Office temp files
 ~$*
+
+# Build outputs / temp
+AndroidTrial/
+WindowTrial/
+MotMam-WindowTrial.zip
+GameSrc/.utmp/
