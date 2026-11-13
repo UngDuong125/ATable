@@ -88,7 +88,7 @@ Hồ ly chín đuôi, vẽ gốc, dễ thương. Khăn và màu hanbok gọn, kh
 
 - Vùng ăn: vòng tròn neo ở mép mâm, phía trước Gumiho. Giữ để bán kính lớn dần, vòng lan vào trong mâm.
 - Tính cách: thèm đồ tròn, ngọt, dẻo. Món ký để vẽ: songpyeon và bánh trôi.
-- Vai trò dạy luật: màn 1–4, và màn 10 khi các món đứng xa nhau. Gumiho không đổi món.
+- Vai trò dạy luật: màn 1–4, và màn 11 khi các món đứng xa nhau. Gumiho không đổi món.
 
 Vòng tròn phải lệch tâm. Vòng đặt đúng tâm mâm thì xoay mâm không đổi kết quả, vì mọi món cùng khoảng cách tới tâm luôn bị ăn chung.
 
@@ -105,7 +105,7 @@ Hổ tranh dân gian, nét Đông Hồ trộn minhwa. Hổ có trong văn hóa c
 Chó trắng dễ thương, đội nón mê. Đi một đường thẳng rồi đứng lại phía bên kia.
 
 - Vùng ăn: một dải thẳng ở nửa mâm gần Mê, hướng xuyên tâm. Giữ để dải dài thêm.
-- Chưa giữ, dải lắc qua lại quanh Mê, biên độ `6°`. Nhấn giữ thì dải đóng băng đúng góc lúc bấm, và mâm giảm tốc đến khi gần dừng.
+- Chưa giữ, dải lắc qua lại quanh Mê, biên độ `5°`. Nhấn giữ thì dải đóng băng đúng góc lúc bấm, và mâm giảm tốc đến khi gần dừng.
 - Thả trước khi dải qua nửa mâm: Mê ăn đoạn ngắn và đứng yên. Dải màn sau vẫn ở phía cũ.
 - Thả khi dải đã qua nửa mâm: Mê lướt, đứng ở mép đối diện. Dải ăn của lượt sau chuyển sang nửa kia.
 - Dải lắc là skill có sẵn của Mê, có ở mọi màn Mê ngồi. Thả đúng lúc dải đang đè món. Không có màn riêng để mở skill này.
@@ -117,15 +117,15 @@ Mê không xuất hiện trong màn hai khách. Lướt đổi mép đứng, tro
 
 ### Cò — mỏ chọc sâu
 
-Cò trắng, khách Việt. Vùng ăn là một chấm. Giữ để chấm chạy từ mép vào tâm, chấm không to ra. Màn 15 dạy độ sâu trên mâm xoay chậm.
+Cò trắng, khách Việt. Vùng ăn là một chấm. Giữ để chấm chạy từ mép vào tâm, chấm không to ra. Màn 13 giới thiệu độ sâu trên mâm đứng yên. Màn 14 thêm mâm xoay chậm.
 
 ### Dokkaebi — lửa ma trên tia tâm–mép
 
 Dokkaebi, yêu tinh truyền thuyết Hàn Quốc: sừng, chùy, và đốm lửa chạy trong đêm. Vẽ gốc.
 
-- Vùng ăn: một đốm tròn. Chưa giữ, đốm chạy qua lại trên đường thẳng từ tâm mâm tới mép. Nhấn giữ thì chiều dọc khóa, đốm quét ngược chiều kim đồng hồ, đốm không to ra. Khách ở đáy thì quét về phía phải.
+- Vùng ăn: một đốm tròn. Chưa giữ, đốm chạy qua lại trên đường thẳng từ tâm mâm tới mép. Nhấn giữ thì chiều dọc khóa. Chạm dưới `0.15` giây thì đốm đứng yên, giữ lâu hơn thì đốm quét ngược chiều kim đồng hồ. Đốm không to ra. Khách ở đáy thì quét về phía phải.
 - Đổi món là đặc trưng của Dokkaebi. Màn nào có Dokkaebi thì icon đổi sau một mốc nhát đã tính. Đốm không đổi theo icon.
-- Màn 16 đổi sau nhát thứ nhất. Màn 17 đổi sau nhát thứ hai.
+- Màn 15 và màn 16 đổi sau nhát thứ nhất. Màn 17 đổi sau nhát thứ hai.
 
 Hai khách gợi ý, chưa có màn: **Rùa** (vòng từ tâm lan ra, ngược với Gumiho) và **Quạt** (cánh mở góc). Cách thêm vẫn là giữ nguyên cử chỉ giữ và thả, chỉ đổi hình vùng ăn.
 
@@ -147,13 +147,13 @@ Trên bảng khách có icon đúng hình món trên mâm, kèm tên món. Món 
 - Ăn một món thèm: món nảy rồi biến khỏi mâm, có tiếng cắn. Hình khách chỉ là đầu, nên không gật.
 - Nhát chỉ gồm món thèm, hoặc món thèm cộng chỗ trống: nhát thành công, trừ 1 lượt cắn.
 - Nhát không trúng món nào: trừ 1 lượt, không trừ mạng, không xóa món.
-- Nhát có ít nhất một món chưa tới lượt: nhát hỏng. Khách ngoảnh mặt. Mất 1 mạng. Mọi món trong nhát đó ở lại mâm. Vẫn trừ 1 lượt cắn.
-- Mỗi lần thả đã tính (đúng, hụt, hoặc hỏng) đều đếm vào `swapAfterBite`. Hủy nhát vì ngón trượt qua đường giữa thì không đếm.
+- Nhát có ít nhất một món chưa tới lượt: nhát hỏng. Khách ngoảnh mặt. Mất 1 mạng. Mọi món trong nhát đó ở lại mâm, kể cả món thèm đi cùng. Không trừ lượt cắn.
+- Mỗi lần thả đúng hoặc hụt đều đếm vào `swapAfterBite`. Nhát hỏng không đếm. Hủy nhát vì ngón trượt qua đường giữa thì không đếm.
 - Hết món thèm khi còn mạng và còn hoặc vừa hết lượt: qua màn.
 - Hết mạng, hoặc hết lượt mà còn món thèm: chơi lại màn đó.
-- Mỗi màn có 3 mạng.
+- Mỗi màn có 2 mạng.
 
-Số lượt ghi trong `Mo-Mam-Thiet-Ke-Man.md` đã tính sẵn một cách giải. Màn 1–3 có thêm một lượt dự phòng. Màn 4 trở đi đúng số nhát của lời giải, để mỗi nhát đều đáng giá. Màn 13 và màn 16 vẫn chừa một lượt.
+Số lượt ghi trong `Mo-Mam-Thiet-Ke-Man.md` đã tính sẵn một cách giải. Màn 1–3 có thêm một lượt dự phòng. Màn 4 trở đi đúng số nhát của lời giải, để mỗi nhát đều đáng giá. Nhát hỏng chỉ mất mạng, không mất lượt, nên mạng là chỗ cho người chơi sai. Màn 12 và màn 16 vẫn chừa một lượt.
 
 Chờ là hành động hợp lệ. Món tự đi qua vùng ăn sẽ không bị ăn nếu người chơi chưa thả ngón.
 
@@ -169,6 +169,8 @@ Thứ tự mắt nhìn, cố định mọi màn:
 Phản hồi trong một nhịp:
 
 - Đúng: món nảy rồi biến, mâm kêu cộc nhẹ. Khách không gật: sprite chỉ có đầu.
+- Đang giữ: món nào sẽ bị cắn nếu thả ngay có vòng xanh (khách thèm) hoặc vòng đỏ (món cấm). Người chơi thấy trước hậu quả của nhát.
+- Màn giới thiệu từng khách (1, 5, 8, 13, 15) có một dòng gợi ý ngắn ở trên. Dòng đó biến mất sau nhát đầu tiên của màn.
 - Sai: mâm khựng, đầu khách lật ngang, món bị nhấp trong vùng ăn rồi ở lại.
 - Sắp đổi món ở màn có Dokkaebi: icon nhấp nháy.
 - Qua màn: mâm sáng một vòng. Vòng giấy nở từ vành ra rồi tắt trong `0.70` giây. Không có cú cụng, vì hình không có tay.
@@ -210,10 +212,10 @@ Bản nộp gồm:
 
 - 5 khách trong bản chơi: Gumiho, Hổ, Mê, Cò, Dokkaebi. Bài nộp vẫn kể được bằng Gumiho, Hổ và Mê.
 - 8 món.
-- 17 màn. Màn 1–12 trong `Mo-Mam-Thiet-Ke-Man.md` là phần thi. Màn 13–17 là phần thêm.
+- 20 màn. Mỗi khách có một màn giới thiệu đơn giản. Màn 1–11 trong `Mo-Mam-Thiet-Ke-Man.md` là phần thi. Màn 12–20 là phần thêm.
 - 1 màn hình tiêu đề có Chơi, Chọn màn và Cài đặt. 1 màn hình qua màn. Nút `Màn` mở lại bảng chọn màn.
 - Build Android (APK) và bản chạy trên máy tính bằng chuột.
-- Video 45–75 giây: màn 1, một màn phải phanh, một nhát lướt của Mê, màn 12.
+- Video 45–75 giây: màn 1, một màn phải phanh, một nhát lướt của Mê, màn 20.
 - PowerPoint đã điền tên và đã dán sketch tay.
 
 Để dành nếu vào chung kết, không làm trước hạn 11/11:
@@ -237,7 +239,7 @@ Assets/
   Scripts/GuestView.cs
   Scripts/LevelRunner.cs
   Scripts/LevelConfig.cs
-  Levels/Level01.asset … Level12.asset
+  Levels/Level01.asset … Level20.asset
   Art/
   Audio/
 ```
@@ -250,15 +252,15 @@ Assets/
 - `charges`, `hearts`.
 - `foods`: danh sách món, mỗi món có `dishId`, góc trên mâm, khoảng cách tới tâm, khách nào thèm, khách nào chưa thèm. Sprite không nằm trong Level asset.
 - Bảng `dishes` trên `LevelRunner`: tám dòng, mỗi `dishId` một sprite. Mọi màn dùng chung bảng này. Lúc chơi, món trên mâm và icon đầu khách lấy cùng sprite.
-- Với Mê: `crossAt`, là độ dài dải tính từ mép, qua ngưỡng này thì lượt sau đổi mép. Dải lắc ở mọi màn Mê, biên độ `6°` khi chưa giữ. Nhấn giữ thì góc dải đóng băng và mâm phanh. Không bật lắc theo số màn.
+- Với Mê: `crossAt`, là độ dài dải tính từ mép, qua ngưỡng này thì lượt sau đổi mép. Dải lắc ở mọi màn Mê, biên độ `5°` khi chưa giữ. Nhấn giữ thì góc dải đóng băng và mâm phanh. Không bật lắc theo số màn.
 - Màn Cò và Dokkaebi dùng `guestMode` `Co` và `Dokkaebi`. Chưa gán khách trong scene thì script copy khách có sẵn và tô màu.
-- Màn có Dokkaebi luôn ghi `swapAfterBite` lớn hơn 0, kèm `wantAfterSwap` / `forbidAfterSwap`. Màn 16 đổi sau nhát 1. Màn 17 đổi sau nhát 2. Màn khác để `swapAfterBite` bằng 0.
+- Màn có Dokkaebi luôn ghi `swapAfterBite` lớn hơn 0, kèm `wantAfterSwap` / `forbidAfterSwap`. Màn 15 và màn 16 đổi sau nhát 1. Màn 17 đổi sau nhát 2. Màn khác để `swapAfterBite` bằng 0.
 
 Món là con của transform mâm, nên xoay theo mâm. Vùng ăn nằm ngoài transform mâm, neo theo khách, đứng yên trên màn hình.
 
 `BiteInput` đọc một ngón hoặc chuột trái. Màn một khách bỏ qua vị trí ngang. Màn hai khách lấy nửa trái hoặc nửa phải theo tọa độ màn hình. Đổi nửa trong lúc đang giữ thì hủy nhát, không cắn.
 
-Khi thả, `SkillZone` xét **tâm món** có nằm trong vùng hay không. Bán kính vẽ `0.08` không cộng vào vùng. Có món chưa thèm trong danh sách thì `LevelRunner` trừ mạng, trừ lượt, giữ nguyên món. Không có món thèm và không có món cấm thì vẫn trừ lượt. Chỉ khi có món thèm và không có món cấm thì xóa món thèm và trừ lượt.
+Khi thả, `SkillZone` xét **tâm món** có nằm trong vùng hay không. Bán kính vẽ `0.08` không cộng vào vùng. Có món chưa thèm trong danh sách thì `LevelRunner` chỉ trừ mạng, không trừ lượt, giữ nguyên món. Không có món thèm và không có món cấm thì vẫn trừ lượt. Chỉ khi có món thèm và không có món cấm thì xóa món thèm và trừ lượt.
 
 Công thức vùng ăn, thời gian giữ, phanh, lướt của Mê và cỡ camera nằm ở `Mo-Mam-Vi-Tri-Mon-An.md`, mục «Các hằng số đã chốt», và khối `constants` trong JSON cùng tên.
 
@@ -273,14 +275,14 @@ Tính từ 29/10/2026.
 | 29–30/10 | Điền tên vào PowerPoint. Vẽ phác Gumiho, Hổ, Mê, mâm, 8 món. Dựng Unity: mâm xoay, giữ để phanh, thả để cắn bằng vòng của Gumiho. |
 | 31/10–02/11 | Xong màn 1–4. Chơi thử với một người chưa biết game. |
 | 03–04/11 | Làm khe Hổ và màn 5–7. |
-| 05–06/11 | Làm Mê, gồm đổi mép, và màn 8–10. |
-| 07/11 | Màn 11–12. |
+| 05–06/11 | Làm Mê, gồm đổi mép, và màn 8–11. |
+| 07/11 | Màn hai khách (nay là màn 18–20). |
 | 08/11 | Tiếng, nảy món, qua màn, build APK, build máy tính. |
-| 09/11 | Quay video. Chơi lại đủ 12 màn trên điện thoại. |
+| 09/11 | Quay video. Chơi lại đủ các màn trên điện thoại. |
 | 10/11 | Dán sketch vào PowerPoint. Đọc lại thể lệ. |
 | 11/11 | Gửi mail đúng tiêu đề, kèm pptx và video hoặc APK. Kiểm tra đã đăng ký link chính thức. |
 
-Nếu trễ, giữ nguyên 12 màn và giảm animation. Giữ nguyên ba vùng ăn. Bỏ polish trước khi bỏ màn 12, vì màn 12 là màn người xem nhớ.
+Nếu trễ, giữ nguyên các màn đã làm và giảm animation. Giữ nguyên ba vùng ăn. Bỏ polish trước khi bỏ màn 20, vì màn 20 là màn người xem nhớ.
 
 ## 13. Bài nói hai phút
 
@@ -304,7 +306,7 @@ Vòng chung kết có phần xử lý tình huống. Giữ nguyên cử chỉ gi
 |---|---|
 | Thêm một khách | Thêm một hình vùng ăn. Quạt mở góc là ứng viên sẵn: giữ để góc mở, thả để cắn. |
 | Làm khó hơn mà không thêm nút | Tăng tốc mâm, giảm lượt cắn, hoặc để Dokkaebi đổi món sau ít nhát hơn. |
-| Hai người cùng chơi | Màn 11–12 đã chia hai nửa màn hình. Mỗi người một nửa, vẫn một ngón mỗi người. |
+| Hai người cùng chơi | Màn 18–20 đã chia hai nửa màn hình. Mỗi người một nửa, vẫn một ngón mỗi người. |
 | Khách đổi chỗ | Xoay neo vùng ăn sang góc mới trên mép mâm. Món vẫn là con của mâm. |
 | Một món cả bàn phải kiêng | Gán món đó là chưa thèm với mọi khách đang ngồi. |
 | Mê vào màn hai khách | Để sau. Lướt đổi mép đứng, dễ chồng lên khách còn lại. Nếu bắt buộc, Mê chỉ được nhát ngắn, không cho qua ngưỡng đổi mép. |

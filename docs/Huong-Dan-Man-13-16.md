@@ -1,8 +1,10 @@
-# Màn hình chọn màn, cài đặt, và màn 13–17
+# Màn hình chọn màn, cài đặt, và các màn 8, 12–18
 
-Màn 1–12 giữ số liệu ở `Huong-Dan-Hierarchy.md` và `Huong-Dan-Man-5-12.md`. File này thêm màn hình lúc mở game, và năm màn sau màn 12. Dải lắc không mở ở đây: Mê đã lắc từ màn 8. Đổi món chỉ có ở màn Dokkaebi.
+> **Cập nhật:** vị trí món, số lượt và lời giải của 20 màn đã làm lại, mỗi màn có 9–11 món. Số liệu hiện hành nằm ở `Mo-Mam-Vi-Tri-Mon-An.md` mục 3–4, file JSON cùng tên và `GameSrc/Assets/Levels/`. Các bảng tọa độ bên dưới chỉ còn là hướng dẫn cách dựng, không dùng để chép số.
 
-Cà phê ở màn 9 đã chuyển từ góc `75` sang `125`. Lời giải nhát hai nằm ở `Huong-Dan-Man-5-12.md`.
+Màn 1–7, 9–11, 19 và 20 giữ số liệu ở `Huong-Dan-Hierarchy.md` và `Huong-Dan-Man-5-12.md`. File này thêm màn hình lúc mở game, và tám màn: 8 và 12 đến 18. Dải lắc không mở ở đây: Mê đã lắc từ màn 8. Đổi món chỉ có ở màn Dokkaebi.
+
+Cà phê ở màn 10 đã chuyển từ góc `75` sang `125`. Lời giải nhát hai nằm ở `Huong-Dan-Man-5-12.md`.
 
 **Điều kiện:** đã làm xong `Huong-Dan-Hierarchy.md` và `Huong-Dan-Man-5-12.md`.
 
@@ -12,7 +14,7 @@ Cà phê ở màn 9 đã chuyển từ góc `75` sang `125`. Lời giải nhát 
 
 - [ ] Mục 1 — Xem màn hình `Một Mâm` chạy (không cần dựng gì)
 - [ ] Mục 4 — Tạo `Co`, `CoZone`, `Dokkaebi`, `DokkaebiZone` (hoặc bỏ qua để script tự copy)
-- [ ] Mục 5 — Đối chiếu Level13 … Level17
+- [ ] Mục 5 — Đối chiếu Level08 và Level12 … Level18
 - [ ] Mục 6 — Chơi thử và checklist
 
 Mục 2 và 3 chỉ là mô tả hành vi, không có việc phải làm trong Unity.
@@ -46,19 +48,19 @@ Cài đặt ghi vào máy, lần Play sau còn:
 
 ## 2. Mê lắc
 
-Dải lắc là skill của Mê, có ở màn 8 và màn 9. Không chờ tới một màn sau mới bật.
+Dải lắc là skill của Mê, có ở màn 8, 9 và 10. Không chờ tới một màn sau mới bật.
 
 | Hằng | Giá trị | Nghĩa |
 |---|---|---|
 | `meSwayIdle` | `6` độ | Biên độ khi chưa giữ |
 | `meSwayMax` | `18` độ | Không dùng để nới lúc giữ |
-| `meSwayHz` | `0.8` | Một vòng trái–phải–trái mất `1.25` giây, chỉ khi chưa giữ |
+| `meSwayHz` | `0.6` | Một vòng trái–phải–trái mất khoảng `1.67` giây, chỉ khi chưa giữ |
 
 Góc dải khi đang lắc = neo khách + `6 * sin(thời gian)` độ. Dương nghĩa là lệch ngược chiều kim đồng hồ: khách ở đáy thì đỉnh dương nằm về phía phải màn hình.
 
 Nhấn giữ: dải đóng băng đúng góc lúc bấm. Mâm giảm tốc và dừng sau `brakeTime`. Dải vẫn dài thêm. Thả thì dải giữ góc đó đến hết nhịp khóa, rồi lắc tiếp. Mê đang chạy sang mép kia thì dải không lắc thêm.
 
-Màn 8: thả ngay vẫn ăn Bibimbap. Nhấn giữ lúc dải đang đè Bibimbap thì góc đứng yên, mâm phanh, giữ qua một phần ba thanh thì Mê lướt.
+Màn 9: thả ngay vẫn ăn Bibimbap. Nhấn giữ lúc dải đang đè Bibimbap thì góc đứng yên, mâm phanh, giữ qua một phần tư thanh thì Mê lướt.
 
 ---
 
@@ -103,9 +105,9 @@ Dokkaebi trong truyền thuyết Hàn: yêu tinh có sừng, hay cầm chùy, v�
 
 **Vùng ăn:** một đốm tròn bán kính `0.14`. Chưa giữ, tâm đốm chạy qua lại trên đường thẳng nối tâm mâm với mép, đúng tia trước mặt Dokkaebi. `along` đi từ `0` tới `1` rồi quay vào. Một vòng ra–vào mất `4` giây (`0.25` vòng mỗi giây).
 
-**Nhấn giữ:** chiều dọc khóa đúng `along` lúc bấm. Đốm quét ngược chiều kim đồng hồ, tối đa `42°`, và không to ra. Khách ở đáy thì quét về phía phải. Thả khi đốm đè đúng món. Hết nhịp khóa thì đốm chạy tiếp từ pha đã dừng.
+**Nhấn giữ:** chiều dọc khóa đúng `along` lúc bấm. Giữ dưới `0.15` giây thì đốm đứng yên, coi như chạm. Quá `0.15` giây đốm mới quét ngược chiều kim đồng hồ, tối đa `42°` lúc giữ đủ `0.50` giây, và không to ra. Khách ở đáy thì quét về phía phải. Thả khi đốm đè đúng món. Hết nhịp khóa thì đốm chạy tiếp từ pha đã dừng.
 
-**Đổi món** là đặc trưng của Dokkaebi. Màn 16 và màn 17 đều có. Đốm không đổi. Sau mốc nhát, icon nhấp rồi món còn lại lấy `wantAfterSwap` / `forbidAfterSwap`. Màn 16 dùng `swapAfterBite = 1`. Màn 17 dùng `swapAfterBite = 2`.
+**Đổi món** là đặc trưng của Dokkaebi. Màn 15, 16 và 17 đều có. Đốm không đổi. Sau mốc nhát, icon nhấp rồi món còn lại lấy `wantAfterSwap` / `forbidAfterSwap`. Màn 15 và màn 16 dùng `swapAfterBite = 1`. Màn 17 dùng `swapAfterBite = 2`.
 
 **Việc trong Unity:**
 
@@ -118,7 +120,7 @@ Dokkaebi trong truyền thuyết Hàn: yêu tinh có sừng, hay cầm chùy, v�
    | Dokkaebi Guest | `Dokkaebi` |
    | Dokkaebi Zone | `DokkaebiZone` |
 
-**Kiểm tra:** `LevelRunner` không còn ô `Co ...` hay `Dokkaebi ...` nào `None`. Thiếu thì vào màn 15–17 **Console** báo `LevelRunner chưa gán ...`.
+**Kiểm tra:** `LevelRunner` không còn ô `Co ...` hay `Dokkaebi ...` nào `None`. Thiếu thì vào màn 13–17 **Console** báo `LevelRunner chưa gán ...`.
 
 ### 4.3 Gợi ý chưa làm
 
@@ -133,21 +135,41 @@ Hai khách này đủ khác Gumiho, Hổ và Mê. Chưa cắm vào game, để d
 
 ## 5. Năm màn thêm
 
-Asset `Level13` … `Level17` đã nằm trong `Assets/Levels` và trong ô `Levels` của scene `GameScene`, sau Level12, đúng số ở bảng dưới. Hearts `3`. Brake Time `0`.
+Asset `Level08` và `Level12` … `Level18` đã nằm trong `Assets/Levels` và trong ô `Levels` của scene `GameScene`, đúng thứ tự số. Màn giới thiệu (8, 13, 15) dùng Hearts `3`, các màn còn lại `2`. Brake Time `0`.
 
 ### Bảng tóm tắt thông số
 
 | Màn | Guest Mode | Spin Speed | Charges | Swap After Bite |
 |---|---|---|---|---|
-| 13 | Ho | 0 | 2 | — |
-| 14 | GumihoHo | 0 | 2 | — |
-| 15 | Co | 28 | 2 | — |
+| 8 | Me | 0 | 3 | — |
+| 12 | Ho | 0 | 2 | — |
+| 13 | Co | 0 | 3 | — |
+| 14 | Co | 28 | 2 | — |
+| 15 | Dokkaebi | 0 | 3 | 1 |
 | 16 | Dokkaebi | 0 | 3 | 1 |
 | 17 | Dokkaebi | 0 | 4 | 2 |
+| 18 | GumihoHo | 0 | 2 | — |
 
 Mỗi màn dưới đây có bảng món, rồi **Cách qua** (lời giải để thử).
 
-### Level13 — Hổ, cụm bên trái
+### Level08 — Mê, đứng yên, bắt buộc lướt
+
+Màn giới thiệu Mê. Mâm không xoay. Hai món thèm nằm đối diện nhau: Bibimbap ở phía dưới, Songpyeon ở phía trên. Dải của Mê chỉ với tới món gần. Phở nằm sát tâm phía dưới là bẫy cho nhát giữ quá lâu.
+
+| dishId | angleDeg | radius | với Mê |
+|---|---|---|---|
+| bibimbap | 270 | 0.70 | want |
+| songpyeon | 90 | 0.70 | want |
+| pho | 270 | 0.25 | forbid |
+
+**Cách qua:**
+
+1. Giữ hơn một phần tư thanh, khoảng `0.13` đến `0.33` giây, rồi thả. Ăn Bibimbap, Mê lướt lên mép trên.
+2. Thả nhanh. Dải mới ở phía trên, ăn Songpyeon.
+
+Thả quá sớm thì Mê ở lại phía dưới và Songpyeon ngoài tầm. Giữ hết thanh thì dải dài tới Phở và mất một mạng. Có `3` lượt, dư một lượt.
+
+### Level12 — Hổ, cụm bên trái
 
 Cả ba món nằm bên trái đường tâm. Gỏi cuốn gần đường tâm nhất. Gimbap xa hơn, bán kính nhỏ hơn. Bibimbap xa đến mức khe tối đa không với tới.
 
@@ -159,31 +181,44 @@ Cả ba món nằm bên trái đường tâm. Gỏi cuốn gần đường tâm 
 
 **Cách qua:** giữ khoảng `0.12` đến `0.40` giây rồi thả. Ăn Gỏi cuốn. Thả ngay thì hụt, còn 1 lượt. Giữ gần hết thì dính Gimbap.
 
-### Level14 — hai khách, mâm đứng yên
+### Level13 — Cò, đứng yên, độ sâu
 
-| dishId | angleDeg | radius | Gumiho | Hổ |
-|---|---|---|---|---|
-| songpyeon | 175 | 0.72 | want | forbid |
-| banh_mi | 180 | 0.35 | forbid | forbid |
-| gimbap | 0 | 0.70 | forbid | want |
-| pho | 95 | 0.45 | forbid | forbid |
-
-**Cách qua:**
-
-1. Nửa trái, thả ngay. Ăn Songpyeon. Giữ thì vòng nuốt Bánh mì gần tâm.
-2. Nửa phải, thả ngay. Ăn Gimbap. Phở ở phía trên, ngoài cả hai vùng.
-
-### Level15 — Cò, độ sâu, mâm xoay chậm
-
-Ba món cùng một tia, khác bán kính. Lúc mở màn, tia đó đang trước mỏ. Mâm xoay `28` độ/giây, nên tia sẽ đi khỏi mỏ nếu chưa giữ.
+Màn giới thiệu Cò. Mâm không xoay. Hai món cùng một tia: Gỏi cuốn ở giữa, Bánh mì sát mép. Chấm lúc đầu đang đè Bánh mì.
 
 | dishId | angleDeg | radius | với Cò |
 |---|---|---|---|
 | goi_cuon | 270 | 0.55 | want |
-| banh_mi | 270 | 0.82 | forbid |
-| pho | 270 | 0.34 | forbid |
+| banh_mi | 270 | 0.84 | forbid |
 
-**Cách qua:** đừng thả ngay, chấm đang đè Bánh mì ở mép. Giữ khoảng `0.16` đến `0.34` giây rồi thả, khi tia còn trước mặt: chấm nằm trên Gỏi cuốn, hai món cấm ở ngoài. Mâm phanh trong lúc giữ nên tia chỉ trôi vài độ. Giữ gần hết thì chấm chọc tới Phở. Nếu để tia đi qua, chờ nó quay lại trước mỏ.
+**Cách qua:** giữ khoảng `0.14` đến `0.40` giây rồi thả. Ăn Gỏi cuốn. Thả ngay thì dính Bánh mì, mất một mạng. Giữ hết thì chấm vào trong, hụt cả hai. Có `3` lượt.
+
+### Level14 — Cò, độ sâu, mâm xoay chậm
+
+Ba món lệch nhau `10°`, khác bán kính. Cò không ngồi đúng đáy: asset có `Anchor Offset = -12`, nên Cò lệch `12°` sang trái, mỏ chỉ về `258°`. Mâm xoay `28` độ/giây. Phở (`240°`) về trước mỏ đầu tiên, khoảng giây `0,64`. Gỏi cuốn (`230°`) về khoảng giây `1,0`. Bánh mì (`220°`) về khoảng giây `1,36`.
+
+| dishId | angleDeg | radius | với Cò |
+|---|---|---|---|
+| goi_cuon | 230 | 0.55 | want |
+| banh_mi | 220 | 0.82 | forbid |
+| pho | 240 | 0.34 | forbid |
+
+**Cách qua:** đừng thả ngay, chấm đang ở mép. Nhấn giữ khi Gỏi cuốn sắp về trước mỏ, khoảng giây `0,4` đến `1,3` kể từ lúc vào màn. Giữ khoảng `0.16` đến `0.35` giây rồi thả: chấm nằm trên Gỏi cuốn, hai món cấm ở ngoài. Mâm phanh trong lúc giữ nên Gỏi cuốn chỉ trôi vài độ. Giữ quá `0.36` giây thì chấm chọc tới Phở, giữ quá `0.39` giây thì hụt. Nếu để Gỏi cuốn đi qua, chờ vòng sau, khoảng `12,9` giây.
+
+### Level15 — Dokkaebi, đứng yên, đốm và đổi món
+
+Màn giới thiệu Dokkaebi. Mâm không xoay. Đốm chạy giữa tâm và mép. Chưa cần quét ngang: bấm là khóa chiều dọc, thả ngay là cắn. Sau nhát 1 icon đổi, Bánh mì ở mép thành món thèm.
+
+| dishId | angleDeg | radius | trước | sau |
+|---|---|---|---|---|
+| gimbap | 270 | 0.55 | want | want |
+| banh_mi | 270 | 0.84 | forbid | want |
+
+**Cách qua:**
+
+1. Chờ đốm về vành giữa, `along` khoảng `0.55`, bấm rồi thả ngay. Ăn Gimbap. Icon đổi.
+2. Chờ đốm ra sát mép, `along` khoảng `0.84`, thả ngay. Ăn Bánh mì.
+
+Bấm khi đốm ở mép lúc chưa đổi thì dính Bánh mì. Có `3` lượt, `swapAfterBite = 1`. Phần quét ngang nằm ở Level16.
 
 ### Level16 — Dokkaebi, khóa độ sâu rồi đổi sau nhát 1
 
@@ -197,7 +232,7 @@ Bánh mì nằm trên tia, sát mép. Gimbap và Bibimbap cùng vành trong `0.5
 
 **Cách qua:**
 
-1. Chờ đốm về vành trong, `along` khoảng `0.56`, rồi nhấn giữ để khóa chiều dọc. Giữ khoảng `0.08` đến `0.30` giây, thả khi đốm quét tới Gimbap. Thả ngay ở độ sâu này thì hụt. Giữ hết thì đốm tới Bibimbap. Icon đổi: Bánh mì thành thèm.
+1. Chờ đốm về vành trong, `along` khoảng `0.56`, rồi nhấn giữ để khóa chiều dọc. Giữ khoảng `0.19` đến `0.38` giây, thả khi đốm quét tới Gimbap. Thả ngay ở độ sâu này thì hụt, và giữ dưới `0.15` giây đốm cũng chưa quét. Giữ quá `0.39` giây thì đốm tới Bibimbap. Icon đổi: Bánh mì thành thèm.
 2. Chờ đốm ra sát mép, `along` khoảng `0.84`, thả ngay. Ăn Bánh mì. Giữ thêm thì đốm rời Bánh mì và không chạm Bibimbap, vì Bibimbap nằm vành trong.
 
 Gimbap vẫn thèm sau khi đổi. Nhát đầu nếu hụt, còn đủ lượt để ăn Gimbap rồi Bánh mì.
@@ -215,9 +250,23 @@ Cùng đốm màn 16. Gỏi cuốn nằm vành trong. Ba món kia nằm sát mé
 
 **Cách qua:**
 
-1. Khóa `along` khoảng `0.48`. Giữ khoảng `0.10` đến `0.40` giây, thả khi đốm nằm trên Gỏi cuốn. Thả ngay thì hụt. Giữ hết thì đốm đã quét qua Gỏi cuốn.
-2. Khóa `along` khoảng `0.80`. Giữ khoảng `0.22` đến `0.36` giây, thả khi đốm nằm trên Cà phê, chưa tới Bibimbap. Nhát này là nhát thứ hai, icon đổi.
+1. Khóa `along` khoảng `0.48`. Giữ khoảng `0.18` đến `0.45` giây, thả khi đốm nằm trên Gỏi cuốn. Thả ngay thì hụt. Giữ hết thì đốm đã quét qua Gỏi cuốn.
+2. Khóa `along` khoảng `0.80`. Giữ khoảng `0.29` đến `0.41` giây, thả khi đốm nằm trên Cà phê, chưa tới Bibimbap. Giữ dưới `0.23` giây thì đốm còn đè Bánh mì. Nhát này là nhát thứ hai, icon đổi.
 3. Khóa lại `along` khoảng `0.80`, thả ngay. Ăn Bánh mì, món vừa thành thèm. Giữ vừa thì dính Cà phê đã thành cấm. Giữ hết thì dính Bibimbap.
+
+### Level18 — hai khách, mâm đứng yên
+
+| dishId | angleDeg | radius | Gumiho | Hổ |
+|---|---|---|---|---|
+| songpyeon | 175 | 0.72 | want | forbid |
+| banh_mi | 180 | 0.35 | forbid | forbid |
+| gimbap | 0 | 0.70 | forbid | want |
+| pho | 95 | 0.45 | forbid | forbid |
+
+**Cách qua:**
+
+1. Nửa trái, thả ngay. Ăn Songpyeon. Giữ thì vòng nuốt Bánh mì gần tâm.
+2. Nửa phải, thả ngay. Ăn Gimbap. Phở ở phía trên, ngoài cả hai vùng.
 
 ---
 
@@ -226,21 +275,27 @@ Cùng đốm màn 16. Gỏi cuốn nằm vành trong. Ba món kia nằm sát mé
 **Ô gán và asset**
 
 - [ ] `LevelRunner` đã gán `Co Guest`, `Co Zone`, `Dokkaebi Guest`, `Dokkaebi Zone` (hoặc chấp nhận script tự copy).
-- [ ] `Levels` có 17 phần tử, `Level13` … `Level17` ở vị trí 12 … 16.
+- [ ] `Levels` có 20 phần tử, `Level08` ở vị trí 7, `Level12` … `Level18` ở vị trí 11 … 17.
+- [ ] Level08: Guest Mode `Me`, Spin Speed `0`, Charges `3`, Cross At `0.50`.
+- [ ] Level13: Guest Mode `Co`, Spin Speed `0`, Charges `3`.
+- [ ] Level15: Guest Mode `Dokkaebi`, Swap After Bite `1`, Charges `3`.
 - [ ] Level16: Swap After Bite `1`. Level17: Swap After Bite `2`, Charges `4`.
-- [ ] Level15: Guest Mode `Co`, Spin Speed `28`.
+- [ ] Level14: Guest Mode `Co`, Spin Speed `28`, Anchor Offset `-12`. Ba món góc `230`, `220`, `240`.
 - [ ] Level16 và Level17: Guest Mode `Dokkaebi`, mọi món có Want/Forbid cả trước lẫn sau đổi như bảng.
 
 **Khi Play — bấm `Chọn màn` rồi vào từng màn**
 
 - [ ] Mở game thấy tấm `Một Mâm` trước, nút `Màn` ở góc trên trái khi đang chơi.
-- [ ] Màn 8: dải chàm lắc khi chưa giữ. Nhấn giữ thì dải đứng im và mâm chậm lại. Thả ngay vẫn ăn Bibimbap.
-- [ ] Màn 11 hoặc 12: thấy cả Gumiho và Hổ, hai hàng icon có chữ `Gumiho` và `Hổ`. Trên điện thoại dọc, hai người không bị cắt mép.
-- [ ] Màn 13: khe xanh, cụm món bên trái. Giữ vừa thì ăn Gỏi cuốn. Giữ gần hết thì dính Gimbap.
-- [ ] Màn 14: thấy cả Gumiho và Hổ, mâm đứng yên. Trái thả ngay ăn Songpyeon. Phải thả ngay ăn Gimbap.
-- [ ] Màn 15: mâm xoay chậm, chấm tròn chạy vào tâm. Giữ vừa khi tia món còn trước mỏ thì ăn Gỏi cuốn.
+- [ ] Màn 8: mâm đứng yên. Giữ hơn một phần tư thanh rồi thả: ăn Bibimbap, Mê lướt lên mép trên. Thả nhanh ăn Songpyeon. Giữ hết ngay nhát đầu thì dính Phở.
+- [ ] Màn 9: dải chàm lắc khi chưa giữ. Nhấn giữ thì dải đứng im và mâm chậm lại. Thả ngay vẫn ăn Bibimbap.
+- [ ] Màn 12: khe xanh, cụm món bên trái. Giữ vừa thì ăn Gỏi cuốn. Giữ gần hết thì dính Gimbap.
+- [ ] Màn 13: chấm đang đè Bánh mì. Thả ngay thì dính Bánh mì. Giữ vừa thì ăn Gỏi cuốn.
+- [ ] Màn 14: Cò lệch trái `12°`, mâm xoay chậm, chấm tròn chạy vào tâm. Nhấn giữ lúc Gỏi cuốn gần về trước mỏ, giữ vừa thì ăn Gỏi cuốn.
+- [ ] Màn 15: đốm đè Gimbap thì bấm và thả ngay. Icon đổi. Đốm ra mép thì thả ngay ăn Bánh mì.
 - [ ] Màn 16: chưa giữ, đốm chạy tâm–mép. Khóa vành trong rồi giữ vừa thì ăn Gimbap. Khóa sát mép rồi thả ngay thì dính Bánh mì. Icon đổi sau nhát đầu. Nhát sau, khóa sát mép và thả ngay ăn Bánh mì vừa thành thèm.
 - [ ] Màn 17: cùng đốm, hai độ sâu, icon đổi sau nhát thứ hai. Khóa vành trong ăn Gỏi cuốn, khóa sát mép ăn Cà phê, nhát ba khóa sát mép và thả ngay ăn Bánh mì.
+- [ ] Màn 18: thấy cả Gumiho và Hổ, mâm đứng yên. Trái thả ngay ăn Songpyeon. Phải thả ngay ăn Gimbap.
+- [ ] Màn 19 hoặc 20: thấy cả Gumiho và Hổ, hai hàng icon có chữ `Gumiho` và `Hổ`. Trên điện thoại dọc, hai người không bị cắt mép.
 - [ ] Cài đặt Tốc độ `Chậm` rồi vào màn 3: mâm xoay chậm hơn lúc `Vừa`.
 
 ---
@@ -249,7 +304,7 @@ Cùng đốm màn 16. Gỏi cuốn nằm vành trong. Ba món kia nằm sát mé
 
 | Triệu chứng | Nguyên nhân hay gặp | Cách sửa |
 |---|---|---|
-| Vào màn 15, 16 hoặc 17 thì Console báo lỗi, màn không chạy | Thiếu `Co ...` hoặc `Dokkaebi ...` trên `LevelRunner` | Gán 4 ô ở mục 4 |
+| Vào màn 13 đến 17 thì Console báo lỗi, màn không chạy | Thiếu `Co ...` hoặc `Dokkaebi ...` trên `LevelRunner` | Gán 4 ô ở mục 4 |
 | Đốm Dokkaebi không đổi icon | `Swap After Bite` của asset là `0`, hoặc `wantAfterSwap` / `forbidAfterSwap` trống | Đặt `1` (màn 16) hoặc `2` (màn 17), điền cột "sau" như bảng |
 | Khách mới nhuộm màu lạ | Ô trống nên script copy rồi tô màu | Tạo `Co` / `Dokkaebi` thật với sprite trắng |
 | Cài đặt tốc độ không đổi | Màn đang `Spin Speed 0` | Thử ở màn 3 trở đi |

@@ -20,9 +20,11 @@ Mâm nhìn từ trên xuống. Tọa độ cực trên mặt mâm, lúc bắt đ
 
 | Chế độ | Khách | `guestAnchorDeg` | Tâm đầu |
 |---|---|---|---|
-| Một khách | Gumiho, Hổ, Mê, Cò, Dokkaebi | `270` | đáy màn hình |
+| Một khách | Gumiho, Hổ, Mê, Cò, Dokkaebi | `270` + `anchorOffset` | đáy màn hình |
 | Hai khách | Gumiho | `180` | mép trái |
 | Hai khách | Hổ | `0` | mép phải |
+
+`anchorOffset` là trường riêng của từng màn, mặc định `0`, tính bằng độ. Âm = khách lệch sang trái khi ngồi phía dưới. Hiện chỉ màn 14 dùng: `-12`, nên Cò ngồi ở `258°`. Vùng ăn của khách đó đi theo neo mới. Màn hai khách bỏ qua trường này.
 
 Hình mỗi khách chỉ là cái đầu. Tâm object là tâm ảnh, không phải cằm hay chân. `guestDrawRadius` đo tới tâm đó.
 
@@ -71,11 +73,11 @@ Số này đã chốt. Đổi thì sửa cả đoạn dưới đây và khối `
 
 - Cùng `along` / `perp` theo neo Mê đang đứng.
 - `len = lerp(0.35, 0.95, u)`, đo từ mép vào trong. Mép trong của dải nằm tại `along = 1 − len`.
-- Nửa bề rộng cố định `0.10`. Giữ lâu làm dải dài thêm, không làm dải rộng thêm.
-- Trong dải khi `along > 0`, `perp ≤ 0.10`, và `1 − along ≤ len`.
+- Nửa bề rộng cố định `0.13`. Giữ lâu làm dải dài thêm, không làm dải rộng thêm.
+- Trong dải khi `along > 0`, `perp ≤ 0.13`, và `1 − along ≤ len`.
 - `len = 0.95` dừng tại `along = 0.05`, gần tâm, không ăn sang nửa kia.
-- `len > 0.55` lúc thả thì Mê lướt, `guestAnchor += 180`. Đúng `0.55` thì đứng yên. Màn có thể ghi `crossAt` khác `0.55`.
-- Dải lắc quanh neo ở mọi màn có Mê, kể từ màn 8. Không có cờ để bật lắc từ một màn sau. Khi chưa giữ: `6° * sin(2π * 0.8 * t)`. Dương = lệch ngược chiều kim đồng hồ. Khách ở đáy thì đỉnh dương về phía phải. Khách không lắc, chỉ dải lắc.
+- `len > 0.50` lúc thả thì Mê lướt, `guestAnchor += 180`. Đúng `0.50` thì đứng yên. Màn có thể ghi `crossAt` khác `0.50`. Giữ hơn một phần tư thanh (khoảng `0.125` giây) là đã lướt. Khi dải đủ dài để lướt, vùng dải sáng và đậm hơn, người chơi biết nhát thả lúc đó sẽ làm Mê đổi mép.
+- Dải lắc quanh neo ở mọi màn có Mê, kể từ màn 8. Không có cờ để bật lắc từ một màn sau. Khi chưa giữ: `5° * sin(2π * 0.6 * t)`. Dương = lệch ngược chiều kim đồng hồ. Khách ở đáy thì đỉnh dương về phía phải. Khách không lắc, chỉ dải lắc.
 - Nhấn giữ: góc dải đóng băng đúng giá trị lúc bấm, không cộng thời gian lắc nữa. Cùng lúc mâm giảm tốc, `spinSpeed * (1 − clamp01(giữ / brakeTime))`. Dải vẫn dài thêm theo `u`. Thả rồi hết nhịp khóa thì dải lắc tiếp từ pha đã dừng.
 
 **Cò — chấm chạy vào tâm**
@@ -86,8 +88,8 @@ Số này đã chốt. Đổi thì sửa cả đoạn dưới đây và khối `
 **Dokkaebi — đốm lửa trên tia tâm–mép**
 
 - Đốm bán kính `0.14`.
-- Chưa giữ, tâm đốm chạy trên tia neo: `along = lerp(0, 1, 0.5 + 0.5 * sin(2π * 0.25 * t))`. `0` là tâm mâm, `1` là mép. Một vòng ra–vào mất `4` giây.
-- Nhấn giữ: `along` đóng băng đúng lúc bấm. Góc đốm = neo + `lerp(0°, 42°, u)`, lệch ngược chiều kim đồng hồ. Khách ở đáy thì quét về phía phải.
+- Chưa giữ, tâm đốm chạy trên tia neo: `along = lerp(0, 1, 0.5 + 0.5 * sin(2π * 0.40 * t))`. `0` là tâm mâm, `1` là mép. Một vòng ra–vào mất `2,5` giây.
+- Nhấn giữ: `along` đóng băng đúng lúc bấm. Giữ dưới `dokkaTapSeconds = 0.15` thì đốm đứng yên tại neo. Quá mốc đó, góc đốm = neo + `lerp(0°, 42°, (giữ − 0.15) / 0.80)`, lệch ngược chiều kim đồng hồ. Khách ở đáy: nhấn nửa phải thì quét sang phải, nhấn nửa trái thì quét sang trái.
 - Trong đốm khi khoảng cách từ tâm món tới tâm đốm ≤ `0.14`. Đốm không to ra.
 - Thả rồi hết nhịp khóa thì đốm chạy tiếp từ pha đã dừng.
 
@@ -118,10 +120,11 @@ Khối `constants` trong `Mo-Mam-Vi-Tri-Mon-An.json` là bản máy đọc. Đo�
 | `meSlideSeconds` | `0.40` | Nhát làm Mê lướt thì thời gian khóa lấy max với `0.40`. Neo chạy sang `+180` trong khoảng đó. Món của nhát này đã xét ở mép cũ. |
 | `meSwayIdle` | `6` | Biên độ khi dải đang lắc, chưa giữ. |
 | `meSwayMax` | `18` | Không còn nới lúc giữ. Giữ thì góc đóng băng. |
-| `meSwayHz` | `0.8` | Số vòng lắc mỗi giây khi chưa giữ. |
+| `meSwayHz` | `0.6` | Số vòng lắc mỗi giây khi chưa giữ. |
 | `dokkaAlongMin` | `0` | Tâm đốm lúc sâu nhất, trùng tâm mâm. |
 | `dokkaAlongMax` | `1` | Tâm đốm lúc nông nhất, trên mép mâm. |
-| `dokkaAlongHz` | `0.25` | Số vòng tâm–mép–tâm mỗi giây khi chưa giữ. |
+| `dokkaAlongHz` | `0.40` | Số vòng tâm–mép–tâm mỗi giây khi chưa giữ. Một vòng mất `2,5` giây. |
+| `dokkaTapSeconds` | `0.15` | Giữ dưới mốc này thì đốm chưa quét. Quá mốc thì quét từ `0°` tới `42°` trong `dokkaSweepSeconds = 0.80` giây, tức giữ tổng cộng `0.95` giây mới quét hết. |
 | `swapBlinkSeconds` | `0.40` | Màn có Dokkaebi: icon nhấp trong lúc khóa, rồi mới đổi want/forbid. |
 | `clearRingSeconds` | `0.70` | Qua màn: vòng sáng nở từ vành mâm rồi tắt. Thua màn thì không có vòng. |
 
@@ -154,8 +157,7 @@ Spin dương làm `θ` tăng. Góc món trên màn hình = `angleDeg + θ`.
 
 **Kiểm nhanh với màn đã xếp**
 
-- Màn 9, nhát 2: sau khi Mê đã sang mép `90°`, `ca_phe` (góc spawn `125`) nằm trong dải khi `θ` khoảng `317°` đến `333°`, tính lúc dải không lệch. `banh_mi` ở `105°` vẫn ngoài dải trong cửa sổ đó. Phải chờ gần một vòng.
-- Màn 11–12: vòng Gumiho tối đa và khe Hổ cách nhau một khoảng trống bán kính `0.15` quanh tâm (15% đường kính mâm). Hai vùng không chồng.
+- Màn 18–20: vòng Gumiho tối đa và khe Hổ cách nhau một khoảng trống bán kính `0.15` quanh tâm (15% đường kính mâm). Hai vùng không chồng.
 
 ---
 
@@ -180,669 +182,703 @@ Cụm “trái / phải vành” = quanh `180°` / `0°`.
 
 ---
 
-## 3. Bảng nhanh 17 màn
+## 3. Bảng nhanh 20 màn
 
-| Màn | Khách | Xoay | Số món trên mâm | Thèm ban đầu | Cấm / bẫy | Lượt |
-|---|---|---|---|---|---|---|
-| 1 | Gumiho | 0 | 3 | 1 | 2 | 2 |
-| 2 | Gumiho | 0 | 3 | 1 | 2 | 2 |
-| 3 | Gumiho | chậm | 3 | 1 | 2 | 2 |
-| 4 | Gumiho | vừa | 4 | 2 | 2 | 1 |
-| 5 | Hổ | 0 | 3 | 1 | 2 | 2 |
-| 6 | Hổ | chậm | 3 | 2 | 1 | 2 |
-| 7 | Hổ | vừa | 4 | 2 | 2 | 1 |
-| 8 | Mê | vừa | 3 | 1 | 2 | 1 |
-| 9 | Mê | vừa | 4 | 2 | 2 | 2 |
-| 10 | Gumiho | chậm | 4 | 3, mỗi nhát một món | 1, đi giữa các món thèm | 3 |
-| 11 | Gumiho+Hổ | chậm | 4 | 2+2 | chồng vùng | 3 |
-| 12 | Gumiho+Hổ | vừa | 4 | xung đột | bẫy chung | 3 |
-| 13 | Hổ | 0 | 3 | 1, nới vừa tới món lệch trái | cấm kế bên; món xa hơn ngoài khe | 2 |
-| 14 | Gumiho+Hổ | 0 | 4 | 1+1, thả ngay mỗi bên | cấm gần tâm phía trái | 2 |
-| 15 | Cò | chậm | 3 | 1, đúng độ sâu | cấm mép và cấm gần tâm | 2 |
-| 16 | Dokkaebi | 0 | 3 | 1 ở vành trong rồi đổi, thêm 1 sát mép | cấm sát mép trên tia; cấm cuối quét cùng vành trong | 3 |
-| 17 | Dokkaebi | 0 | 4 | 2 rồi đổi, hai độ sâu | sau đổi, cấm món vừa thèm nếu còn | 4 |
+Số món là tổng món trên mâm (thèm + cấm + trang trí). Món trang trí không ai thèm hay cấm, nằm sẵn trong asset. Thời gian là thời gian ngắn nhất để qua màn theo lời giải. «Độ khó» là điểm tổng hợp ở mục 3.1.
+
+| Màn | Khách | Xoay (°/s) | Số món | Thèm | Cấm | Nhát | Lượt | Mạng | Thời gian | Độ khó |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Gumiho | 0 | 10 | 3 | 1 | 1 | 2 | 3 | 0.7 s | 1.5 |
+| 2 | Gumiho | 0 | 10 | 3 | 2 | 1 | 2 | 2 | 1.0 s | 5.0 |
+| 3 | Gumiho | 10 | 10 | 2 | 2 | 2 | 3 | 2 | 13.4 s | 10.5 |
+| 4 | Gumiho | 16 | 10 | 2 | 3 | 2 | 2 | 2 | 12.2 s | 16.5 |
+| 5 | Hổ | 0 | 11 | 3 | 1 | 1 | 2 | 3 | 0.6 s | 6.5 |
+| 6 | Hổ | 14 | 11 | 3 | 2 | 2 | 2 | 2 | 11.6 s | 19.5 |
+| 7 | Hổ | 20 | 11 | 3 | 3 | 3 | 3 | 2 | 17.2 s | 25.5 |
+| 8 | Mê | 0 | 11 | 3 | 1 | 2 | 3 | 3 | 2.8 s | 11.5 |
+| 9 | Mê | 16 | 11 | 3 | 2 | 3 | 3 | 2 | 12.2 s | 28.0 |
+| 10 | Mê | 22 | 11 | 4 | 2 | 4 | 4 | 2 | 16.7 s | 32.5 |
+| 11 | Gumiho | 38 | 12 | 4 | 2 | 4 | 4 | 2 | 8.3 s | 35.5 |
+| 12 | Hổ | 40 | 12 | 4 | 2 | 4 | 5 | 2 | 10.3 s | 38.0 |
+| 13 | Cò | 0 | 12 | 3 | 2 | 2 | 3 | 3 | 1.3 s | 21.0 |
+| 14 | Cò | 24 | 12 | 4 | 2 | 4 | 4 | 2 | 17.5 s | 41.0 |
+| 15 | Dokkaebi | 0 | 12 | 6 | 3 | 4 | 5 | 3 | 4.6 s | 33.5 |
+| 16 | Dokkaebi | 20 | 12 | 5 | 4 | 4 | 5 | 2 | 8.5 s | 42.0 |
+| 17 | Dokkaebi | 26 | 12 | 4 | 4 | 4 | 4 | 2 | 11.8 s | 46.5 |
+| 18 | Gumiho trái + Hổ phải | 0 | 13 | 4 | 6 | 2 | 3 | 3 | 1.6 s | 34.0 |
+| 19 | Gumiho trái + Hổ phải | 22 | 13 | 4 | 6 | 4 | 4 | 2 | 16.0 s | 50.5 |
+| 20 | Gumiho trái + Hổ phải | 32 | 13 | 5 | 5 | 4 | 4 | 2 | 12.5 s | 51.5 |
+
+### 3.1 Độ khó tăng dần
+
+Điểm độ khó = `2 × bậc khách` (Gumiho 0, Hổ 1, Mê 2, Cò 3, Dokkaebi 4, hai khách 5) + `xoay / 4` + `3 × (nhát − 1)` + `1,5 × số món cấm` + `2` nếu 2 mạng + `3` nếu không còn lượt dự phòng + `3 × bậc cửa sổ nhịp`.
+
+Cửa sổ nhịp là phạm vi sai nhịp mà lời giải còn đúng: ±chờ / ±giữ (giây). Bậc 0: ±0,20 / ±0,06. Bậc 1: ±0,18 / ±0,05. Bậc 2: ±0,15 / ±0,045. Bậc 3: ±0,13 / ±0,04. Bậc 4: ±0,12 / ±0,035; riêng Dokkaebi xoay (màn 16, 17) ±0,08 / ±0,03 và màn 15 ±0,07 / ±0,03, vì đốm chạy tâm–mép rất nhanh.
+
+Qua các màn thường (không kể màn giới thiệu) điểm luôn tăng. Màn giới thiệu khách mới (1, 5, 8, 13, 15, 18) theo luật có sẵn là mâm đứng yên và dư một lượt, nên điểm thấp hơn màn thường ngay trước đó. Điểm giữa các màn giới thiệu cũng tăng dần.
+
+| Màn | Điểm | Loại |
+|---|---|---|
+| 1 | 1.5 | giới thiệu khách |
+| 2 | 5.0 | thường |
+| 3 | 10.5 | thường |
+| 4 | 16.5 | thường |
+| 5 | 6.5 | giới thiệu khách |
+| 6 | 19.5 | thường |
+| 7 | 25.5 | thường |
+| 8 | 11.5 | giới thiệu khách |
+| 9 | 28.0 | thường |
+| 10 | 32.5 | thường |
+| 11 | 35.5 | thường |
+| 12 | 38.0 | thường |
+| 13 | 21.0 | giới thiệu khách |
+| 14 | 41.0 | thường |
+| 15 | 33.5 | giới thiệu khách |
+| 16 | 42.0 | thường |
+| 17 | 46.5 | thường |
+| 18 | 34.0 | giới thiệu khách |
+| 19 | 50.5 | thường |
+| 20 | 51.5 | thường |
 
 ---
 
 ## 4. Chi tiết từng màn
 
-Góc ghi là góc **trên mâm lúc spawn**. Với màn đứng yên, góc màn hình = góc spawn. Với màn xoay, lời giải ghi thêm góc mâm lúc thả (`θ`).
+Góc ghi là góc **trên mâm lúc spawn**. Với màn đứng yên, góc màn hình = góc spawn. Với màn xoay, góc màn hình = góc spawn + góc mâm.
+
+Mọi màn do `tools/design_levels.py` sinh và `tools/mm_sim.py` kiểm: lời giải tồn tại, không nhát nào dính món cấm, và mỗi nhát còn đúng khi người chơi lệch nhịp trong phạm vi của bậc cửa sổ.
+
+Luật xếp món áp cho cả 20 màn: dưới 3 món thèm thì không món thèm nào bắt đầu ở góc 250°–360°; món rải khắp mâm (khoảng trống góc lớn nhất không quá 62°, mỗi góc phần tư có ít nhất 2 món, cả vành trong lẫn vành ngoài đều có món); màn xoay đặt món thèm đầu cách vạch miệng khách 30° trở lên.
 
 ---
 
-### Màn 1 — Gumiho, đứng yên · thả ngay
+### Màn 1 — Gumiho
 
-**Ý đồ:** vòng nhỏ sẵn đã trùm đúng 1 món thèm. Món cấm ngoài `rMax`.
+**Ý đồ:** Màn dạy Gumiho. Mâm đứng yên, vòng lớn dần khi giữ. Món cấm nằm sát món thèm để người chơi thấy phải thả đúng lúc.
 
-| dishId | angleDeg | radius | với Gumiho |
+Xoay `0`°/s · 2 lượt · 3 mạng
+
+| dishId | angleDeg | radius | vai trò |
 |---|---|---|---|
-| `songpyeon` | 270 | 0.58 | **want** |
-| `banh_mi` | 90 | 0.58 | forbid |
-| `bibimbap` | 20 | 0.78 | forbid |
+| `gimbap` | 275.1 | 0.78 | **want** Gumiho |
+| `pho` | 257.3 | 0.8 | **want** Gumiho |
+| `gimbap` | 248.3 | 0.38 | **want** Gumiho |
+| `bibimbap` | 223.2 | 0.54 | forbid Gumiho |
+| `goi_cuon` | 77 | 0.83 | trang trí |
+| `songpyeon` | 327.1 | 0.31 | trang trí |
+| `banh_mi` | 166 | 0.7 | trang trí |
+| `tteokbokki` | 6.4 | 0.84 | trang trí |
+| `ca_phe` | 125.9 | 0.49 | trang trí |
+| `goi_cuon` | 28.8 | 0.76 | trang trí |
 
-```
-        [banh_mi]
-            90
-             |
-             ●
-            / \
-           /   \
- [bib]20       270 [songpyeon ★]  ← trong vòng r0
-             khách
-```
+**Lời giải ngắn nhất:**
 
-**Lời giải:** thả ngay (không cần giữ). 1 nhát ăn `songpyeon`. Còn 1 lượt dự phòng.
+1. không chờ, giữ 0.32 giây → ăn `gimbap`, `pho`, `gimbap`.
 
-**Cửa sổ:** mọi góc giữ đều an toàn vì cấm ngoài `rMax`. Fail chỉ khi giữ cực đại rồi… vẫn không tới cấm — màn này gần như không fail bằng vùng; mạng chủ yếu để quen UI.
+Cửa sổ nhịp hẹp nhất: chờ không đổi (mâm không đổi theo giờ), giữ 0.30 giây.
+
+**Gợi ý hiện trong màn:** Chạm nhanh: vòng nhỏ ăn món sáng gần miệng. Giữ lâu: vòng to dần. Đừng chạm món bị cấm.
 
 ---
 
-### Màn 2 — Gumiho, đứng yên · giữ vừa phải
+### Màn 2 — Gumiho
 
-**Ý đồ:** món thèm ngoài `r0`, trong một khoảng giữ. Món cấm sát phía ngoài `r` an toàn.
+**Ý đồ:** Mâm đứng yên, thêm một món cấm. Người chơi phải đọc vòng lớn dần trước khi thả.
 
-| dishId | angleDeg | radius | với Gumiho |
+Xoay `0`°/s · 2 lượt · 2 mạng
+
+| dishId | angleDeg | radius | vai trò |
 |---|---|---|---|
-| `tteokbokki` | 300 | 0.58 | **want** |
-| `pho` | 200 | 0.38 | forbid |
-| `goi_cuon` | 200 | 0.78 | forbid |
+| `tteokbokki` | 304.7 | 0.43 | **want** Gumiho |
+| `goi_cuon` | 258.8 | 0.78 | **want** Gumiho |
+| `tteokbokki` | 240.6 | 0.62 | **want** Gumiho |
+| `songpyeon` | 219.7 | 0.65 | forbid Gumiho |
+| `ca_phe` | 341.2 | 0.28 | forbid Gumiho |
+| `bibimbap` | 145.7 | 0.82 | trang trí |
+| `banh_mi` | 73.2 | 0.41 | trang trí |
+| `gimbap` | 13.8 | 0.77 | trang trí |
+| `pho` | 179.4 | 0.73 | trang trí |
+| `bibimbap` | 116.7 | 0.52 | trang trí |
 
-Tâm vòng Gumiho ở `radius≈0.62` phía 270°.  
-`tteokbokki` ở `300°`, `radius 0.58`.  
-`pho` ở `200°`, `radius 0.38`.  
-`goi_cuon` cùng góc `200°`, `radius 0.78`.
+**Lời giải ngắn nhất:**
 
-**Lời giải:** giữ khoảng 35–55% thanh nạp (vòng vừa phủ `tteokbokki`, chưa tới `pho`), thả. Lượt dự phòng nếu nhả sớm hụt.
+1. không chờ, giữ 0.64 giây → ăn `tteokbokki`, `goi_cuon`, `tteokbokki`.
 
-**Cửa sổ an toàn:** bán kính vòng `≈ 0.28–0.40`. Dưới → hụt. Trên → nuốt `pho`.
+Cửa sổ nhịp hẹp nhất: chờ không đổi (mâm không đổi theo giờ), giữ 0.72 giây.
 
 ---
 
-### Màn 3 — Gumiho, xoay chậm · chờ rồi thả nhanh
+### Màn 3 — Gumiho
 
-**Ý đồ:** thèm và cấm cùng vành `0.58`, lệch góc. Chờ món thèm vào vòng sẵn, thả trước khi cấm tới.
+**Ý đồ:** Mâm xoay rất chậm. Có chưa tới ba món thèm nên không món nào bắt đầu ở vùng 250–360°: phải chờ mâm đưa tới.
 
-| dishId | angleDeg | radius | với Gumiho |
+Xoay `10`°/s · 3 lượt · 2 mạng
+
+| dishId | angleDeg | radius | vai trò |
 |---|---|---|---|
-| `gimbap` | 200 | 0.58 | **want** |
-| `ca_phe` | 245 | 0.58 | forbid |
-| `banh_mi` | 40 | 0.78 | forbid |
+| `bibimbap` | 163.6 | 0.56 | **want** Gumiho |
+| `ca_phe` | 112.5 | 0.41 | **want** Gumiho |
+| `songpyeon` | 97.6 | 0.65 | forbid Gumiho |
+| `pho` | 74.8 | 0.35 | forbid Gumiho |
+| `gimbap` | 300.5 | 0.66 | trang trí |
+| `goi_cuon` | 258.8 | 0.77 | trang trí |
+| `tteokbokki` | 348.6 | 0.68 | trang trí |
+| `banh_mi` | 203.9 | 0.58 | trang trí |
+| `gimbap` | 24.9 | 0.79 | trang trí |
+| `goi_cuon` | 241.1 | 0.55 | trang trí |
 
-`spinSpeed ≈ 28°/s`. Vòng giữ ở `r0` (không giữ lâu).
+**Lời giải ngắn nhất:**
 
-**Lời giải:** không giữ (hoặc chạm rất ngắn). Chờ `θ ≈ 70°` để `gimbap` về ~270° (`200+70`), lúc đó `ca_phe` còn ở ~315° — ngoài vòng nhỏ. Thả. Còn 1 lượt dự phòng.
+1. chờ 6.85 giây, giữ 0.66 giây → ăn `bibimbap`.
+2. chờ 4.55 giây, giữ 0.68 giây → ăn `ca_phe`.
 
-**Cửa sổ:** khoảng `θ ∈ [60°, 82°]`. Trễ hơn → `ca_phe` vào vòng. Sớm → hụt `gimbap`.
+Cửa sổ nhịp hẹp nhất: chờ 2.15 giây, giữ 0.64 giây.
 
 ---
 
-### Màn 4 — Gumiho, xoay · phanh ôm cụm 2 thèm
+### Màn 4 — Gumiho
 
-**Ý đồ:** hai món thèm sát nhau. Món cấm đi sát sau cụm. Phanh + nới vòng vừa ôm cặp thèm.
+**Ý đồ:** Mâm xoay nhanh hơn, ba món cấm. Hai món thèm không ôm được trong một nhát, phải cắn hai lần.
 
-| dishId | angleDeg | radius | với Gumiho |
+Xoay `16`°/s · 2 lượt · 2 mạng
+
+| dishId | angleDeg | radius | vai trò |
 |---|---|---|---|
-| `songpyeon` | 200 | 0.58 | **want** |
-| `tteokbokki` | 250 | 0.58 | **want** |
-| `pho` | 320 | 0.58 | forbid |
-| `goi_cuon` | 110 | 0.78 | forbid |
+| `bibimbap` | 55.7 | 0.35 | **want** Gumiho |
+| `goi_cuon` | 164.3 | 0.37 | **want** Gumiho |
+| `tteokbokki` | 204.9 | 0.47 | forbid Gumiho |
+| `pho` | 37.9 | 0.6 | forbid Gumiho |
+| `tteokbokki` | 204.7 | 0.28 | forbid Gumiho |
+| `gimbap` | 312.5 | 0.72 | trang trí |
+| `banh_mi` | 113.5 | 0.38 | trang trí |
+| `songpyeon` | 237.5 | 0.64 | trang trí |
+| `ca_phe` | 340.3 | 0.7 | trang trí |
+| `gimbap` | 266 | 0.49 | trang trí |
 
-`spinSpeed ≈ 40°/s`. `brakeTime ≈ 0.35s` tới gần dừng.
+**Lời giải ngắn nhất:**
 
-**Lời giải:** khi cụm thèm sắp vào đáy, giữ để phanh và nới vòng vừa ôm `songpyeon` (`200°`) và `tteokbokki` (`250°`), thả trước khi `pho` (`320°`) vào. Một nhát hết 2 thèm.
+1. chờ 7.00 giây, giữ 0.30 giây → ăn `goi_cuon`.
+2. chờ 3.55 giây, giữ 0.70 giây → ăn `bibimbap`.
 
-`charges = 1`. Hai món thèm lệch `50°`, vòng lúc mới chạm chỉ rộng khoảng `±19°` trên vành `0.58`, nên thả nhanh không ôm cả hai. Hụt hoặc chỉ ăn một món thì hết lượt.
-
-**Cửa sổ:** hai món thèm lệch `50°` trên vành `0.58`. `pho` ở `320°`, cùng vành. `goi_cuon` ở `110°`, `radius 0.78`.
+Cửa sổ nhịp hẹp nhất: chờ 1.40 giây, giữ 0.38 giây.
 
 ---
 
-### Màn 5 — Hổ, đứng yên · khe hẹp sẵn
+### Màn 5 — Hổ
 
-**Ý đồ:** 1 thèm đúng đường tâm. Hai cấm hai bên ngoài `w0`.
+**Ý đồ:** Màn dạy Hổ. Mâm đứng yên, khe hẹp khi chạm và rộng dần khi giữ.
 
-| dishId | angleDeg | radius | với Hổ |
+Xoay `0`°/s · 2 lượt · 3 mạng
+
+| dishId | angleDeg | radius | vai trò |
 |---|---|---|---|
-| `goi_cuon` | 270 | 0.58 | **want** |
-| `gimbap` | 248 | 0.58 | forbid |
-| `bibimbap` | 292 | 0.58 | forbid |
+| `tteokbokki` | 271.3 | 0.72 | **want** Hổ |
+| `ca_phe` | 278.9 | 0.48 | **want** Hổ |
+| `tteokbokki` | 263.2 | 0.59 | **want** Hổ |
+| `songpyeon` | 287.8 | 0.85 | forbid Hổ |
+| `pho` | 116 | 0.57 | trang trí |
+| `gimbap` | 11.5 | 0.83 | trang trí |
+| `banh_mi` | 216.8 | 0.33 | trang trí |
+| `bibimbap` | 45 | 0.6 | trang trí |
+| `goi_cuon` | 164.3 | 0.82 | trang trí |
+| `pho` | 335.7 | 0.36 | trang trí |
+| `gimbap` | 77.9 | 0.69 | trang trí |
 
-**Lời giải:** thả ngay, không nới khe. 1 nhát. 1 lượt dự phòng.
+**Lời giải ngắn nhất:**
 
-**Cửa sổ:** mọi mức giữ `w > ~0.12` tại vành 0.58 sẽ nuốt một trong hai cấm — dạy “đừng giữ thừa”.
+1. không chờ, giữ 0.24 giây → ăn `tteokbokki`, `ca_phe`, `tteokbokki`.
+
+Cửa sổ nhịp hẹp nhất: chờ không đổi (mâm không đổi theo giờ), giữ 0.42 giây.
+
+**Gợi ý hiện trong màn:** Hổ cắn theo khe. Chạm: khe hẹp. Giữ: khe rộng dần, đừng chạm món bị cấm.
 
 ---
 
-### Màn 6 — Hổ, xoay chậm · cả ba món bên trái
+### Màn 6 — Hổ
 
-**Ý đồ:** cả ba món nằm bên trái đường tâm, nên món thèm thứ hai vào khe ngay sau món thứ nhất. Cấm nằm giữa hai thèm. Một nhát rộng = hỏng.
+**Ý đồ:** Mâm xoay chậm. Món cấm đứng gần món thèm nên khe phải vừa đủ.
 
-Bên trái là cung từ `180°` tới `270°`. Mâm xoay ngược chiều kim đồng hồ, món trên cung này đi xuống miệng Hổ, không phải đi gần hết một vòng.
+Xoay `14`°/s · 2 lượt · 2 mạng
 
-| dishId | angleDeg | radius | với Hổ |
+| dishId | angleDeg | radius | vai trò |
 |---|---|---|---|
-| `goi_cuon` | 250 | 0.58 | **want** |
-| `banh_mi` | 228 | 0.58 | forbid |
-| `gimbap` | 206 | 0.58 | **want** |
+| `gimbap` | 211.4 | 0.35 | **want** Hổ |
+| `ca_phe` | 122.3 | 0.81 | **want** Hổ |
+| `gimbap` | 213.1 | 0.63 | **want** Hổ |
+| `bibimbap` | 244.9 | 0.47 | forbid Hổ |
+| `banh_mi` | 192.8 | 0.76 | forbid Hổ |
+| `songpyeon` | 333.1 | 0.34 | trang trí |
+| `goi_cuon` | 75.5 | 0.4 | trang trí |
+| `tteokbokki` | 15.3 | 0.43 | trang trí |
+| `pho` | 290.1 | 0.44 | trang trí |
+| `songpyeon` | 169.6 | 0.47 | trang trí |
+| `goi_cuon` | 51.2 | 0.55 | trang trí |
 
-`spinSpeed ≈ 24°/s`. Ba món cách nhau `22°`.
+**Lời giải ngắn nhất:**
 
-**Lời giải:**
+1. chờ 3.80 giây, giữ 0.22 giây → ăn `gimbap`, `gimbap`.
+2. chờ 6.40 giây, giữ 0.52 giây → ăn `ca_phe`.
 
-1. Chờ `θ ≈ 20°` → `goi_cuon` về ~270°. Khe hẹp, thả. `banh_mi` lúc đó lệch `22°` về trái, `perp ≈ 0.22`, ngoài khe hẹp (`w = 0.08`) và trong khe nếu nới quá khoảng hai phần ba thanh.
-2. Chờ `θ ≈ 64°` → `gimbap` về ~270°. Khe hẹp, thả. `banh_mi` lúc đó lệch `22°` sang phía kia của đường tâm.
-
-Khoảng chờ giữa hai nhát là `44°`, khoảng `1,8` giây cộng nhịp khóa. Nới `w` quá `0.22` trong một trong hai nhát sẽ ăn `banh_mi`.
+Cửa sổ nhịp hẹp nhất: chờ 1.30 giây, giữ 0.38 giây.
 
 ---
 
-### Màn 7 — Hổ, xoay · cụm 2 thèm, cấm ở rìa
+### Màn 7 — Hổ
 
-**Ý đồ:** hai thèm sát nhau gần đường tâm; cấm ở rìa cụm. Phanh và nới vừa đủ.
+**Ý đồ:** Mâm xoay vừa, ba món cấm. Khe phải thu hẹp hoặc chờ mâm đưa món thèm vào đúng đường tâm.
 
-| dishId | angleDeg | radius | với Hổ |
+Xoay `20`°/s · 3 lượt · 2 mạng
+
+| dishId | angleDeg | radius | vai trò |
 |---|---|---|---|
-| `gimbap` | 262 | 0.58 | **want** |
-| `goi_cuon` | 278 | 0.58 | **want** |
-| `pho` | 300 | 0.58 | forbid |
-| `ca_phe` | 100 | 0.78 | forbid |
+| `tteokbokki` | 41.2 | 0.55 | **want** Hổ |
+| `pho` | 315 | 0.58 | **want** Hổ |
+| `tteokbokki` | 120.9 | 0.8 | **want** Hổ |
+| `gimbap` | 16.7 | 0.55 | forbid Hổ |
+| `banh_mi` | 138.5 | 0.86 | forbid Hổ |
+| `gimbap` | 64.9 | 0.67 | forbid Hổ |
+| `bibimbap` | 196.7 | 0.39 | trang trí |
+| `goi_cuon` | 268.9 | 0.43 | trang trí |
+| `songpyeon` | 233.7 | 0.76 | trang trí |
+| `ca_phe` | 334.2 | 0.66 | trang trí |
+| `bibimbap` | 171.9 | 0.81 | trang trí |
 
-`spinSpeed ≈ 36°/s`.
+**Lời giải ngắn nhất:**
 
-**Lời giải:** khi tâm cụm thèm về 270° (`θ ≈ 8°`), phanh, nới `w ≈ 0.14` (ôm lệch ±8° tại 0.58), thả. Một nhát hết 2 thèm. `pho` @ +30° còn ngoài.
+1. chờ 7.35 giây, giữ 0.14 giây → ăn `tteokbokki`.
+2. chờ 3.80 giây, giữ 0.20 giây → ăn `tteokbokki`.
+3. chờ 4.15 giây, giữ 0.52 giây → ăn `pho`.
 
-`charges = 1`.
-
-**Cửa sổ:** `w ∈ [0.11, 0.18]`. Hẹp quá → sót một thèm, hết lượt. Rộng quá → `pho`.
+Cửa sổ nhịp hẹp nhất: chờ 0.90 giây, giữ 0.34 giây.
 
 ---
 
-### Màn 8 — Mê, xoay · một nhát dài lướt
+### Màn 8 — Mê
 
-**Ý đồ:** thèm nằm trên dải gần. Nhát dài ăn thèm + vượt `crossAt`, đáp mép kia. Dải mới lúc đáp không có cấm.
+**Ý đồ:** Màn dạy Mê. Mâm đứng yên, dải lắc nhẹ. Giữ quá nửa thanh thì Mê lướt sang mép đối diện.
 
-| dishId | angleDeg | radius | với Mê |
+Xoay `0`°/s · 3 lượt · 3 mạng
+
+| dishId | angleDeg | radius | vai trò |
 |---|---|---|---|
-| `bibimbap` | 270 | 0.70 | **want** |
-| `songpyeon` | 90 | 0.70 | forbid |
-| `tteokbokki` | 0 | 0.50 | forbid |
+| `bibimbap` | 265.4 | 0.71 | **want** Mê |
+| `banh_mi` | 266.2 | 0.39 | **want** Mê |
+| `bibimbap` | 84.2 | 0.44 | **want** Mê |
+| `gimbap` | 286.9 | 0.72 | forbid Mê |
+| `goi_cuon` | 156.5 | 0.53 | trang trí |
+| `tteokbokki` | 15.8 | 0.51 | trang trí |
+| `pho` | 198.1 | 0.79 | trang trí |
+| `songpyeon` | 326 | 0.68 | trang trí |
+| `ca_phe` | 116.8 | 0.8 | trang trí |
+| `goi_cuon` | 40.1 | 0.53 | trang trí |
+| `tteokbokki` | 235.4 | 0.61 | trang trí |
 
-Mê bắt đầu ở `270`. `spinSpeed ≈ 32°/s`.
+**Lời giải ngắn nhất:**
 
-**Lời giải:** chỉnh xoay nhẹ nếu cần để `bibimbap` thẳng dải (`θ ≈ 0` nếu đã sẵn 270). Giữ dài qua `crossAt`, thả. Ăn `bibimbap`, lướt sang `90`. Lúc đáp, `songpyeon` đang ở phía mới nhưng **đã là forbid và không còn thèm** — màn chỉ có 1 thèm, qua màn ngay khi ăn xong, trước khi nhát sau xảy ra. `songpyeon` / `tteokbokki` chỉ là bẫy nếu người chơi nhát ngắn rồi cố nhát 2 (nhưng hết lượt).
+1. chờ 0.85 giây, giữ 0.60 giây (Mê lướt sang mép đối diện) → ăn `bibimbap`, `banh_mi`.
+2. không chờ, giữ 0.58 giây (Mê lướt sang mép đối diện) → ăn `bibimbap`.
 
-**Lượt = 1:** buộc phải nhát dài đúng. Nhát ngắn ăn được thèm nhưng không sao — vẫn qua màn vì hết thèm. (Nếu muốn bắt buộc lướt để dạy skill: chuyển `songpyeon` thành **want** và để nó chỉ vào dải sau khi lướt — đó là màn 9. Màn 8 giữ 1 thèm.)
+Cửa sổ nhịp hẹp nhất: chờ 1.75 giây, giữ 0.80 giây.
 
-**Cửa sổ:** miễn `bibimbap` nằm trên nửa dưới và dải đủ dài tới `radius 0.70`. Cấm lệch góc không nằm trên dải nếu không xoay nhầm quá lâu trước khi thả.
+**Gợi ý hiện trong màn:** Chạm: dải ngắn. Giữ lâu hơn một chút: dải dài ra và Mê lướt sang mép đối diện.
 
 ---
 
-### Màn 9 — Mê, xoay · lướt rồi cắn nhát 2
+### Màn 9 — Mê
 
-**Ý đồ:** nhát dài ăn A + lướt. B spawn ở `125`, nên chỉ thẳng dải phía trên sau gần một vòng. Cắn B khi nó nằm trên dải, trước khi nó đi ra.
+**Ý đồ:** Mâm xoay chậm, ba nhát. Mỗi nhát dài đổi mép đứng của Mê.
 
-| dishId | angleDeg | radius | với Mê |
+Xoay `16`°/s · 3 lượt · 2 mạng
+
+| dishId | angleDeg | radius | vai trò |
 |---|---|---|---|
-| `pho` | 255 | 0.68 | **want** (A) |
-| `ca_phe` | 85 | 0.68 | **want** (B) |
-| `banh_mi` | 110 | 0.68 | forbid |
-| `gimbap` | 200 | 0.50 | forbid |
+| `bibimbap` | 106.3 | 0.76 | **want** Mê |
+| `banh_mi` | 356.8 | 0.4 | **want** Mê |
+| `bibimbap` | 271.7 | 0.67 | **want** Mê |
+| `gimbap` | 296.4 | 0.72 | forbid Mê |
+| `ca_phe` | 36.7 | 0.42 | forbid Mê |
+| `tteokbokki` | 156.2 | 0.82 | trang trí |
+| `goi_cuon` | 196.1 | 0.58 | trang trí |
+| `songpyeon` | 246.2 | 0.4 | trang trí |
+| `pho` | 82.5 | 0.78 | trang trí |
+| `tteokbokki` | 329.2 | 0.64 | trang trí |
+| `goi_cuon` | 216.3 | 0.84 | trang trí |
 
-Mê bắt đầu `270`. `spinSpeed ≈ 34°/s`.
+**Lời giải ngắn nhất:**
 
-**Lời giải:**
+1. chờ 0.30 giây, giữ 0.56 giây (Mê lướt sang mép đối diện) → ăn `bibimbap`.
+2. chờ 5.00 giây, giữ 0.60 giây (Mê lướt sang mép đối diện) → ăn `banh_mi`.
+3. chờ 4.60 giây, chạm → ăn `bibimbap`.
 
-1. Chờ `θ ≈ 15°` → A về ~270°. Giữ dài vượt `crossAt`, thả. Ăn A, Mê → `90`.
-2. Sau khi đáp, xoay thêm tới `θ` tổng ≈ `50°` từ đầu: B (`85+50=135`… cần chỉnh) — **hiệu chỉnh góc spawn B** để sau lướt, với `θ₂` nhỏ, B nằm trên dải phía `90` còn `banh_mi` còn lệch.
-
-Góc spawn chỉnh lại cho dễ playtest (bảng chính thức màn 9):
-
-| dishId | angleDeg | radius | với Mê |
-|---|---|---|---|
-| `pho` | 270 | 0.68 | **want** A |
-| `ca_phe` | 125 | 0.68 | **want** B |
-| `banh_mi` | 105 | 0.68 | forbid |
-| `gimbap` | 200 | 0.50 | forbid |
-
-Nhát 1 tại `θ≈0`: dải đang gần giữa, nhấn giữ để đóng băng góc đó và phanh mâm. Giữ dài hơn `crossAt` rồi thả, lướt sang 90.  
-Nhát 2: chờ `θ` khoảng `317°` đến `333°` thì `ca_phe` (`125 + θ`) về `90°`. `banh_mi` lúc đó vẫn lệch khỏi dải. Thả nhanh khi dải đang đè Cà phê.
-
-**Cửa sổ nhát 2:** `θ ∈ [317°, 333°]`. Cà phê nằm trên dải phía trên. Nhấn giữ lúc dải đang đè Cà phê thì góc đóng băng và mâm phanh. Cà phê spawn ở `125`, nên không vào dải trên ngay sau lúc lướt. Nhát 1 nếu ngắn: hết 1 lượt, Mê còn ở 270; Cà phê phải đi gần nửa vòng nữa mới tới đáy, và Bánh mì dễ đi kèm. Lời giải dự kiến vẫn là nhát dài rồi chờ ở mép trên.
+Cửa sổ nhịp hẹp nhất: chờ 0.65 giây, giữ 0.10 giây.
 
 ---
 
-### Màn 10 — Gumiho, xoay chậm · bốn món cách xa
+### Màn 10 — Mê
 
-**Ý đồ:** không đổi món. Bốn món đứng cách nhau `90°` trên vành `0.58`. Vòng tối đa của Gumiho với tới khoảng `±47°` trên vành này, nên một nhát chỉ ăn được một món. Món cấm đi qua miệng giữa hai món thèm.
+**Ý đồ:** Bốn món thèm, hai món cấm. Phải tính trước nhát nào lướt, nhát nào đứng yên.
 
-| dishId | angleDeg | radius | với Gumiho |
+Xoay `22`°/s · 4 lượt · 2 mạng
+
+| dishId | angleDeg | radius | vai trò |
 |---|---|---|---|
-| `songpyeon` | 250 | 0.58 | **want** |
-| `pho` | 160 | 0.58 | forbid |
-| `gimbap` | 70 | 0.58 | **want** |
-| `banh_mi` | 340 | 0.58 | **want** |
+| `gimbap` | 70.4 | 0.69 | **want** Mê |
+| `banh_mi` | 18.7 | 0.47 | **want** Mê |
+| `gimbap` | 154.9 | 0.56 | **want** Mê |
+| `banh_mi` | 227.7 | 0.37 | **want** Mê |
+| `songpyeon` | 343.5 | 0.28 | forbid Mê |
+| `ca_phe` | 52.4 | 0.86 | forbid Mê |
+| `bibimbap` | 297.2 | 0.79 | trang trí |
+| `goi_cuon` | 126.1 | 0.72 | trang trí |
+| `tteokbokki` | 204.3 | 0.71 | trang trí |
+| `pho` | 262.6 | 0.64 | trang trí |
+| `bibimbap` | 88.7 | 0.55 | trang trí |
 
-`spinSpeed ≈ 26°/s`. `charges = 3`. `swapAfterBite = 0`.
+**Lời giải ngắn nhất:**
 
-Thứ tự vào đáy (`θ = (270 − angleDeg) mod 360`):
+1. chờ 1.70 giây, giữ 0.62 giây (Mê lướt sang mép đối diện) → ăn `banh_mi`.
+2. chờ 0.90 giây, giữ 0.58 giây (Mê lướt sang mép đối diện) → ăn `banh_mi`.
+3. chờ 5.85 giây, giữ 0.56 giây (Mê lướt sang mép đối diện) → ăn `gimbap`.
+4. chờ 4.35 giây, giữ 0.56 giây (Mê lướt sang mép đối diện) → ăn `gimbap`.
 
-1. `θ ≈ 20°`: `songpyeon` vào vòng nhỏ. Thả nhanh.
-2. `θ ≈ 110°`: `pho` đi qua đáy. Không thả.
-3. `θ ≈ 200°`: `gimbap` vào vòng nhỏ. Thả nhanh.
-4. `θ ≈ 290°`: `banh_mi` vào vòng nhỏ. Thả nhanh.
-
-Khi một món nằm đúng đáy, món kế cách `90°`. Khoảng cách từ tâm vòng tới món đó khoảng `0.85`, lớn hơn `rMax = 0.48`. Giữ hết vẫn không nuốt kèm món bên cạnh. Cắn `pho` thì mất một lượt và một mạng, không đủ lượt cho ba món thèm.
+Cửa sổ nhịp hẹp nhất: chờ 0.70 giây, giữ 0.78 giây.
 
 ---
 
-### Màn 11 — Gumiho trái + Hổ phải · dạy chia nửa
+### Màn 11 — Gumiho
 
-**Ý đồ:** mỗi món chỉ đi vào vùng của đúng người thèm. Không xung đột.
+**Ý đồ:** Gumiho quay lại, mâm xoay nhanh nhất từ đầu game. Bốn món thèm rải bốn phía, mỗi nhát một món.
 
-Neo: Gumiho `180°`, Hổ `0°`. Vùng không chồng; chừa ~15% đường kính ở tâm. `spinSpeed ≈ 26°/s`. `charges = 3`.
+Xoay `38`°/s · 4 lượt · 2 mạng
 
-| dishId | angleDeg | radius | Gumiho | Hổ |
-|---|---|---|---|---|
-| `songpyeon` | 170 | 0.72 | **want** | forbid |
-| `tteokbokki` | 200 | 0.55 | **want** | forbid |
-| `gimbap` | 350 | 0.72 | forbid | **want** |
-| `goi_cuon` | 20 | 0.55 | forbid | **want** |
+| dishId | angleDeg | radius | vai trò |
+|---|---|---|---|
+| `tteokbokki` | 192.2 | 0.74 | **want** Gumiho |
+| `ca_phe` | 32.1 | 0.67 | **want** Gumiho |
+| `tteokbokki` | 122.7 | 0.49 | **want** Gumiho |
+| `ca_phe` | 221.1 | 0.36 | **want** Gumiho |
+| `songpyeon` | 156.4 | 0.28 | forbid Gumiho |
+| `pho` | 215.2 | 0.86 | forbid Gumiho |
+| `gimbap` | 283.8 | 0.68 | trang trí |
+| `goi_cuon` | 331.2 | 0.5 | trang trí |
+| `bibimbap` | 87.2 | 0.71 | trang trí |
+| `banh_mi` | 259.1 | 0.73 | trang trí |
+| `gimbap` | 10.8 | 0.33 | trang trí |
+| `goi_cuon` | 68.4 | 0.6 | trang trí |
 
-```
-     trên
-       |
- Gumiho ----+---- Hổ
- 180   tâm    0
-```
+**Lời giải ngắn nhất:**
 
-**Lời giải (một trong các thứ tự):**
+1. chờ 0.25 giây, giữ 0.42 giây → ăn `ca_phe`.
+2. chờ 1.55 giây, giữ 0.20 giây → ăn `tteokbokki`.
+3. chờ 1.60 giây, giữ 0.20 giây → ăn `tteokbokki`.
+4. chờ 2.20 giây, giữ 0.52 giây → ăn `ca_phe`.
 
-1. Nửa trái: chờ `songpyeon` vào vòng Gumiho, thả.  
-2. Nửa phải: chờ `gimbap` vào khe Hổ, thả.  
-3. Lượt còn lại: ăn nốt `tteokbokki` (Gumiho) hoặc `goi_cuon` (Hổ) — **thiếu 1 lượt**.  
-
-Chỉnh: gộp một nhát ôm 2 thèm cùng khách, hoặc giảm còn 3 món thèm.
-
-**Bảng ship màn 11 (3 thèm, 3 lượt):**
-
-| dishId | angleDeg | radius | Gumiho | Hổ |
-|---|---|---|---|---|
-| `songpyeon` | 175 | 0.70 | **want** | forbid |
-| `gimbap` | 355 | 0.70 | forbid | **want** |
-| `goi_cuon` | 15 | 0.55 | forbid | **want** |
-| `pho` | 95 | 0.45 | forbid | forbid |
-
-1. Trái — `songpyeon`.  
-2. Phải — khe hẹp `gimbap` (chưa nới tới `goi_cuon`).  
-3. Phải — chờ `goi_cuon` vào đường tâm, khe hẹp.
-
-`pho` giữa trên là bẫy tâm / nhiễu, ngoài hai vùng mép nếu không nới quá tay.
+Cửa sổ nhịp hẹp nhất: chờ 0.55 giây, giữ 0.34 giây.
 
 ---
 
-### Màn 12 — Gumiho + Hổ · xung đột thời điểm
+### Màn 12 — Hổ
 
-**Ý đồ:** một món Gumiho thèm / Hổ chưa thèm — phải cắn bằng Gumiho trước khi xoay sang miệng Hổ. Một món cả hai thèm nằm phía Hổ. Một bẫy chung.
+**Ý đồ:** Hổ quay lại, mâm xoay nhanh. Bốn món thèm rải khắp mâm, khe phải đúng nhịp từng lần.
 
-| dishId | angleDeg | radius | Gumiho | Hổ | Ghi chú |
-|---|---|---|---|---|---|
-| `songpyeon` | 150 | 0.70 | **want** | forbid | xung đột: chỉ Gumiho được ăn |
-| `gimbap` | 10 | 0.70 | **want** | **want** | cả hai thèm, đang phía Hổ |
-| `banh_mi` | 190 | 0.55 | forbid | forbid | bẫy hai vùng |
-| `goi_cuon` | 330 | 0.55 | forbid | **want** | chỉ Hổ |
+Xoay `40`°/s · 5 lượt · 2 mạng
 
-`spinSpeed ≈ 38°/s`. `charges = 3`.
+| dishId | angleDeg | radius | vai trò |
+|---|---|---|---|
+| `gimbap` | 211.5 | 0.59 | **want** Hổ |
+| `goi_cuon` | 86.3 | 0.47 | **want** Hổ |
+| `gimbap` | 304.8 | 0.83 | **want** Hổ |
+| `goi_cuon` | 173.2 | 0.44 | **want** Hổ |
+| `tteokbokki` | 184.7 | 0.69 | forbid Hổ |
+| `banh_mi` | 102.3 | 0.52 | forbid Hổ |
+| `songpyeon` | 3.5 | 0.4 | trang trí |
+| `pho` | 256.6 | 0.39 | trang trí |
+| `bibimbap` | 58.2 | 0.79 | trang trí |
+| `ca_phe` | 138.9 | 0.63 | trang trí |
+| `songpyeon` | 342.8 | 0.44 | trang trí |
+| `pho` | 34.3 | 0.67 | trang trí |
 
-**Lời giải:**
+**Lời giải ngắn nhất:**
 
-1. **Ưu tiên trái:** khi `songpyeon` còn trong vòng Gumiho (`θ` nhỏ, món ~150°→ chưa sang nửa phải), giữ trái và thả. Trễ tới khi món qua ~0° phía Hổ → Hổ cắn sẽ hỏng (forbid với Hổ), Gumiho không với tới.
-2. Phải — ăn `gimbap` (cả hai want, khe hoặc vòng bên phải tùy món đang trong vùng Hổ).
-3. Phải — ăn `goi_cuon` khe hẹp, tránh `banh_mi` nếu đang gần.
+1. chờ 1.05 giây, giữ 0.56 giây → ăn `gimbap`.
+2. chờ 1.25 giây, chạm → ăn `goi_cuon`.
+3. chờ 2.10 giây, chạm → ăn `goi_cuon`.
+4. chờ 3.30 giây, giữ 0.52 giây → ăn `gimbap`.
 
-**Cửa sổ xung đột `songpyeon`:** với `rMax = 0.47`, tâm món còn trong vòng Gumiho tới góc màn hình khoảng `221°` (`θ ≈ 71°`). Sau mốc đó Gumiho không với tới. Hổ chỉ với tới khi hình chiếu của món lên tia neo của Hổ ≥ `0.15`.
+Cửa sổ nhịp hẹp nhất: chờ 0.40 giây, giữ 0.30 giây.
 
 ---
 
-## 5. Màn 13–17
+### Màn 13 — Cò
 
-Cách chơi nằm ở `Huong-Dan-Man-13-16.md`. Màn 13 và 14 không còn là màn Mê. Dải lắc đã có ở màn 8 và 9.
+**Ý đồ:** Màn dạy Cò. Mâm đứng yên. Chấm là độ sâu, không phải bề rộng.
 
-### Màn 13 — Hổ, đứng yên · cụm bên trái
+Xoay `0`°/s · 3 lượt · 3 mạng
 
-`spinSpeed = 0`. `charges = 2`. `hearts = 3`.
-
-| dishId | angleDeg | radius | với Hổ |
+| dishId | angleDeg | radius | vai trò |
 |---|---|---|---|
-| `goi_cuon` | 258 | 0.58 | **want** |
-| `gimbap` | 240 | 0.52 | forbid |
-| `bibimbap` | 222 | 0.40 | forbid |
+| `bibimbap` | 273.5 | 0.39 | **want** Cò |
+| `ca_phe` | 275.5 | 0.67 | **want** Cò |
+| `bibimbap` | 264 | 0.56 | **want** Cò |
+| `tteokbokki` | 250.9 | 0.37 | forbid Cò |
+| `banh_mi` | 287.9 | 0.59 | forbid Cò |
+| `gimbap` | 47.1 | 0.38 | trang trí |
+| `pho` | 171 | 0.8 | trang trí |
+| `songpyeon` | 121.3 | 0.8 | trang trí |
+| `goi_cuon` | 336.4 | 0.73 | trang trí |
+| `gimbap` | 200.6 | 0.42 | trang trí |
+| `pho` | 71.3 | 0.47 | trang trí |
+| `songpyeon` | 18.6 | 0.82 | trang trí |
 
-Gỏi cuốn lệch `12°` về trái, `perp ≈ 0.12`. Khe lúc mới giữ (`w = 0.08`) chưa tới. Gimbap lệch `30°`, bán kính `0.52`, `perp ≈ 0.26`, chỉ vào khe khi giữ gần hết. Bibimbap lệch `48°`, `perp ≈ 0.30`, ngoài `wMax = 0.28`.
+**Lời giải ngắn nhất:**
 
-**Lời giải:** giữ khoảng `0.12` đến `0.40` giây rồi thả. Thả ngay thì hụt, còn 1 lượt. Giữ gần hết thì dính Gimbap.
+1. không chờ, giữ 0.20 giây → ăn `ca_phe`, `bibimbap`.
+2. không chờ, giữ 0.36 giây → ăn `bibimbap`.
 
-### Màn 14 — hai khách, đứng yên
+Cửa sổ nhịp hẹp nhất: chờ không đổi (mâm không đổi theo giờ), giữ 0.12 giây.
 
-`guestMode = GumihoHo`. `spinSpeed = 0`. `charges = 2`. `hearts = 3`.
+**Gợi ý hiện trong màn:** Cò chọc từ mép vào. Giữ để chấm đi sâu hơn. Chạm sớm thì chấm còn ở sát mép.
 
-| dishId | angleDeg | radius | Gumiho | Hổ |
-|---|---|---|---|---|
-| `songpyeon` | 175 | 0.72 | **want** | forbid |
-| `banh_mi` | 180 | 0.35 | forbid | forbid |
-| `gimbap` | 0 | 0.70 | forbid | **want** |
-| `pho` | 95 | 0.45 | forbid | forbid |
+---
 
-Songpyeon cách tâm vòng Gumiho khoảng `0.12`, nằm trong vòng nhỏ. Bánh mì trên cùng tia, cách tâm vòng `0.27`, vào vòng khi giữ hơn khoảng một phần tư thanh. Gimbap nằm đúng khe hẹp của Hổ. Phở ở phía trên, ngoài cả hai vùng kể cả khi giữ hết.
+### Màn 14 — Cò
 
-**Lời giải:**
+**Ý đồ:** Cò ngồi lệch trái 12°, mâm xoay chậm. Bốn món thèm đi qua mỏ lần lượt.
 
-1. Nửa trái, thả ngay. Ăn Songpyeon. Giữ thì dính Bánh mì.
-2. Nửa phải, thả ngay. Ăn Gimbap.
+Xoay `24`°/s · 4 lượt · 2 mạng · `anchorOffset = -12`
 
-### Màn 15 — Cò, mâm xoay chậm
-
-`spinSpeed = 28`, `charges = 2`, `hearts = 3`. Ba món vẫn cùng một tia. Lúc mở màn tia đang trước mỏ. Giữ khoảng `0.16` đến `0.34` giây khi tia còn trước mặt thì ăn Gỏi cuốn. Mâm phanh nên tia chỉ trôi vài độ trong nhát. Nếu để tia đi qua, chờ vòng sau.
-
-| dishId | angleDeg | radius | với Cò |
+| dishId | angleDeg | radius | vai trò |
 |---|---|---|---|
-| `goi_cuon` | 270 | 0.55 | **want** |
-| `banh_mi` | 270 | 0.82 | forbid |
-| `pho` | 270 | 0.34 | forbid |
+| `tteokbokki` | 220.9 | 0.66 | **want** Cò |
+| `ca_phe` | 203.4 | 0.42 | **want** Cò |
+| `tteokbokki` | 68.7 | 0.43 | **want** Cò |
+| `ca_phe` | 265.9 | 0.41 | **want** Cò |
+| `bibimbap` | 231.8 | 0.32 | forbid Cò |
+| `pho` | 45.7 | 0.4 | forbid Cò |
+| `songpyeon` | 337.3 | 0.47 | trang trí |
+| `banh_mi` | 151.4 | 0.73 | trang trí |
+| `gimbap` | 112.9 | 0.42 | trang trí |
+| `goi_cuon` | 290.9 | 0.39 | trang trí |
+| `songpyeon` | 19.2 | 0.73 | trang trí |
+| `banh_mi` | 180.1 | 0.31 | trang trí |
 
-### Màn 16 — Dokkaebi, khóa độ sâu rồi đổi sau nhát 1
+**Lời giải ngắn nhất:**
 
-`spinSpeed = 0`. `charges = 3`. `hearts = 3`. `swapAfterBite = 1`.
+1. chờ 1.40 giây, giữ 0.16 giây → ăn `tteokbokki`.
+2. chờ 0.60 giây, giữ 0.64 giây → ăn `ca_phe`.
+3. chờ 5.15 giây, giữ 0.64 giây → ăn `tteokbokki`.
+4. chờ 6.85 giây, giữ 0.64 giây → ăn `ca_phe`.
 
-| dishId | angleDeg | radius | trước | sau |
-|---|---|---|---|---|
-| `banh_mi` | 270 | 0.84 | forbid | **want** |
-| `gimbap` | 288 | 0.56 | **want** | **want** |
-| `bibimbap` | 312 | 0.56 | forbid | forbid |
+Cửa sổ nhịp hẹp nhất: chờ 0.70 giây, giữ 0.26 giây.
 
-Gimbap và Bibimbap cùng vành trong. Bánh mì nằm trên tia, sát mép. Gimbap vẫn thèm sau khi đổi, để nhát hụt không xóa mục tiêu. Bánh mì thành thèm. Bibimbap vẫn cấm.
+---
 
-**Lời giải:**
+### Màn 15 — Dokkaebi
 
-1. Khóa `along` khoảng `0.56`, giữ `0.08` đến `0.30` giây, thả khi đốm nằm trên Gimbap. Icon đổi.
-2. Khóa `along` khoảng `0.84`, thả ngay. Đốm đứng trên Bánh mì, món vừa thành thèm.
+**Ý đồ:** Màn dạy Dokkaebi. Mâm đứng yên, đốm lửa chạy tâm–mép. Icon đổi sau nhát đầu.
 
-Còn 1 lượt nếu nhát đầu hụt: sau đổi vẫn phải ăn Gimbap rồi Bánh mì.
+Xoay `0`°/s · 5 lượt · 3 mạng · đổi icon sau nhát 1
 
-### Màn 17 — Dokkaebi, hai độ sâu rồi đổi sau nhát 2
+| dishId | angleDeg | radius | vai trò |
+|---|---|---|---|
+| `songpyeon` | 303.2 | 0.77 | **want** Dokkaebi → sau đổi: trang trí |
+| `goi_cuon` | 230.2 | 0.31 | **want** Dokkaebi → sau đổi: trang trí |
+| `songpyeon` | 240 | 0.81 | **want** Dokkaebi → sau đổi: trang trí |
+| `tteokbokki` | 271.1 | 0.44 | forbid Dokkaebi → sau đổi: **want** Dokkaebi |
+| `banh_mi` | 298.3 | 0.61 | forbid Dokkaebi → sau đổi: **want** Dokkaebi |
+| `tteokbokki` | 284.3 | 0.83 | forbid Dokkaebi → sau đổi: **want** Dokkaebi |
+| `gimbap` | 102.5 | 0.34 | trang trí |
+| `pho` | 46.9 | 0.41 | trang trí |
+| `bibimbap` | 179.7 | 0.47 | trang trí |
+| `ca_phe` | 342.6 | 0.59 | trang trí |
+| `gimbap` | 153.4 | 0.41 | trang trí |
+| `pho` | 18.1 | 0.8 | trang trí |
 
-`spinSpeed = 0`. `charges = 4`. `hearts = 3`. `swapAfterBite = 2`.
+**Lời giải ngắn nhất:**
 
-| dishId | angleDeg | radius | trước | sau |
-|---|---|---|---|---|
-| `goi_cuon` | 290 | 0.48 | **want** | |
-| `ca_phe` | 296 | 0.80 | **want** | forbid |
-| `banh_mi` | 270 | 0.80 | forbid | **want** |
-| `bibimbap` | 312 | 0.80 | forbid | forbid |
+1. chờ 0.25 giây, giữ 0.72 giây (nhấn nửa trái màn hình) → ăn `songpyeon`.
+2. không chờ, giữ 0.42 giây (nhấn nửa phải màn hình) → ăn `tteokbokki`.
+3. chờ 0.90 giây, giữ 0.68 giây (nhấn nửa phải màn hình) → ăn `banh_mi`.
+4. chờ 0.15 giây, chạm → ăn `tteokbokki`.
 
-Gỏi cuốn nằm vành trong. Ba món kia sát mép. Sau đổi, Gỏi cuốn không còn thèm, Cà phê thành cấm, Bánh mì thành thèm, Bibimbap vẫn cấm. Lời giải dùng 3 nhát, còn 1 lượt dự phòng. Chi tiết nhát nằm ở `Huong-Dan-Man-13-16.md`.
+Cửa sổ nhịp hẹp nhất: chờ 0.25 giây, giữ 0.36 giây.
 
-Hai khách gợi ý, chưa có màn: **Rùa** (vòng từ tâm lan ra) và **Quạt** (cánh mở góc về một phía). Quạt vẫn để sau hạn nộp.
+**Gợi ý hiện trong màn:** Đốm lửa chạy từ tâm ra mép. Chạm nhanh: đốm đứng yên. Giữ lâu: đốm quét ngang. Sau nhát đầu, icon đổi.
+
+---
+
+### Màn 16 — Dokkaebi
+
+**Ý đồ:** Mâm xoay chậm. Icon đổi sau nhát đầu: món cấm thành món thèm, món trung lập thành món cấm.
+
+Xoay `20`°/s · 5 lượt · 2 mạng · đổi icon sau nhát 1
+
+| dishId | angleDeg | radius | vai trò |
+|---|---|---|---|
+| `tteokbokki` | 178.7 | 0.67 | **want** Dokkaebi → sau đổi: trang trí |
+| `banh_mi` | 226 | 0.63 | **want** Dokkaebi → sau đổi: trang trí |
+| `bibimbap` | 189.7 | 0.43 | forbid Dokkaebi → sau đổi: **want** Dokkaebi |
+| `goi_cuon` | 206.5 | 0.54 | forbid Dokkaebi → sau đổi: **want** Dokkaebi |
+| `bibimbap` | 132.4 | 0.84 | forbid Dokkaebi → sau đổi: **want** Dokkaebi |
+| `songpyeon` | 166.8 | 0.62 | trang trí → sau đổi: forbid Dokkaebi |
+| `pho` | 332.1 | 0.47 | trang trí |
+| `gimbap` | 52.7 | 0.57 | trang trí |
+| `ca_phe` | 269.3 | 0.82 | trang trí |
+| `pho` | 17.5 | 0.44 | trang trí |
+| `gimbap` | 81.6 | 0.45 | trang trí |
+| `ca_phe` | 312.1 | 0.36 | trang trí |
+
+**Lời giải ngắn nhất:**
+
+1. chờ 1.15 giây, giữ 0.44 giây (nhấn nửa trái màn hình) → ăn `banh_mi`.
+2. chờ 1.30 giây, giữ 0.60 giây (nhấn nửa trái màn hình) → ăn `bibimbap`.
+3. chờ 0.05 giây, giữ 0.20 giây (nhấn nửa phải màn hình) → ăn `goi_cuon`.
+4. chờ 2.85 giây, giữ 0.48 giây (nhấn nửa trái màn hình) → ăn `bibimbap`.
+
+Cửa sổ nhịp hẹp nhất: chờ 0.20 giây, giữ 0.34 giây.
+
+---
+
+### Màn 17 — Dokkaebi
+
+**Ý đồ:** Mâm xoay nhanh hơn. Icon đổi sau nhát thứ hai, nên phải ăn đủ hai nhát trước khi đổi.
+
+Xoay `26`°/s · 4 lượt · 2 mạng · đổi icon sau nhát 2
+
+| dishId | angleDeg | radius | vai trò |
+|---|---|---|---|
+| `tteokbokki` | 200.2 | 0.77 | **want** Dokkaebi → sau đổi: trang trí |
+| `pho` | 239.8 | 0.38 | **want** Dokkaebi → sau đổi: trang trí |
+| `songpyeon` | 5.1 | 0.57 | forbid Dokkaebi → sau đổi: **want** Dokkaebi |
+| `ca_phe` | 25.8 | 0.71 | forbid Dokkaebi → sau đổi: **want** Dokkaebi |
+| `gimbap` | 217.6 | 0.68 | trang trí → sau đổi: forbid Dokkaebi |
+| `goi_cuon` | 185.9 | 0.86 | trang trí → sau đổi: forbid Dokkaebi |
+| `bibimbap` | 85.6 | 0.76 | trang trí |
+| `banh_mi` | 283.7 | 0.35 | trang trí |
+| `bibimbap` | 119.1 | 0.61 | trang trí |
+| `banh_mi` | 313.4 | 0.6 | trang trí |
+| `bibimbap` | 145.3 | 0.82 | trang trí |
+| `banh_mi` | 50.1 | 0.56 | trang trí |
+
+**Lời giải ngắn nhất:**
+
+1. chờ 1.35 giây, chạm → ăn `pho`.
+2. chờ 1.40 giây, giữ 0.28 giây (nhấn nửa phải màn hình) → ăn `tteokbokki`.
+3. chờ 4.95 giây, giữ 0.74 giây (nhấn nửa trái màn hình) → ăn `ca_phe`.
+4. chờ 1.00 giây, giữ 0.56 giây (nhấn nửa trái màn hình) → ăn `songpyeon`.
+
+Cửa sổ nhịp hẹp nhất: chờ 0.25 giây, giữ 0.34 giây.
+
+---
+
+### Màn 18 — Gumiho trái + Hổ phải
+
+**Ý đồ:** Màn dạy hai khách. Mâm đứng yên. Mỗi khách hai món thèm riêng, món của người này là món cấm của người kia.
+
+Xoay `0`°/s · 3 lượt · 3 mạng
+
+| dishId | angleDeg | radius | vai trò |
+|---|---|---|---|
+| `songpyeon` | 158.3 | 0.82 | **want** Gumiho, forbid Hổ |
+| `pho` | 159 | 0.34 | **want** Gumiho, forbid Hổ |
+| `bibimbap` | 2.4 | 0.83 | **want** Hổ, forbid Gumiho |
+| `ca_phe` | 0.4 | 0.51 | **want** Hổ, forbid Gumiho |
+| `gimbap` | 19 | 0.86 | forbid Gumiho, Hổ |
+| `goi_cuon` | 342.6 | 0.86 | forbid Gumiho, Hổ |
+| `tteokbokki` | 260.2 | 0.33 | trang trí |
+| `banh_mi` | 99 | 0.66 | trang trí |
+| `tteokbokki` | 217 | 0.4 | trang trí |
+| `banh_mi` | 311.6 | 0.41 | trang trí |
+| `tteokbokki` | 46.7 | 0.84 | trang trí |
+| `banh_mi` | 137.2 | 0.82 | trang trí |
+| `tteokbokki` | 187.8 | 0.55 | trang trí |
+
+**Lời giải ngắn nhất:**
+
+1. bên phải, Hổ: không chờ, giữ 0.24 giây → ăn `bibimbap`, `ca_phe`.
+2. bên trái, Gumiho: không chờ, giữ 0.62 giây → ăn `songpyeon`, `pho`.
+
+Cửa sổ nhịp hẹp nhất: chờ không đổi (mâm không đổi theo giờ), giữ 0.42 giây.
+
+**Gợi ý hiện trong màn:** Chạm nửa trái cho Gumiho, nửa phải cho Hổ. Mỗi khách chỉ ăn món sáng của mình.
+
+---
+
+### Màn 19 — Gumiho trái + Hổ phải
+
+**Ý đồ:** Mâm xoay chậm, bốn nhát luân phiên giữa hai khách.
+
+Xoay `22`°/s · 4 lượt · 2 mạng
+
+| dishId | angleDeg | radius | vai trò |
+|---|---|---|---|
+| `bibimbap` | 102.5 | 0.35 | **want** Gumiho, forbid Hổ |
+| `goi_cuon` | 226.6 | 0.51 | **want** Gumiho, forbid Hổ |
+| `gimbap` | 143.7 | 0.39 | **want** Hổ, forbid Gumiho |
+| `ca_phe` | 44.1 | 0.7 | **want** Hổ, forbid Gumiho |
+| `tteokbokki` | 31.8 | 0.86 | forbid Gumiho, Hổ |
+| `banh_mi` | 159.9 | 0.48 | forbid Gumiho, Hổ |
+| `songpyeon` | 295.7 | 0.68 | trang trí |
+| `pho` | 356.1 | 0.56 | trang trí |
+| `songpyeon` | 273.6 | 0.82 | trang trí |
+| `pho` | 200.4 | 0.38 | trang trí |
+| `songpyeon` | 319.3 | 0.31 | trang trí |
+| `pho` | 67.1 | 0.31 | trang trí |
+| `songpyeon` | 256.6 | 0.8 | trang trí |
+
+**Lời giải ngắn nhất:**
+
+1. bên trái, Gumiho: chờ 3.50 giây, giữ 0.28 giây → ăn `bibimbap`.
+2. bên phải, Hổ: chờ 6.35 giây, giữ 0.16 giây → ăn `gimbap`.
+3. bên trái, Gumiho: chờ 3.25 giây, giữ 0.52 giây → ăn `goi_cuon`.
+4. bên phải, Hổ: chờ 0.25 giây, giữ 0.28 giây → ăn `ca_phe`.
+
+Cửa sổ nhịp hẹp nhất: chờ 0.60 giây, giữ 0.26 giây.
+
+---
+
+### Màn 20 — Gumiho trái + Hổ phải
+
+**Ý đồ:** Mâm xoay nhanh nhất. Có món cả hai cùng thèm, và món chỉ một khách được ăn khi nó nằm đúng vùng.
+
+Xoay `32`°/s · 4 lượt · 2 mạng
+
+| dishId | angleDeg | radius | vai trò |
+|---|---|---|---|
+| `tteokbokki` | 213.3 | 0.83 | **want** Gumiho, forbid Hổ |
+| `pho` | 117.2 | 0.38 | **want** Gumiho, forbid Hổ |
+| `songpyeon` | 7.8 | 0.42 | **want** Hổ, forbid Gumiho |
+| `goi_cuon` | 237 | 0.38 | **want** Hổ, forbid Gumiho |
+| `bibimbap` | 134.9 | 0.54 | **want** Gumiho, Hổ |
+| `ca_phe` | 156.7 | 0.63 | forbid Gumiho, Hổ |
+| `gimbap` | 276.5 | 0.75 | trang trí |
+| `banh_mi` | 63.2 | 0.74 | trang trí |
+| `gimbap` | 315.8 | 0.52 | trang trí |
+| `banh_mi` | 181.9 | 0.4 | trang trí |
+| `gimbap` | 35 | 0.34 | trang trí |
+| `banh_mi` | 83.4 | 0.57 | trang trí |
+| `gimbap` | 347 | 0.46 | trang trí |
+
+**Lời giải ngắn nhất:**
+
+1. bên phải, Hổ: không chờ, giữ 0.52 giây → ăn `songpyeon`.
+2. bên trái, Gumiho: chờ 1.60 giây, giữ 0.24 giây → ăn `pho`, `bibimbap`.
+3. bên phải, Hổ: chờ 1.05 giây, giữ 0.58 giây → ăn `goi_cuon`.
+4. bên trái, Gumiho: chờ 6.55 giây, giữ 0.56 giây → ăn `tteokbokki`.
+
+Cửa sổ nhịp hẹp nhất: chờ 0.75 giây, giữ 0.34 giây.
+
+---
+
+## 5. Ghi chú
+
+Cách chơi nằm ở `Huong-Dan-Man-5-12.md` (màn 5–7, 9–11, 19 và 20) và `Huong-Dan-Man-13-16.md` (màn 8 và 12–18). Dải lắc có ở mọi màn Mê, từ màn 8.
 
 ---
 
 ## 6. JSON sẵn cắm Unity
 
-Cùng dữ liệu, dạng máy đọc được. `spinSpeed` đơn vị độ/giây. `radius` chuẩn hóa.
-
-```json
-{
-  "coord": {
-    "angleZero": "east_screen_right_ccw",
-    "radius": "0_center_1_inner_rim",
-    "singleGuestAnchorDeg": 270,
-    "dualGumihoAnchorDeg": 180,
-    "dualHoAnchorDeg": 0
-  },
-  "constants": {
-    "holdToMaxSeconds": 0.5,
-    "brakeTime": 0.35,
-    "feedbackLockSeconds": 0.35,
-    "meSlideSeconds": 0.4,
-    "swapBlinkSeconds": 0.4,
-    "foodVisualRadius": 0.08,
-    "hitTest": "food_center",
-    "emptyBiteConsumesCharge": true,
-    "resolvedBiteCountsForSwap": true,
-    "centerGapRadius": 0.15,
-    "trayWorldRadius": 2.5,
-    "orthoSize": 6.1,
-    "referenceWidth": 1080,
-    "referenceHeight": 1920,
-    "guestDrawRadius": 1.18,
-    "guestDrawRadiusDual": 1.42,
-    "gumiho": { "centerDistance": 0.62, "r0": 0.2, "rMax": 0.48, "rMaxDual": 0.47 },
-    "clearRingSeconds": 0.7,
-    "ho": { "w0": 0.08, "wMax": 0.28, "minAlong": 0, "minAlongDual": 0.15 },
-    "me": { "len0": 0.35, "lenMax": 0.95, "halfWidth": 0.1, "crossAt": 0.55, "swayIdle": 6, "swayMax": 18, "swayHz": 0.8 },
-    "co": { "radius": 0.13, "along0": 0.82, "alongMax": 0.32 },
-    "dokkaebi": { "radius": 0.14, "alongMin": 0, "alongMax": 1, "alongHz": 0.25, "sweepMax": 42 }
-  },
-  "levels": [
-    {
-      "id": 1,
-      "guestMode": "Gumiho",
-      "spinSpeed": 0,
-      "charges": 2,
-      "hearts": 3,
-      "foods": [
-        { "dishId": "songpyeon", "angleDeg": 270, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
-        { "dishId": "banh_mi", "angleDeg": 90, "radius": 0.58, "want": [], "forbid": ["Gumiho"] },
-        { "dishId": "bibimbap", "angleDeg": 20, "radius": 0.78, "want": [], "forbid": ["Gumiho"] }
-      ]
-    },
-    {
-      "id": 2,
-      "guestMode": "Gumiho",
-      "spinSpeed": 0,
-      "charges": 2,
-      "hearts": 3,
-      "foods": [
-        { "dishId": "tteokbokki", "angleDeg": 300, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
-        { "dishId": "pho", "angleDeg": 200, "radius": 0.38, "want": [], "forbid": ["Gumiho"] },
-        { "dishId": "goi_cuon", "angleDeg": 200, "radius": 0.78, "want": [], "forbid": ["Gumiho"] }
-      ]
-    },
-    {
-      "id": 3,
-      "guestMode": "Gumiho",
-      "spinSpeed": 28,
-      "charges": 2,
-      "hearts": 3,
-      "foods": [
-        { "dishId": "gimbap", "angleDeg": 200, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
-        { "dishId": "ca_phe", "angleDeg": 245, "radius": 0.58, "want": [], "forbid": ["Gumiho"] },
-        { "dishId": "banh_mi", "angleDeg": 40, "radius": 0.78, "want": [], "forbid": ["Gumiho"] }
-      ]
-    },
-    {
-      "id": 4,
-      "guestMode": "Gumiho",
-      "spinSpeed": 40,
-      "charges": 1,
-      "hearts": 3,
-      "brakeTime": 0.35,
-      "foods": [
-        { "dishId": "songpyeon", "angleDeg": 200, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
-        { "dishId": "tteokbokki", "angleDeg": 250, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
-        { "dishId": "pho", "angleDeg": 320, "radius": 0.58, "want": [], "forbid": ["Gumiho"] },
-        { "dishId": "goi_cuon", "angleDeg": 110, "radius": 0.78, "want": [], "forbid": ["Gumiho"] }
-      ]
-    },
-    {
-      "id": 5,
-      "guestMode": "Ho",
-      "spinSpeed": 0,
-      "charges": 2,
-      "hearts": 3,
-      "foods": [
-        { "dishId": "goi_cuon", "angleDeg": 270, "radius": 0.58, "want": ["Ho"], "forbid": [] },
-        { "dishId": "gimbap", "angleDeg": 248, "radius": 0.58, "want": [], "forbid": ["Ho"] },
-        { "dishId": "bibimbap", "angleDeg": 292, "radius": 0.58, "want": [], "forbid": ["Ho"] }
-      ]
-    },
-    {
-      "id": 6,
-      "guestMode": "Ho",
-      "spinSpeed": 24,
-      "charges": 2,
-      "hearts": 3,
-      "foods": [
-        { "dishId": "goi_cuon", "angleDeg": 250, "radius": 0.58, "want": ["Ho"], "forbid": [] },
-        { "dishId": "banh_mi", "angleDeg": 228, "radius": 0.58, "want": [], "forbid": ["Ho"] },
-        { "dishId": "gimbap", "angleDeg": 206, "radius": 0.58, "want": ["Ho"], "forbid": [] }
-      ]
-    },
-    {
-      "id": 7,
-      "guestMode": "Ho",
-      "spinSpeed": 36,
-      "charges": 1,
-      "hearts": 3,
-      "foods": [
-        { "dishId": "gimbap", "angleDeg": 262, "radius": 0.58, "want": ["Ho"], "forbid": [] },
-        { "dishId": "goi_cuon", "angleDeg": 278, "radius": 0.58, "want": ["Ho"], "forbid": [] },
-        { "dishId": "pho", "angleDeg": 300, "radius": 0.58, "want": [], "forbid": ["Ho"] },
-        { "dishId": "ca_phe", "angleDeg": 100, "radius": 0.78, "want": [], "forbid": ["Ho"] }
-      ]
-    },
-    {
-      "id": 8,
-      "guestMode": "Me",
-      "spinSpeed": 32,
-      "charges": 1,
-      "hearts": 3,
-      "crossAt": 0.55,
-      "foods": [
-        { "dishId": "bibimbap", "angleDeg": 270, "radius": 0.70, "want": ["Me"], "forbid": [] },
-        { "dishId": "songpyeon", "angleDeg": 90, "radius": 0.70, "want": [], "forbid": ["Me"] },
-        { "dishId": "tteokbokki", "angleDeg": 0, "radius": 0.50, "want": [], "forbid": ["Me"] }
-      ]
-    },
-    {
-      "id": 9,
-      "guestMode": "Me",
-      "spinSpeed": 34,
-      "charges": 2,
-      "hearts": 3,
-      "crossAt": 0.55,
-      "foods": [
-        { "dishId": "pho", "angleDeg": 270, "radius": 0.68, "want": ["Me"], "forbid": [] },
-        { "dishId": "ca_phe", "angleDeg": 125, "radius": 0.68, "want": ["Me"], "forbid": [] },
-        { "dishId": "banh_mi", "angleDeg": 105, "radius": 0.68, "want": [], "forbid": ["Me"] },
-        { "dishId": "gimbap", "angleDeg": 200, "radius": 0.50, "want": [], "forbid": ["Me"] }
-      ]
-    },
-    {
-      "id": 10,
-      "guestMode": "Gumiho",
-      "spinSpeed": 26,
-      "charges": 3,
-      "hearts": 3,
-      "foods": [
-        { "dishId": "songpyeon", "angleDeg": 250, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
-        { "dishId": "pho", "angleDeg": 160, "radius": 0.58, "want": [], "forbid": ["Gumiho"] },
-        { "dishId": "gimbap", "angleDeg": 70, "radius": 0.58, "want": ["Gumiho"], "forbid": [] },
-        { "dishId": "banh_mi", "angleDeg": 340, "radius": 0.58, "want": ["Gumiho"], "forbid": [] }
-      ]
-    },
-    {
-      "id": 11,
-      "guestMode": "GumihoHo",
-      "spinSpeed": 26,
-      "charges": 3,
-      "hearts": 3,
-      "foods": [
-        { "dishId": "songpyeon", "angleDeg": 175, "radius": 0.70, "want": ["Gumiho"], "forbid": ["Ho"] },
-        { "dishId": "gimbap", "angleDeg": 355, "radius": 0.70, "want": ["Ho"], "forbid": ["Gumiho"] },
-        { "dishId": "goi_cuon", "angleDeg": 15, "radius": 0.55, "want": ["Ho"], "forbid": ["Gumiho"] },
-        { "dishId": "pho", "angleDeg": 95, "radius": 0.45, "want": [], "forbid": ["Gumiho", "Ho"] }
-      ]
-    },
-    {
-      "id": 12,
-      "guestMode": "GumihoHo",
-      "spinSpeed": 38,
-      "charges": 3,
-      "hearts": 3,
-      "foods": [
-        { "dishId": "songpyeon", "angleDeg": 150, "radius": 0.70, "want": ["Gumiho"], "forbid": ["Ho"] },
-        { "dishId": "gimbap", "angleDeg": 10, "radius": 0.70, "want": ["Gumiho", "Ho"], "forbid": [] },
-        { "dishId": "banh_mi", "angleDeg": 190, "radius": 0.55, "want": [], "forbid": ["Gumiho", "Ho"] },
-        { "dishId": "goi_cuon", "angleDeg": 330, "radius": 0.55, "want": ["Ho"], "forbid": ["Gumiho"] }
-      ]
-    },
-    {
-      "id": 13,
-      "guestMode": "Ho",
-      "spinSpeed": 0,
-      "charges": 2,
-      "hearts": 3,
-      "foods": [
-        { "dishId": "goi_cuon", "angleDeg": 258, "radius": 0.58, "want": ["Ho"], "forbid": [] },
-        { "dishId": "gimbap", "angleDeg": 240, "radius": 0.52, "want": [], "forbid": ["Ho"] },
-        { "dishId": "bibimbap", "angleDeg": 222, "radius": 0.40, "want": [], "forbid": ["Ho"] }
-      ]
-    },
-    {
-      "id": 14,
-      "guestMode": "GumihoHo",
-      "spinSpeed": 0,
-      "charges": 2,
-      "hearts": 3,
-      "foods": [
-        { "dishId": "songpyeon", "angleDeg": 175, "radius": 0.72, "want": ["Gumiho"], "forbid": ["Ho"] },
-        { "dishId": "banh_mi", "angleDeg": 180, "radius": 0.35, "want": [], "forbid": ["Gumiho", "Ho"] },
-        { "dishId": "gimbap", "angleDeg": 0, "radius": 0.70, "want": ["Ho"], "forbid": ["Gumiho"] },
-        { "dishId": "pho", "angleDeg": 95, "radius": 0.45, "want": [], "forbid": ["Gumiho", "Ho"] }
-      ]
-    },
-    {
-      "id": 15,
-      "guestMode": "Co",
-      "spinSpeed": 28,
-      "charges": 2,
-      "hearts": 3,
-      "foods": [
-        { "dishId": "goi_cuon", "angleDeg": 270, "radius": 0.55, "want": ["Co"], "forbid": [] },
-        { "dishId": "banh_mi", "angleDeg": 270, "radius": 0.82, "want": [], "forbid": ["Co"] },
-        { "dishId": "pho", "angleDeg": 270, "radius": 0.34, "want": [], "forbid": ["Co"] }
-      ]
-    },
-    {
-      "id": 16,
-      "guestMode": "Dokkaebi",
-      "spinSpeed": 0,
-      "charges": 3,
-      "hearts": 3,
-      "swapAfterBite": 1,
-      "foods": [
-        { "dishId": "banh_mi", "angleDeg": 270, "radius": 0.84, "want": [], "forbid": ["Dokkaebi"], "wantAfterSwap": ["Dokkaebi"], "forbidAfterSwap": [] },
-        { "dishId": "gimbap", "angleDeg": 288, "radius": 0.56, "want": ["Dokkaebi"], "forbid": [], "wantAfterSwap": ["Dokkaebi"], "forbidAfterSwap": [] },
-        { "dishId": "bibimbap", "angleDeg": 312, "radius": 0.56, "want": [], "forbid": ["Dokkaebi"], "wantAfterSwap": [], "forbidAfterSwap": ["Dokkaebi"] }
-      ]
-    },
-    {
-      "id": 17,
-      "guestMode": "Dokkaebi",
-      "spinSpeed": 0,
-      "charges": 4,
-      "hearts": 3,
-      "swapAfterBite": 2,
-      "foods": [
-        { "dishId": "goi_cuon", "angleDeg": 290, "radius": 0.48, "want": ["Dokkaebi"], "forbid": [], "wantAfterSwap": [], "forbidAfterSwap": [] },
-        { "dishId": "ca_phe", "angleDeg": 296, "radius": 0.80, "want": ["Dokkaebi"], "forbid": [], "wantAfterSwap": [], "forbidAfterSwap": ["Dokkaebi"] },
-        { "dishId": "banh_mi", "angleDeg": 270, "radius": 0.80, "want": [], "forbid": ["Dokkaebi"], "wantAfterSwap": ["Dokkaebi"], "forbidAfterSwap": [] },
-        { "dishId": "bibimbap", "angleDeg": 312, "radius": 0.80, "want": [], "forbid": ["Dokkaebi"], "wantAfterSwap": [], "forbidAfterSwap": ["Dokkaebi"] }
-      ]
-    }
-  ]
-}
-```
+Dữ liệu máy đọc được nằm ở `docs/Mo-Mam-Vi-Tri-Mon-An.json`, cùng nội dung với bảng ở mục 4. `spinSpeed` đơn vị độ/giây. `radius` chuẩn hóa. Không chép lại cả khối JSON vào đây để khỏi lệch.
 
 Bản JSON sạch (không comment) để import: `docs/Mo-Mam-Vi-Tri-Mon-An.json`.
 
@@ -850,7 +886,7 @@ Bản JSON sạch (không comment) để import: `docs/Mo-Mam-Vi-Tri-Mon-An.json
 
 ## 7. Checklist khi chỉnh tay
 
-1. Xếp cụm góc trước, gán want/forbid sau.  
+1. Xếp cụm góc trước, gán want/forbid sau. Dưới 3 món thèm thì không món thèm nào bắt đầu ở 250°–360°. Món rải khắp mâm.  
 2. Với mỗi nhát trong lời giải, khoanh vùng ăn tại `θ` đó — không được có forbid trong vùng.  
 3. Với mỗi nhát “giữ quá tay” dễ xảy ra, phải có ít nhất một forbid nằm ngay ngoài cửa sổ.  
 4. Màn xoay: đo cửa sổ bằng giây (`Δθ / spinSpeed`) — mục tiêu ≥ 0.35s với màn dạy, ≥ 0.25s với màn khó.  

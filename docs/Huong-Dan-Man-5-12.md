@@ -1,8 +1,10 @@
-# Hướng dẫn xếp màn 5–12
+# Hướng dẫn xếp màn 5–7, 9–11, 19 và 20
 
-Màn 1–4 giữ nguyên `Huong-Dan-Hierarchy.md`. File này thêm khe Hổ, dải Mê, màn 10 với các món cách xa, và hai khách ở màn 11–12. Dải lắc có ở mọi màn Mê trong file này. Màn hình chọn màn và màn 13–17 nằm ở `Huong-Dan-Man-13-16.md`. Đổi món chỉ có khi khách là Dokkaebi.
+> **Cập nhật:** vị trí món, số lượt và lời giải của 20 màn đã làm lại, mỗi màn có 9–11 món. Số liệu hiện hành nằm ở `Mo-Mam-Vi-Tri-Mon-An.md` mục 3–4, file JSON cùng tên và `GameSrc/Assets/Levels/`. Các bảng tọa độ bên dưới chỉ còn là hướng dẫn cách dựng, không dùng để chép số.
 
-Script và tám asset `Level05` … `Level12` đã nằm trong project, đúng số ở các bảng dưới. **Bạn không tạo lại số liệu.** Việc còn lại: thêm object, gán ô, kéo asset vào `LevelRunner`, rồi chơi thử.
+Màn 1–4 giữ nguyên `Huong-Dan-Hierarchy.md`. File này thêm khe Hổ, dải Mê, màn 11 với các món cách xa, và hai khách ở màn 19–20. Dải lắc có ở mọi màn Mê trong file này. Màn hình chọn màn cùng màn 8 và 12–18 nằm ở `Huong-Dan-Man-13-16.md`. Đổi món chỉ có khi khách là Dokkaebi.
+
+Script và tám asset `Level05` … `Level07`, `Level09` … `Level11`, `Level19`, `Level20` đã nằm trong project, đúng số ở các bảng dưới. **Bạn không tạo lại số liệu.** Việc còn lại: thêm object, gán ô, kéo asset vào `LevelRunner`, rồi chơi thử.
 
 Luật vùng ăn lấy từ `Mo-Mam-Vi-Tri-Mon-An.md`. Bán kính logic `1` = `2.5` đơn vị Unity. Góc `0°` là bên phải, tăng ngược chiều kim đồng hồ. Lúc Play, script xếp khách và vùng ăn. Tọa độ bạn đặt trong scene chỉ để nhìn khi đang sửa.
 
@@ -16,7 +18,7 @@ Luật vùng ăn lấy từ `Mo-Mam-Vi-Tri-Mon-An.md`. Bán kính logic `1` = `2
 - [ ] Bước 2 — Tạo `Ho`, `Me`
 - [ ] Bước 3 — Tạo `IconsHo` trên Canvas
 - [ ] Bước 4 — Gán ô trên `LevelRunner` và `LevelHud`
-- [ ] Bước 5 — Đối chiếu Level05 … Level12
+- [ ] Bước 5 — Đối chiếu Level05 … Level07, Level09 … Level11, Level19, Level20
 - [ ] Bước 6 — Chơi thử
 - [ ] Bước 7 — Checklist cuối
 
@@ -86,7 +88,7 @@ Script xoay khách nhìn vào tâm mâm. Gumiho ở đáy vẫn đứng thẳng.
 2. Giữ Anchor giữa dưới, Pos `0, 40`, Horizontal Layout Group giống `Icons`.
 3. Để trống, không đặt icon con.
 
-Màn một khách chỉ hiện `Icons`. Màn 11–12 script tách hai hàng: Gumiho bên trái, Hổ bên phải, icon thu nhỏ cho vừa.
+Màn một khách chỉ hiện `Icons`. Màn 19–20 script tách hai hàng: Gumiho bên trái, Hổ bên phải, icon thu nhỏ cho vừa.
 
 ---
 
@@ -102,11 +104,11 @@ Các ô màn 1–4 giữ nguyên. Gán thêm:
 | Ho Guest | `Ho` |
 | Me Zone | `MeZone` |
 | Me Guest | `Me` |
-| Levels | Đủ 17 asset. Phần tử 0 là Level01, phần tử 16 là Level17 |
+| Levels | Đủ 20 asset. Phần tử 0 là Level01, phần tử 19 là Level20 |
 
 Thiếu `Ho` hoặc `Me` thì màn 1–4 vẫn chạy. Vào màn cần khách đó, **Console** báo `LevelRunner chưa gán ...` và màn không đổi.
 
-Mẹo kéo nhanh 17 asset: chọn `Game`, bấm khóa (lock) góc trên Inspector, rồi trong **Project** chọn `Level01` … `Level17` (Shift+click) và kéo cả cụm vào chữ `Levels`. Sắp xếp theo tên là đúng thứ tự.
+Mẹo kéo nhanh 20 asset: chọn `Game`, bấm khóa (lock) góc trên Inspector, rồi trong **Project** chọn `Level01` … `Level20` (Shift+click) và kéo cả cụm vào chữ `Levels`. Sắp xếp theo tên là đúng thứ tự.
 
 ### 4.2 `Canvas` → `LevelHud`
 
@@ -117,20 +119,20 @@ Mẹo kéo nhanh 17 asset: chọn `Game`, bấm khóa (lock) góc trên Inspecto
 
 `Guest Name` để trống thì chữ khách không đổi theo màn.
 
-**Kiểm tra:** `LevelRunner` không còn ô khách nào `None` (trừ `Co`, `Dokkaebi` nếu chưa làm màn 15–17). `LevelHud` có `Icon Row Ho`.
+**Kiểm tra:** `LevelRunner` không còn ô khách nào `None` (trừ `Co`, `Dokkaebi` nếu chưa làm màn 13–17). `LevelHud` có `Icon Row Ho`.
 
 ---
 
 ## Bước 5. Đối chiếu Level asset
 
-Vị trí: `Assets/Levels/Level05.asset` … `Level12.asset`. Mở từng asset đối chiếu bảng dưới.
+Vị trí: `Assets/Levels/Level05.asset` … `Level07.asset`, `Level09.asset` … `Level11.asset`, `Level19.asset`, `Level20.asset`. Mở từng asset đối chiếu bảng dưới.
 
 **Mẹo đối chiếu:**
 
 - Dropdown **Guest Mode** phải hiện `Ho`, `Me` hoặc `GumihoHo`, **không phải số**.
 - Món thèm: `Want` có đúng tên khách.
 - Món cấm: `Forbid` có đúng tên khách, `Want` size `0`.
-- Brake Time để `0` thì game lấy `0.35`. Hearts mọi màn là `3`.
+- Brake Time để `0` thì game lấy `0.35`. Hearts là `2`, trừ màn giới thiệu (8, 13, 15) là `3`.
 
 ### Bảng tóm tắt thông số
 
@@ -139,11 +141,11 @@ Vị trí: `Assets/Levels/Level05.asset` … `Level12.asset`. Mở từng asset 
 | 05 | Ho | 0 | 2 | — | — |
 | 06 | Ho | 24 | 2 | — | — |
 | 07 | Ho | 36 | 1 | — | — |
-| 08 | Me | 32 | 1 | 0.55 | — |
-| 09 | Me | 34 | 2 | 0.55 | — |
-| 10 | Gumiho | 26 | 3 | — | 0 |
-| 11 | GumihoHo | 26 | 3 | — | — |
-| 12 | GumihoHo | 38 | 3 | — | — |
+| 09 | Me | 30 | 3 | 0.50 | — |
+| 10 | Me | 34 | 3 | 0.50 | — |
+| 11 | Gumiho | 26 | 3 | — | 0 |
+| 19 | GumihoHo | 26 | 3 | — | — |
+| 20 | GumihoHo | 38 | 3 | — | — |
 
 ### Level05 — Hổ, đứng yên
 
@@ -170,7 +172,7 @@ Vị trí: `Assets/Levels/Level05.asset` … `Level12.asset`. Mở từng asset 
 | pho | 300 | 0.58 | forbid |
 | ca_phe | 100 | 0.78 | forbid |
 
-### Level08 — Mê, một nhát
+### Level09 — Mê, một nhát
 
 | dishId | angleDeg | radius | với Mê |
 |---|---|---|---|
@@ -178,7 +180,7 @@ Vị trí: `Assets/Levels/Level05.asset` … `Level12.asset`. Mở từng asset 
 | songpyeon | 90 | 0.70 | forbid |
 | tteokbokki | 0 | 0.50 | forbid |
 
-### Level09 — Mê, lướt rồi cắn nhát hai
+### Level10 — Mê, lướt rồi cắn nhát hai
 
 | dishId | angleDeg | radius | với Mê |
 |---|---|---|---|
@@ -187,7 +189,7 @@ Vị trí: `Assets/Levels/Level05.asset` … `Level12.asset`. Mở từng asset 
 | banh_mi | 105 | 0.68 | forbid |
 | gimbap | 200 | 0.50 | forbid |
 
-### Level10 — Gumiho, bốn món cách xa
+### Level11 — Gumiho, bốn món cách xa
 
 **Không điền** Want After Swap hay Forbid After Swap. Bốn món cùng vành `0.58`, cách nhau `90°`.
 
@@ -198,7 +200,7 @@ Vị trí: `Assets/Levels/Level05.asset` … `Level12.asset`. Mở từng asset 
 | gimbap | 70 | 0.58 | want |
 | banh_mi | 340 | 0.58 | want |
 
-### Level11 — Gumiho trái, Hổ phải
+### Level19 — Gumiho trái, Hổ phải
 
 | dishId | angleDeg | radius | Gumiho | Hổ |
 |---|---|---|---|---|
@@ -207,7 +209,7 @@ Vị trí: `Assets/Levels/Level05.asset` … `Level12.asset`. Mở từng asset 
 | goi_cuon | 15 | 0.55 | forbid | want |
 | pho | 95 | 0.45 | forbid | forbid |
 
-### Level12 — xung đột hai miệng
+### Level20 — xung đột hai miệng
 
 | dishId | angleDeg | radius | Gumiho | Hổ |
 |---|---|---|---|---|
@@ -216,7 +218,7 @@ Vị trí: `Assets/Levels/Level05.asset` … `Level12.asset`. Mở từng asset 
 | banh_mi | 190 | 0.55 | forbid | forbid |
 | goi_cuon | 330 | 0.55 | forbid | want |
 
-Kéo đủ 17 asset vào ô `Levels`, đúng thứ tự. **Save scene** (Ctrl+S). Màn 13–17 đã có asset; số liệu ở `Huong-Dan-Man-13-16.md`.
+Kéo đủ 20 asset vào ô `Levels`, đúng thứ tự. **Save scene** (Ctrl+S). Màn 8 và 12–18 đã có asset; số liệu ở `Huong-Dan-Man-13-16.md`.
 
 ---
 
@@ -231,12 +233,12 @@ Màn một khách: giữ chuột ở bất kỳ chỗ nào, giống màn 1–4. 
 
 **Mê chi tiết:**
 
-- Chưa giữ: dải lắc ±`6°`, một vòng khoảng `1,25` giây. Khách ở đáy thì đỉnh lắc dương nằm về phía phải.
+- Chưa giữ: dải lắc ±`5°`, một vòng khoảng `1,67` giây. Khách ở đáy thì đỉnh lắc dương nằm về phía phải.
 - Nhấn giữ: dải đóng băng đúng góc lúc bấm, mâm giảm tốc, dải dài thêm. Thả lúc dải đang đè món.
 - Dải dài hơn `crossAt`: Mê chạy sang mép đối diện. Đúng ngưỡng thì đứng yên. Nhát sau tính từ mép mới.
-- Thanh giữ hơn khoảng một phần ba là Mê lướt, với `crossAt = 0.55`.
+- Thanh giữ hơn khoảng một phần tư là Mê lướt, với `crossAt = 0.50`.
 
-**Màn 11–12 (hai khách):**
+**Màn 19–20 (hai khách):**
 
 - Nửa trái màn hình là Gumiho, nửa phải là Hổ.
 - Giữ bên nào thì chỉ vùng bên đó lớn lên, mâm vẫn phanh.
@@ -246,7 +248,7 @@ Màn một khách: giữ chuột ở bất kỳ chỗ nào, giống màn 1–4. 
 - Dưới mâm: hàng trái ghi `Gumiho`, hàng phải ghi `Hổ`. Dòng giữa là `Trái · Gumiho` và `Phải · Hổ`.
 - Vòng Gumiho ở màn hai khách ngắn hơn một chút so với màn một khách, để không chạm khe Hổ ở giữa mâm.
 
-Màn 10 không đổi icon. Bốn món đứng xa nhau, mỗi nhát một món. Đổi món chỉ xảy ra ở màn có Dokkaebi.
+Màn 11 không đổi icon. Bốn món đứng xa nhau, mỗi nhát một món. Đổi món chỉ xảy ra ở màn có Dokkaebi.
 
 ---
 
@@ -259,15 +261,15 @@ Số dưới đây là cửa sổ đã tính với bán kính vùng ăn trong co
 | 5 | Thả ngay. Gỏi cuốn đang nằm trong khe hẹp. Giữ lâu sẽ nuốt Gimbap hoặc Bibimbap hai bên. |
 | 6 | Cả ba món đang ở bên trái Hổ. Chờ Gỏi cuốn xuống đúng khe, thả nhanh. Khoảng 2 giây sau Gimbap vào khe, thả nhanh lần nữa. Bánh mì nằm giữa hai món thèm: nới rộng một nhát sẽ dính. Không phải chờ hết một vòng. |
 | 7 | Vừa vào màn, giữ hơi một chút rồi thả. Hai món thèm đang kẹp sát đường giữa. Giữ hết cỡ ngay lúc đó vẫn chưa tới Phở. Chỉ có 1 lượt: hẹp quá thì sót một món và thua. |
-| 8 | Bibimbap đang ở dải dưới. Thả ngay là qua màn, còn 0 lượt vẫn tính là qua. Muốn thấy Mê chạy lên mép trên: nhấn giữ khi dải đang đè Bibimbap. Dải đứng yên, mâm chậm lại. Giữ hơn một phần ba thanh rồi thả. Chỉ có 1 lượt. |
-| 9 | Phở đang ở đáy. Nhấn giữ khi dải đè Phở, giữ hơn một phần ba thanh rồi thả: ăn Phở, Mê sang mép trên, mâm đã phanh trong lúc giữ. Cà phê chưa nằm trên dải mới. Chờ gần một vòng, khoảng `θ` từ `317°` đến `333°`, Cà phê thẳng mép trên. Thả nhanh khi dải đè nó. Bánh mì ở `105°` vẫn ngoài dải trong cửa sổ đó. |
-| 10 | 1) Chờ Songpyeon về đáy, thả nhanh. 2) Phở đi qua đáy, đừng thả. 3) Gimbap về đáy, thả nhanh. 4) Bánh mì về đáy, thả nhanh. Bốn món cách nhau 90°, giữ hết cũng không ăn được hai món trong một nhát. |
-| 11 | Trái, thả nhanh: Songpyeon. Phải, thả nhanh: Gimbap. Phải, giữ hơi rộng hơn hoặc chờ Gỏi cuốn vào đúng khe, thả. Phở ở phía trên là bẫy nếu giữ khe hết cỡ lúc nó sang mép phải. |
-| 12 | Đừng bấm trái lúc mở màn: Bánh mì đang nằm trong vòng nhỏ của Gumiho. 1) Ngay lập tức bấm nửa phải, giữ khoảng một phần ba thanh, Hổ ăn Gimbap. Giữ hết cỡ sẽ dính Gỏi cuốn. 2) Chờ một nhịp, Bánh mì ra khỏi vòng trái và Songpyeon vào giữa, thả nhanh bên trái. 3) Gỏi cuốn thẳng khe bên phải thì thả nhanh. Để Songpyeon chạy quá mép trái thì Gumiho không với tới; Hổ cắn món đó sẽ mất mạng. |
+| 9 | Bibimbap đang ở dải dưới. Thả ngay là qua màn, còn 0 lượt vẫn tính là qua. Muốn thấy Mê chạy lên mép trên: nhấn giữ khi dải đang đè Bibimbap. Dải đứng yên, mâm chậm lại. Giữ hơn một phần tư thanh rồi thả. Chỉ có 1 lượt. |
+| 10 | Phở đang ở đáy. Nhấn giữ khi dải đè Phở, giữ hơn một phần ba thanh rồi thả: ăn Phở, Mê sang mép trên, mâm đã phanh trong lúc giữ. Cà phê chưa nằm trên dải mới. Chờ gần một vòng, khoảng `θ` từ `317°` đến `333°`, Cà phê thẳng mép trên. Thả nhanh khi dải đè nó. Bánh mì ở `105°` vẫn ngoài dải trong cửa sổ đó. |
+| 11 | 1) Chờ Songpyeon về đáy, thả nhanh. 2) Phở đi qua đáy, đừng thả. 3) Gimbap về đáy, thả nhanh. 4) Bánh mì về đáy, thả nhanh. Bốn món cách nhau 90°, giữ hết cũng không ăn được hai món trong một nhát. |
+| 19 | Trái, thả nhanh: Songpyeon. Phải, thả nhanh: Gimbap. Phải, giữ hơi rộng hơn hoặc chờ Gỏi cuốn vào đúng khe, thả. Phở ở phía trên là bẫy nếu giữ khe hết cỡ lúc nó sang mép phải. |
+| 20 | Đừng bấm trái lúc mở màn: Bánh mì đang nằm trong vòng nhỏ của Gumiho. 1) Ngay lập tức bấm nửa phải, giữ khoảng một phần ba thanh, Hổ ăn Gimbap. Giữ hết cỡ sẽ dính Gỏi cuốn. 2) Chờ một nhịp, Bánh mì ra khỏi vòng trái và Songpyeon vào giữa, thả nhanh bên trái. 3) Gỏi cuốn thẳng khe bên phải thì thả nhanh. Để Songpyeon chạy quá mép trái thì Gumiho không với tới; Hổ cắn món đó sẽ mất mạng. |
 
 Màn 6 nhát hai tới sau khoảng 44° xoay. Cả ba món nằm bên trái đường tâm.
 
-Qua màn 12, nút hiện `Từ đầu` và chơi lại từ màn 1.
+Qua màn 20, nút hiện `Từ đầu` và chơi lại từ màn 1.
 
 ---
 
@@ -281,23 +283,23 @@ Qua màn 12, nút hiện `Từ đầu` và chơi lại từ màn 1.
 **Ô gán**
 
 - [ ] `LevelRunner` đã gán Ho Zone, Ho Guest, Me Zone, Me Guest.
-- [ ] `Levels` có 17 phần tử, Level01 ở vị trí 0, Level17 ở vị trí 16.
+- [ ] `Levels` có 20 phần tử, Level01 ở vị trí 0, Level20 ở vị trí 19.
 - [ ] `LevelHud` đã gán Guest Name và Icon Row Ho.
 
 **Level asset**
 
 - [ ] Level05: Guest Mode `Ho`, Gỏi cuốn Want = Ho.
 - [ ] Level07: Charges `1`.
-- [ ] Level08 và Level09: Cross At `0.55`.
-- [ ] Level09: Cà phê góc `125`.
-- [ ] Level10: Charges `3`, Swap After Bite `0`, không có món nào điền Want After Swap.
-- [ ] Level11 và Level12: Guest Mode `GumihoHo`.
+- [ ] Level09 và Level10: Cross At `0.50`.
+- [ ] Level10: Cà phê góc `125`.
+- [ ] Level11: Charges `3`, Swap After Bite `0`, không có món nào điền Want After Swap.
+- [ ] Level19 và Level20: Guest Mode `GumihoHo`.
 
 **Khi Play**
 
 - [ ] Màn 5 thấy khe xanh, không thấy vòng son.
-- [ ] Màn 8: dải chàm lắc khi chưa giữ; nhấn giữ thì dải đứng im và mâm chậm lại.
-- [ ] Màn 11 thấy cả Gumiho bên trái và Hổ bên phải, hai hàng icon tách nhau.
+- [ ] Màn 9: dải chàm lắc khi chưa giữ; nhấn giữ thì dải đứng im và mâm chậm lại.
+- [ ] Màn 19 thấy cả Gumiho bên trái và Hổ bên phải, hai hàng icon tách nhau.
 
 ---
 
@@ -308,8 +310,8 @@ Qua màn 12, nút hiện `Từ đầu` và chơi lại từ màn 1.
 | Console: `LevelRunner chưa gán Ho Zone` / `Ho` / `Me Zone` / `Me` | Ô tương ứng trên `LevelRunner` còn `None` | Kéo `HoZone`, `Ho`, `MeZone`, `Me` vào |
 | Vào màn 5 mà vẫn thấy vòng tròn son | `Levels` sai thứ tự, hoặc Guest Mode của asset là `Gumiho` | Đối chiếu Bước 5, kiểm tra thứ tự phần tử |
 | Không có khe xanh | `HoZone` thiếu Sprite hoặc `Fill` trống | Thêm Square, gán `Fill` |
-| Màn 11–12 chỉ thấy một hàng icon | `Icon Row Ho` trên `LevelHud` chưa gán | Gán `IconsHo` |
+| Màn 19–20 chỉ thấy một hàng icon | `Icon Row Ho` trên `LevelHud` chưa gán | Gán `IconsHo` |
 | Chữ khách không đổi theo màn | `Guest Name` trên `LevelHud` chưa gán | Gán Text `GuestName` |
-| Dải Mê không lắc | Đang ở màn không phải Me, hoặc đang giữ chuột | Chọn màn 8 hoặc 9, chưa nhấn |
-| Mê không chạy sang mép kia | Thanh giữ chưa vượt `crossAt` (`0.55`) | Giữ hơn một phần ba thanh |
+| Dải Mê không lắc | Đang ở màn không phải Me, hoặc đang giữ chuột | Chọn màn 9 hoặc 10, chưa nhấn |
+| Mê không chạy sang mép kia | Thanh giữ chưa vượt `crossAt` (`0.50`) | Giữ hơn một phần tư thanh |
 | Hai khách bị cắt mép trên điện thoại dọc | Camera chưa lùi | Kiểm tra Camera là Orthographic, Size `6.1` |

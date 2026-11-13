@@ -28,10 +28,10 @@ Tên file khớp `dishId` trong `Mo-Mam-Vi-Tri-Mon-An.json` và `Art.cs`.
 | File gợi ý | Dùng cho | Ghi chú vẽ |
 |---|---|---|
 | `NPCs/Gumiho.png` | Guest + PPT | Đầu hồ ly chín đuôi, khăn/hanbok gọn. Màu trắng trên sprite, son `#8C2F39` là màu vùng ăn. |
-| `NPCs/Ho.png` | Guest màn 5–7, 11–12 | Đầu hổ tranh dân gian. Màu lá `#2F6B4F` là màu vùng ăn. |
-| `NPCs/Me.png` | Guest màn 8–9 | Đầu chó trắng đội nón mê. Màu chàm `#1F4E79` là màu vùng ăn. |
-| `NPCs/Co.png` | Guest màn 15 | Đầu cò trắng, mỏ dài. Màu `#3E6B66` là màu vùng ăn. |
-| `NPCs/Dokkaebi.png` | Guest màn 16–17 | Đầu Dokkaebi, sừng. Màu lửa `#E24A2A` là màu vùng ăn. |
+| `NPCs/Ho.png` | Guest màn 5–7, 12, 18–20 | Đầu hổ tranh dân gian. Màu lá `#2F6B4F` là màu vùng ăn. |
+| `NPCs/Me.png` | Guest màn 8–10 | Đầu chó trắng đội nón mê. Màu chàm `#1F4E79` là màu vùng ăn. |
+| `NPCs/Co.png` | Guest màn 13–14 | Đầu cò trắng, mỏ dài. Màu `#3E6B66` là màu vùng ăn. |
+| `NPCs/Dokkaebi.png` | Guest màn 15–17 | Đầu Dokkaebi, sừng. Màu lửa `#E24A2A` là màu vùng ăn. |
 
 Không vẽ sprite gật. Ảnh không có cổ. Nhát hỏng lật ngang đầu đang có.
 
@@ -71,7 +71,7 @@ Ban đầu được phép dùng **sprite Circle** Unity tô màu; thay hình v�
 |---|---|---|
 | Sprite tròn alpha ~70, `#8C2F39` | Gumiho | `GumihoZone` — script scale theo bán kính |
 | Hai sọc / khe (hoặc 2 sprite thanh) | Hổ | Màn 5+ ; giữ để khe rộng |
-| Dải thẳng (sprite chữ nhật bo nhẹ) | Mê | Màn 8–9 ; dài theo giữ, và lắc ở mọi màn có Mê |
+| Dải thẳng (sprite chữ nhật bo nhẹ) | Mê | Màn 8–10 ; dài theo giữ, và lắc ở mọi màn có Mê |
 
 ### E. UI / phụ — tối thiểu
 
@@ -112,7 +112,7 @@ Màn 1–4 trong JSON đụng các `dishId`:
 | 14 | Sprite khe Hổ |
 | 15 | Sprite dải Mê |
 
-### Giai đoạn 3 — màn 11–12 + nộp
+### Giai đoạn 3 — màn 18–20 + nộp
 
 | # | Sprite |
 |---|---|

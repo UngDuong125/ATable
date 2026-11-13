@@ -13,7 +13,7 @@ Các file liên quan:
 | `Mo-Mam-Vi-Tri-Mon-An.md` | Luật vùng ăn và số liệu gốc |
 | `Mo-Mam-Danh-Sach-Sprite.md` | Danh sách file hình cần vẽ |
 | `Huong-Dan-Man-5-12.md` | Hổ, Mê, hai khách (màn 5–12) |
-| `Huong-Dan-Man-13-16.md` | Màn hình chọn màn, cài đặt, màn 13–17 |
+| `Huong-Dan-Man-13-16.md` | Màn hình chọn màn, cài đặt, màn 8 và 12–18 |
 
 ---
 
@@ -409,7 +409,7 @@ FoodIcon          RectTransform 210 × 170
 
 **Project** → chuột phải → Create → Mot Mam → Level. Tạo bốn asset trong `Assets/Levels`: `Level01` … `Level04`.
 
-> Trong project hiện đã có sẵn `Level01.asset` … `Level17.asset`. Nếu đã có, **mở ra đối chiếu với bảng dưới** thay vì tạo lại.
+> Trong project hiện đã có sẵn `Level01.asset` … `Level20.asset`. Nếu đã có, **mở ra đối chiếu với bảng dưới** thay vì tạo lại.
 
 Ô chung của màn 1–3:
 
@@ -417,7 +417,7 @@ FoodIcon          RectTransform 210 × 170
 |---|---|
 | Guest Mode | `Gumiho` |
 | Charges | `2` |
-| Hearts | `3` |
+| Hearts | `2` |
 
 Màn 4 cùng Guest Mode và Hearts, nhưng Charges là `1` (một lượt buộc người chơi giữ để vòng ôm cả Songpyeon và Tteokbokki).
 
@@ -478,7 +478,7 @@ Gán các ô của `LevelRunner` (màn 1–4):
 
 | Ô | Kéo vào |
 |---|---|
-| Levels | Level01 … Level04, đúng thứ tự (phần tử 0 là màn 1). Về sau mở rộng tới 17 |
+| Levels | Level01 … Level04, đúng thứ tự (phần tử 0 là màn 1). Về sau mở rộng tới 20 |
 | Tray | object `Tray` |
 | Food Prefab | prefab `Food` |
 | Zone | object `GumihoZone` |
