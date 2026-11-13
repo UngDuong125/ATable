@@ -1412,6 +1412,135 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -190}
   m_SizeDelta: {x: 400, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &802732299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 802732301}
+  - component: {fileID: 802732300}
+  m_Layer: 0
+  m_Name: 8. Through a Snowy Wood LOOP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &802732300
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802732299}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 97693783fcc7e47b69fd7d545d15f419, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &802732301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802732299}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 481.94583, y: 189.39977, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &906371223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,16 +1659,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cde2bc9305b8405aa9899bf3844a736a, type: 2}
   - {fileID: 11400000, guid: 7805a15273e5470488c7925d5b08ff24, type: 2}
   - {fileID: 11400000, guid: 0b4f483e6d7b4e87b4a04966c6d89817, type: 2}
+  - {fileID: 11400000, guid: c08aa101b2c34d5e8f9012345678abcd, type: 2}
   - {fileID: 11400000, guid: 8a6725a74c49473c86acd9d50f9180fe, type: 2}
   - {fileID: 11400000, guid: 6b5ffbdb7c234d21811790acd8663d6b, type: 2}
   - {fileID: 11400000, guid: ccf4e2c170da40418efd3441dee95299, type: 2}
-  - {fileID: 11400000, guid: cbffbe085fe5427c8d68d8cca285b4c5, type: 2}
-  - {fileID: 11400000, guid: 94fce7524d09408b84854191b99fd871, type: 2}
   - {fileID: 11400000, guid: c13aa101b2c34d5e8f9012345678abcd, type: 2}
-  - {fileID: 11400000, guid: c8163d092e8f2674198eaa2cd88b29e6, type: 2}
+  - {fileID: 11400000, guid: c1caa101b2c34d5e8f9012345678abcd, type: 2}
   - {fileID: 11400000, guid: c15aa101b2c34d5e8f9012345678abcd, type: 2}
+  - {fileID: 11400000, guid: c1eaa101b2c34d5e8f9012345678abcd, type: 2}
   - {fileID: 11400000, guid: c16aa101b2c34d5e8f9012345678abcd, type: 2}
   - {fileID: 11400000, guid: d17aa101b2c34d5e8f9012345678abcd, type: 2}
+  - {fileID: 11400000, guid: c8163d092e8f2674198eaa2cd88b29e6, type: 2}
+  - {fileID: 11400000, guid: cbffbe085fe5427c8d68d8cca285b4c5, type: 2}
+  - {fileID: 11400000, guid: 94fce7524d09408b84854191b99fd871, type: 2}
   tray: {fileID: 1279219738}
   foodPrefab: {fileID: 3041206819251526578, guid: 35a63aaf11b8e514d93dc5dcd2ef42d9, type: 3}
   zone: {fileID: 1352831594}
@@ -1570,6 +1702,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 564b677747a50394f9c8c5dd71524c60, type: 3}
   - dishId: bibimbap
     sprite: {fileID: 21300000, guid: e320d3a7262065741b3b82fa02ec07c4, type: 3}
+  happySprite: {fileID: 21300000, guid: c62a1c42f80cc6e4b9fb32e866dd1abc, type: 3}
+  sadSprite: {fileID: 21300000, guid: 1340fb0feea2ecb44bf674dd9bc5dc64, type: 3}
 --- !u!114 &971443873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3317,3 +3451,4 @@ SceneRoots:
   - {fileID: 971443875}
   - {fileID: 692947561}
   - {fileID: 136205425}
+  - {fileID: 802732301}
