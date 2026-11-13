@@ -13,31 +13,90 @@ MonoBehaviour:
   m_Name: Level10
   m_EditorClassIdentifier: Assembly-CSharp::MotMam.LevelConfig
   id: 10
-  guestMode: 0
-  spinSpeed: 26
-  charges: 3
-  hearts: 3
+  guestMode: 2
+  spinSpeed: 22
+  charges: 4
+  hearts: 2
   brakeTime: 0
   crossAt: 0
   swapAfterBite: 0
+  anchorOffset: 0
+  hint: 
   foods:
-  - dishId: songpyeon
-    angleDeg: 250
-    radius: 0.58
-    want: 00000000
-    forbid: 
-  - dishId: pho
-    angleDeg: 160
-    radius: 0.58
-    want: 
-    forbid: 00000000
   - dishId: gimbap
-    angleDeg: 70
-    radius: 0.58
-    want: 00000000
+    angleDeg: 70.4
+    radius: 0.69
+    want: 02000000
     forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
   - dishId: banh_mi
-    angleDeg: 340
-    radius: 0.58
-    want: 00000000
+    angleDeg: 18.7
+    radius: 0.47
+    want: 02000000
     forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: gimbap
+    angleDeg: 154.9
+    radius: 0.56
+    want: 02000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: banh_mi
+    angleDeg: 227.7
+    radius: 0.37
+    want: 02000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: songpyeon
+    angleDeg: 343.5
+    radius: 0.28
+    want: 
+    forbid: 02000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: ca_phe
+    angleDeg: 52.4
+    radius: 0.86
+    want: 
+    forbid: 02000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: bibimbap
+    angleDeg: 297.2
+    radius: 0.79
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: goi_cuon
+    angleDeg: 126.1
+    radius: 0.72
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: tteokbokki
+    angleDeg: 204.3
+    radius: 0.71
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: pho
+    angleDeg: 262.6
+    radius: 0.64
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: bibimbap
+    angleDeg: 88.7
+    radius: 0.55
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 

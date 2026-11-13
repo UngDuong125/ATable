@@ -13,26 +13,97 @@ MonoBehaviour:
   m_Name: Level13
   m_EditorClassIdentifier: Assembly-CSharp::MotMam.LevelConfig
   id: 13
-  guestMode: 1
+  guestMode: 4
   spinSpeed: 0
-  charges: 2
+  charges: 3
   hearts: 3
   brakeTime: 0
   crossAt: 0
   swapAfterBite: 0
+  anchorOffset: 0
+  hint: "C\u00f2 ch\u1ecdc t\u1eeb m\u00e9p v\u00e0o. Gi\u1eef \u0111\u1ec3 ch\u1ea5m \u0111i s\u00e2u h\u01a1n. Ch\u1ea1m s\u1edbm th\u00ec ch\u1ea5m c\u00f2n \u1edf s\u00e1t m\u00e9p."
   foods:
-  - dishId: goi_cuon
-    angleDeg: 258
-    radius: 0.58
-    want: 01000000
-    forbid: 
-  - dishId: gimbap
-    angleDeg: 240
-    radius: 0.52
-    want: 
-    forbid: 01000000
   - dishId: bibimbap
-    angleDeg: 222
-    radius: 0.4
+    angleDeg: 273.5
+    radius: 0.39
+    want: 03000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: ca_phe
+    angleDeg: 275.5
+    radius: 0.67
+    want: 03000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: bibimbap
+    angleDeg: 264
+    radius: 0.56
+    want: 03000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: tteokbokki
+    angleDeg: 250.9
+    radius: 0.37
     want: 
-    forbid: 01000000
+    forbid: 03000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: banh_mi
+    angleDeg: 287.9
+    radius: 0.59
+    want: 
+    forbid: 03000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: gimbap
+    angleDeg: 47.1
+    radius: 0.38
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: pho
+    angleDeg: 171
+    radius: 0.8
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: songpyeon
+    angleDeg: 121.3
+    radius: 0.8
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: goi_cuon
+    angleDeg: 336.4
+    radius: 0.73
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: gimbap
+    angleDeg: 200.6
+    radius: 0.42
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: pho
+    angleDeg: 71.3
+    radius: 0.47
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: songpyeon
+    angleDeg: 18.6
+    radius: 0.82
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 

@@ -14,31 +14,96 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MotMam.LevelConfig
   id: 16
   guestMode: 5
-  spinSpeed: 0
-  charges: 3
-  hearts: 3
+  spinSpeed: 20
+  charges: 5
+  hearts: 2
   brakeTime: 0
   crossAt: 0
   swapAfterBite: 1
+  anchorOffset: 0
+  hint: 
   foods:
+  - dishId: tteokbokki
+    angleDeg: 178.7
+    radius: 0.67
+    want: 04000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
   - dishId: banh_mi
-    angleDeg: 270
+    angleDeg: 226
+    radius: 0.63
+    want: 04000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: bibimbap
+    angleDeg: 189.7
+    radius: 0.43
+    want: 
+    forbid: 04000000
+    wantAfterSwap: 04000000
+    forbidAfterSwap: 
+  - dishId: goi_cuon
+    angleDeg: 206.5
+    radius: 0.54
+    want: 
+    forbid: 04000000
+    wantAfterSwap: 04000000
+    forbidAfterSwap: 
+  - dishId: bibimbap
+    angleDeg: 132.4
     radius: 0.84
     want: 
     forbid: 04000000
     wantAfterSwap: 04000000
     forbidAfterSwap: 
-  - dishId: gimbap
-    angleDeg: 288
-    radius: 0.56
-    want: 04000000
-    forbid: 
-    wantAfterSwap: 04000000
-    forbidAfterSwap: 
-  - dishId: bibimbap
-    angleDeg: 312
-    radius: 0.56
+  - dishId: songpyeon
+    angleDeg: 166.8
+    radius: 0.62
     want: 
-    forbid: 04000000
+    forbid: 
     wantAfterSwap: 
     forbidAfterSwap: 04000000
+  - dishId: pho
+    angleDeg: 332.1
+    radius: 0.47
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: gimbap
+    angleDeg: 52.7
+    radius: 0.57
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: ca_phe
+    angleDeg: 269.3
+    radius: 0.82
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: pho
+    angleDeg: 17.5
+    radius: 0.44
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: gimbap
+    angleDeg: 81.6
+    radius: 0.45
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: ca_phe
+    angleDeg: 312.1
+    radius: 0.36
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 

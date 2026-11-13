@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4988bd2d3f9e35419515d028e9a36bf, type: 3}
+  m_Name: Level18
+  m_EditorClassIdentifier: Assembly-CSharp::MotMam.LevelConfig
+  id: 18
+  guestMode: 3
+  spinSpeed: 0
+  charges: 3
+  hearts: 3
+  brakeTime: 0
+  crossAt: 0
+  swapAfterBite: 0
+  anchorOffset: 0
+  hint: "Ch\u1ea1m n\u1eeda tr\u00e1i cho Gumiho, n\u1eeda ph\u1ea3i cho H\u1ed5. M\u1ed7i kh\u00e1ch ch\u1ec9 \u0103n m\u00f3n s\u00e1ng c\u1ee7a m\u00ecnh."
+  foods:
+  - dishId: songpyeon
+    angleDeg: 158.3
+    radius: 0.82
+    want: 00000000
+    forbid: 01000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: pho
+    angleDeg: 159
+    radius: 0.34
+    want: 00000000
+    forbid: 01000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: bibimbap
+    angleDeg: 2.4
+    radius: 0.83
+    want: 01000000
+    forbid: 00000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: ca_phe
+    angleDeg: 0.4
+    radius: 0.51
+    want: 01000000
+    forbid: 00000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: gimbap
+    angleDeg: 19
+    radius: 0.86
+    want: 
+    forbid: 0000000001000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: goi_cuon
+    angleDeg: 342.6
+    radius: 0.86
+    want: 
+    forbid: 0000000001000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: tteokbokki
+    angleDeg: 260.2
+    radius: 0.33
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: banh_mi
+    angleDeg: 99
+    radius: 0.66
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: tteokbokki
+    angleDeg: 217
+    radius: 0.4
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: banh_mi
+    angleDeg: 311.6
+    radius: 0.41
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: tteokbokki
+    angleDeg: 46.7
+    radius: 0.84
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: banh_mi
+    angleDeg: 137.2
+    radius: 0.82
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: tteokbokki
+    angleDeg: 187.8
+    radius: 0.55
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 

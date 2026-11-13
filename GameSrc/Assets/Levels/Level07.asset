@@ -14,30 +14,89 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MotMam.LevelConfig
   id: 7
   guestMode: 1
-  spinSpeed: 36
-  charges: 1
-  hearts: 3
+  spinSpeed: 20
+  charges: 3
+  hearts: 2
   brakeTime: 0
   crossAt: 0
   swapAfterBite: 0
+  anchorOffset: 0
+  hint: 
   foods:
-  - dishId: gimbap
-    angleDeg: 262
-    radius: 0.58
+  - dishId: tteokbokki
+    angleDeg: 41.2
+    radius: 0.55
     want: 01000000
     forbid: 
-  - dishId: goi_cuon
-    angleDeg: 278
-    radius: 0.58
-    want: 01000000
-    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
   - dishId: pho
-    angleDeg: 300
+    angleDeg: 315
     radius: 0.58
+    want: 01000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: tteokbokki
+    angleDeg: 120.9
+    radius: 0.8
+    want: 01000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: gimbap
+    angleDeg: 16.7
+    radius: 0.55
     want: 
     forbid: 01000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: banh_mi
+    angleDeg: 138.5
+    radius: 0.86
+    want: 
+    forbid: 01000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: gimbap
+    angleDeg: 64.9
+    radius: 0.67
+    want: 
+    forbid: 01000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: bibimbap
+    angleDeg: 196.7
+    radius: 0.39
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: goi_cuon
+    angleDeg: 268.9
+    radius: 0.43
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: songpyeon
+    angleDeg: 233.7
+    radius: 0.76
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
   - dishId: ca_phe
-    angleDeg: 100
-    radius: 0.78
+    angleDeg: 334.2
+    radius: 0.66
     want: 
-    forbid: 01000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: bibimbap
+    angleDeg: 171.9
+    radius: 0.81
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 

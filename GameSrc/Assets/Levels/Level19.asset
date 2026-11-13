@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4988bd2d3f9e35419515d028e9a36bf, type: 3}
+  m_Name: Level19
+  m_EditorClassIdentifier: Assembly-CSharp::MotMam.LevelConfig
+  id: 19
+  guestMode: 3
+  spinSpeed: 22
+  charges: 4
+  hearts: 2
+  brakeTime: 0
+  crossAt: 0
+  swapAfterBite: 0
+  anchorOffset: 0
+  hint: 
+  foods:
+  - dishId: bibimbap
+    angleDeg: 102.5
+    radius: 0.35
+    want: 00000000
+    forbid: 01000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: goi_cuon
+    angleDeg: 226.6
+    radius: 0.51
+    want: 00000000
+    forbid: 01000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: gimbap
+    angleDeg: 143.7
+    radius: 0.39
+    want: 01000000
+    forbid: 00000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: ca_phe
+    angleDeg: 44.1
+    radius: 0.7
+    want: 01000000
+    forbid: 00000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: tteokbokki
+    angleDeg: 31.8
+    radius: 0.86
+    want: 
+    forbid: 0000000001000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: banh_mi
+    angleDeg: 159.9
+    radius: 0.48
+    want: 
+    forbid: 0000000001000000
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: songpyeon
+    angleDeg: 295.7
+    radius: 0.68
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: pho
+    angleDeg: 356.1
+    radius: 0.56
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: songpyeon
+    angleDeg: 273.6
+    radius: 0.82
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: pho
+    angleDeg: 200.4
+    radius: 0.38
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: songpyeon
+    angleDeg: 319.3
+    radius: 0.31
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: pho
+    angleDeg: 67.1
+    radius: 0.31
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: songpyeon
+    angleDeg: 256.6
+    radius: 0.8
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 

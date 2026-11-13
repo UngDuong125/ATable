@@ -13,32 +13,97 @@ MonoBehaviour:
   m_Name: Level15
   m_EditorClassIdentifier: Assembly-CSharp::MotMam.LevelConfig
   id: 15
-  guestMode: 4
-  spinSpeed: 28
-  charges: 2
+  guestMode: 5
+  spinSpeed: 0
+  charges: 5
   hearts: 3
   brakeTime: 0
   crossAt: 0
-  swapAfterBite: 0
+  swapAfterBite: 1
+  anchorOffset: 0
+  hint: "\u0110\u1ed1m l\u1eeda ch\u1ea1y t\u1eeb t\u00e2m ra m\u00e9p. Ch\u1ea1m nhanh: \u0111\u1ed1m \u0111\u1ee9ng y\u00ean. Gi\u1eef l\u00e2u: \u0111\u1ed1m qu\u00e9t ngang. Sau nh\u00e1t \u0111\u1ea7u, icon \u0111\u1ed5i."
   foods:
-  - dishId: goi_cuon
-    angleDeg: 270
-    radius: 0.55
-    want: 03000000
+  - dishId: songpyeon
+    angleDeg: 303.2
+    radius: 0.77
+    want: 04000000
     forbid: 
     wantAfterSwap: 
     forbidAfterSwap: 
-  - dishId: banh_mi
-    angleDeg: 270
-    radius: 0.82
+  - dishId: goi_cuon
+    angleDeg: 230.2
+    radius: 0.31
+    want: 04000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: songpyeon
+    angleDeg: 240
+    radius: 0.81
+    want: 04000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: tteokbokki
+    angleDeg: 271.1
+    radius: 0.44
     want: 
-    forbid: 03000000
+    forbid: 04000000
+    wantAfterSwap: 04000000
+    forbidAfterSwap: 
+  - dishId: banh_mi
+    angleDeg: 298.3
+    radius: 0.61
+    want: 
+    forbid: 04000000
+    wantAfterSwap: 04000000
+    forbidAfterSwap: 
+  - dishId: tteokbokki
+    angleDeg: 284.3
+    radius: 0.83
+    want: 
+    forbid: 04000000
+    wantAfterSwap: 04000000
+    forbidAfterSwap: 
+  - dishId: gimbap
+    angleDeg: 102.5
+    radius: 0.34
+    want: 
+    forbid: 
     wantAfterSwap: 
     forbidAfterSwap: 
   - dishId: pho
-    angleDeg: 270
-    radius: 0.34
+    angleDeg: 46.9
+    radius: 0.41
     want: 
-    forbid: 03000000
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: bibimbap
+    angleDeg: 179.7
+    radius: 0.47
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: ca_phe
+    angleDeg: 342.6
+    radius: 0.59
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: gimbap
+    angleDeg: 153.4
+    radius: 0.41
+    want: 
+    forbid: 
+    wantAfterSwap: 
+    forbidAfterSwap: 
+  - dishId: pho
+    angleDeg: 18.1
+    radius: 0.8
+    want: 
+    forbid: 
     wantAfterSwap: 
     forbidAfterSwap: 
