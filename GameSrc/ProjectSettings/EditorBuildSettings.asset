@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MotMam.unity
     guid: b7e4d2a19c8f4e0d9a6b5c4d3e2f1a08
+  - enabled: 1
+    path: Assets/MotMam.unity
+    guid: 4803ff7e804d3fe4997eb5bfb5defcf0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
