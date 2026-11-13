@@ -4,17 +4,35 @@ namespace MotMam
 {
     public static class GameSettings
     {
-        const string SoundKey = "motmam.sound";
+        const string LegacySoundKey = "motmam.sound";
+        const string MusicKey = "motmam.music";
+        const string SfxKey = "motmam.sfx";
         const string SpeedKey = "motmam.speed";
+        const float DefaultMusic = 0.6f;
+        const float DefaultSfx = 1f;
 
-        public static bool Sound
+        // Gọi mỗi khi đổi âm lượng, để nhạc nền cập nhật ngay.
+        public static event System.Action Changed;
+
+        // Âm lượng nhạc nền, 0 = tắt, 1 = to nhất.
+        public static float MusicVolume
         {
-            get => PlayerPrefs.GetInt(SoundKey, 1) == 1;
+            get => Mathf.Clamp01(PlayerPrefs.GetFloat(MusicKey, LegacyOff() ? 0f : DefaultMusic));
             set
             {
-                PlayerPrefs.SetInt(SoundKey, value ? 1 : 0);
-                PlayerPrefs.Save();
-                ApplySound();
+                PlayerPrefs.SetFloat(MusicKey, Mathf.Clamp01(value));
+                Changed?.Invoke();
+            }
+        }
+
+        // Âm lượng tiếng hiệu ứng (cắn, trượt, qua màn...), 0 = tắt.
+        public static float SfxVolume
+        {
+            get => Mathf.Clamp01(PlayerPrefs.GetFloat(SfxKey, LegacyOff() ? 0f : DefaultSfx));
+            set
+            {
+                PlayerPrefs.SetFloat(SfxKey, Mathf.Clamp01(value));
+                Changed?.Invoke();
             }
         }
 
@@ -38,9 +56,22 @@ namespace MotMam
             }
         }
 
+        public static void Save()
+        {
+            PlayerPrefs.Save();
+        }
+
         public static void ApplySound()
         {
-            AudioListener.volume = Sound ? 1f : 0f;
+            // Bản cũ tắt tiếng bằng AudioListener; giờ mỗi loại tự chỉnh âm lượng riêng.
+            AudioListener.volume = 1f;
+            Changed?.Invoke();
+        }
+
+        // Người chơi từng bấm "Tắt" ở bản cũ thì giữ nguyên là tắt.
+        static bool LegacyOff()
+        {
+            return PlayerPrefs.GetInt(LegacySoundKey, 1) == 0;
         }
     }
 }

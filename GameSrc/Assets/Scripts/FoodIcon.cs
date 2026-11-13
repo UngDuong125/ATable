@@ -35,5 +35,34 @@ namespace MotMam
                 outline.effectColor = accent;
             }
         }
+
+        // Xếp lại hình và chữ cho vừa ô nhỏ (thẻ món màn hai khách): hình ở trên, chữ ở dưới, không chồng nhau.
+        public void FitTo(Vector2 size)
+        {
+            float labelHeight = Mathf.Round(size.y * 0.28f);
+            if (label != null)
+            {
+                var rect = label.rectTransform;
+                rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 0f);
+                rect.pivot = new Vector2(0.5f, 0f);
+                rect.anchoredPosition = new Vector2(0f, 2f);
+                rect.sizeDelta = new Vector2(size.x, labelHeight);
+                label.resizeTextForBestFit = true;
+                label.resizeTextMinSize = 12;
+                label.resizeTextMaxSize = Mathf.Max(12, Mathf.RoundToInt(labelHeight * 0.75f));
+                label.horizontalOverflow = HorizontalWrapMode.Wrap;
+                label.verticalOverflow = VerticalWrapMode.Truncate;
+            }
+            if (swatch != null)
+            {
+                float side = Mathf.Min(size.x * 0.75f, size.y - labelHeight - 8f);
+                var rect = swatch.rectTransform;
+                rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 1f);
+                rect.pivot = new Vector2(0.5f, 1f);
+                rect.anchoredPosition = new Vector2(0f, -4f);
+                rect.sizeDelta = new Vector2(side, side);
+                swatch.preserveAspect = true;
+            }
+        }
     }
 }

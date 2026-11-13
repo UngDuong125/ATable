@@ -13,7 +13,11 @@ namespace MotMam
         GameObject levelPage;
         GameObject settingsPage;
         Button corner;
-        Text soundLabel;
+        Slider musicSlider;
+        Slider sfxSlider;
+        Text musicValue;
+        Text sfxValue;
+        bool refreshing;
         Image[] speedImages;
         static Sprite quad;
 
@@ -60,6 +64,7 @@ namespace MotMam
         {
             if (root != null) root.SetActive(false);
             if (corner != null) corner.gameObject.SetActive(true);
+            GameSettings.Save();
         }
 
         void BuildHome()
@@ -90,20 +95,113 @@ namespace MotMam
 
         void BuildSettings()
         {
-            Label(settingsPage.transform, "Cài đặt", 56, Art.Ink, new Vector2(0f, 460f), new Vector2(800f, 80f));
-            Label(settingsPage.transform, "Âm thanh", 36, Art.Ink, new Vector2(0f, 280f), new Vector2(700f, 60f));
-            var sound = MakeButton(settingsPage.transform, "Bật", new Vector2(0f, 180f), new Vector2(420f, 100f), 36, ToggleSound);
-            soundLabel = sound.GetComponentInChildren<Text>();
-            Label(settingsPage.transform, "Tốc độ mâm", 36, Art.Ink, new Vector2(0f, 40f), new Vector2(700f, 60f));
+            Label(settingsPage.transform, "Cài đặt", 56, Art.Ink, new Vector2(0f, 560f), new Vector2(800f, 80f));
+
+            Label(settingsPage.transform, "Nhạc nền", 36, Art.Ink, new Vector2(0f, 400f), new Vector2(700f, 60f));
+            musicSlider = MakeSlider(settingsPage.transform, new Vector2(-60f, 310f), new Vector2(580f, 64f), SetMusic);
+            musicValue = Label(settingsPage.transform, "", 34, Art.Ink, new Vector2(320f, 310f), new Vector2(140f, 60f));
+
+            Label(settingsPage.transform, "Hiệu ứng", 36, Art.Ink, new Vector2(0f, 190f), new Vector2(700f, 60f));
+            sfxSlider = MakeSlider(settingsPage.transform, new Vector2(-60f, 100f), new Vector2(580f, 64f), SetSfx);
+            sfxValue = Label(settingsPage.transform, "", 34, Art.Ink, new Vector2(320f, 100f), new Vector2(140f, 60f));
+
+            Label(settingsPage.transform, "Tốc độ mâm", 36, Art.Ink, new Vector2(0f, -30f), new Vector2(700f, 60f));
             speedImages = new Image[3];
             string[] names = { "Chậm", "Vừa", "Nhanh" };
             for (int i = 0; i < 3; i++)
             {
                 int step = i;
-                var button = MakeButton(settingsPage.transform, names[i], new Vector2((i - 1) * 250f, -80f), new Vector2(220f, 100f), 32, () => SetSpeed(step));
+                var button = MakeButton(settingsPage.transform, names[i], new Vector2((i - 1) * 250f, -140f), new Vector2(220f, 100f), 32, () => SetSpeed(step));
                 speedImages[i] = button.GetComponent<Image>();
             }
-            MakeButton(settingsPage.transform, "Đóng", new Vector2(0f, -360f), new Vector2(420f, 100f), 36, ShowHome);
+            MakeButton(settingsPage.transform, "Xem lại hướng dẫn", new Vector2(0f, -300f), new Vector2(520f, 100f), 34, () => runner.RestartWithTutorials());
+            MakeButton(settingsPage.transform, "Đóng", new Vector2(0f, -450f), new Vector2(420f, 100f), 36, ShowHome);
+        }
+
+        // Thanh trượt 0–100%: nền mờ, phần đã kéo màu son, nút kéo vuông.
+        Slider MakeSlider(Transform parent, Vector2 pos, Vector2 size, UnityEngine.Events.UnityAction<float> onChange)
+        {
+            const float knob = 56f;
+            const float track = 18f;
+            var go = Child(parent, "Slider");
+            var rect = go.GetComponent<RectTransform>();
+            rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 0.5f);
+            rect.sizeDelta = size;
+            rect.anchoredPosition = pos;
+
+            // Vùng chạm phủ cả thanh cho dễ bấm trên điện thoại.
+            var hit = go.AddComponent<Image>();
+            hit.sprite = White();
+            hit.color = new Color(1f, 1f, 1f, 0f);
+
+            var bg = Child(go.transform, "Background");
+            var bgRect = bg.GetComponent<RectTransform>();
+            bgRect.anchorMin = new Vector2(0f, 0.5f);
+            bgRect.anchorMax = new Vector2(1f, 0.5f);
+            bgRect.offsetMin = new Vector2(knob * 0.5f, -track * 0.5f);
+            bgRect.offsetMax = new Vector2(-knob * 0.5f, track * 0.5f);
+            var bgImage = bg.AddComponent<Image>();
+            bgImage.sprite = White();
+            bgImage.color = new Color(Art.Ink.r, Art.Ink.g, Art.Ink.b, 0.22f);
+            bgImage.raycastTarget = false;
+
+            var fillArea = Child(go.transform, "Fill Area");
+            var fillAreaRect = fillArea.GetComponent<RectTransform>();
+            fillAreaRect.anchorMin = bgRect.anchorMin;
+            fillAreaRect.anchorMax = bgRect.anchorMax;
+            fillAreaRect.offsetMin = bgRect.offsetMin;
+            fillAreaRect.offsetMax = bgRect.offsetMax;
+            var fill = Child(fillArea.transform, "Fill");
+            var fillRect = fill.GetComponent<RectTransform>();
+            fillRect.sizeDelta = Vector2.zero;
+            var fillImage = fill.AddComponent<Image>();
+            fillImage.sprite = White();
+            fillImage.color = Art.Son;
+            fillImage.raycastTarget = false;
+
+            var handleArea = Child(go.transform, "Handle Slide Area");
+            var handleAreaRect = handleArea.GetComponent<RectTransform>();
+            handleAreaRect.anchorMin = Vector2.zero;
+            handleAreaRect.anchorMax = Vector2.one;
+            handleAreaRect.offsetMin = new Vector2(knob * 0.5f, 0f);
+            handleAreaRect.offsetMax = new Vector2(-knob * 0.5f, 0f);
+            var handle = Child(handleArea.transform, "Handle");
+            var handleRect = handle.GetComponent<RectTransform>();
+            handleRect.sizeDelta = new Vector2(knob, 0f);
+            var handleImage = handle.AddComponent<Image>();
+            handleImage.sprite = White();
+            handleImage.color = Art.Son;
+
+            var slider = go.AddComponent<Slider>();
+            slider.fillRect = fillRect;
+            slider.handleRect = handleRect;
+            slider.targetGraphic = handleImage;
+            slider.direction = Slider.Direction.LeftToRight;
+            slider.minValue = 0f;
+            slider.maxValue = 1f;
+            slider.wholeNumbers = false;
+            slider.onValueChanged.AddListener(onChange);
+            return slider;
+        }
+
+        void SetMusic(float value)
+        {
+            if (refreshing) return;
+            GameSettings.MusicVolume = value;
+            RefreshSettings();
+        }
+
+        void SetSfx(float value)
+        {
+            if (refreshing) return;
+            GameSettings.SfxVolume = value;
+            runner.PreviewSfx();
+            RefreshSettings();
+        }
+
+        static string Percent(float value)
+        {
+            return value <= 0.001f ? "Tắt" : Mathf.RoundToInt(value * 100f) + "%";
         }
 
         void ShowLevels()
@@ -121,12 +219,6 @@ namespace MotMam
             RefreshSettings();
         }
 
-        void ToggleSound()
-        {
-            GameSettings.Sound = !GameSettings.Sound;
-            RefreshSettings();
-        }
-
         void SetSpeed(int step)
         {
             GameSettings.SpeedStep = step;
@@ -136,7 +228,14 @@ namespace MotMam
 
         void RefreshSettings()
         {
-            if (soundLabel != null) soundLabel.text = GameSettings.Sound ? "Bật" : "Tắt";
+            refreshing = true;
+            float music = GameSettings.MusicVolume;
+            float effects = GameSettings.SfxVolume;
+            if (musicSlider != null) musicSlider.SetValueWithoutNotify(music);
+            if (sfxSlider != null) sfxSlider.SetValueWithoutNotify(effects);
+            if (musicValue != null) musicValue.text = Percent(music);
+            if (sfxValue != null) sfxValue.text = Percent(effects);
+            refreshing = false;
             if (speedImages == null) return;
             for (int i = 0; i < speedImages.Length; i++)
             {
@@ -178,9 +277,9 @@ namespace MotMam
             return go;
         }
 
-        void Label(Transform parent, string text, int size, Color color, Vector2 pos, Vector2 box)
+        Text Label(Transform parent, string text, int size, Color color, Vector2 pos, Vector2 box)
         {
-            var go = Child(parent, text);
+            var go = Child(parent, string.IsNullOrEmpty(text) ? "Label" : text);
             var rect = go.GetComponent<RectTransform>();
             rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 0.5f);
             rect.sizeDelta = box;
@@ -194,6 +293,7 @@ namespace MotMam
             label.raycastTarget = false;
             label.horizontalOverflow = HorizontalWrapMode.Overflow;
             label.verticalOverflow = VerticalWrapMode.Overflow;
+            return label;
         }
 
         Button MakeButton(Transform parent, string caption, Vector2 pos, Vector2 size, int fontSize, UnityEngine.Events.UnityAction onClick)

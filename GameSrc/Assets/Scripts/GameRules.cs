@@ -20,7 +20,7 @@ namespace MotMam
         public const float ClearRingSeconds = 0.70f;
         public const float TrayWorldRadius = 2.5f;
         public const float OrthoSize = 6.1f;
-        public const float GuestDrawRadius = 1.18f;
+        public const float GuestDrawRadius = 1.28f; // nhích khách xuống chừa chỗ cho biểu cảm vui/buồn
         public const float FoodVisualRadius = 0.08f;
 
         public const float GumihoCenterDistance = 0.62f;
@@ -35,11 +35,11 @@ namespace MotMam
 
         public const float MeLen0 = 0.35f;
         public const float MeLenMax = 0.95f;
-        public const float MeHalfWidth = 0.10f;
-        public const float MeCrossAt = 0.55f;
-        public const float MeSwayIdle = 6f;
+        public const float MeHalfWidth = 0.13f;
+        public const float MeCrossAt = 0.50f;
+        public const float MeSwayIdle = 5f;
         public const float MeSwayMax = 18f;
-        public const float MeSwayHz = 0.8f;
+        public const float MeSwayHz = 0.6f;
 
         public const float CoRadius = 0.13f;
         public const float CoAlong0 = 0.82f;
@@ -48,8 +48,11 @@ namespace MotMam
         public const float DokkaRadius = 0.14f;
         public const float DokkaAlongMin = 0f;
         public const float DokkaAlongMax = 1f;
-        public const float DokkaAlongHz = 0.25f;
+        public const float DokkaAlongHz = 0.40f;
         public const float DokkaSweepMax = 42f;
+        public const float DokkaTapSeconds = 0.15f;
+        // Đốm quét ngang chậm: từ lúc quá DokkaTapSeconds tới góc tối đa mất chừng này giây.
+        public const float DokkaSweepSeconds = 0.80f;
 
         public const float SingleAnchor = 270f;
         public const float DualGumihoAnchor = 180f;
@@ -95,10 +98,12 @@ namespace MotMam
 
         public static float DokkaSweep(float holdSeconds)
         {
-            return Mathf.Lerp(0f, DokkaSweepMax, HoldU(holdSeconds));
+            // Chạm nhanh thì đốm đứng yên. Chỉ khi giữ quá DokkaTapSeconds mới bắt đầu lướt.
+            float u = Mathf.Clamp01((holdSeconds - DokkaTapSeconds) / DokkaSweepSeconds);
+            return Mathf.Lerp(0f, DokkaSweepMax, u);
         }
 
-        // Chưa giữ: tâm đốm chạy từ tâm mâm ra mép rồi quay vào. Một vòng mất 4 giây.
+        // Chưa giữ: tâm đốm chạy từ tâm mâm ra mép rồi quay vào. Một vòng mất 2,5 giây.
         // Nhấn giữ thì LevelRunner đóng băng along này. Đốm chỉ quét góc.
         public static float DokkaAlong(float time)
         {
@@ -143,9 +148,10 @@ namespace MotMam
             return along > 0f && perp <= MeHalfWidth && (1f - along) <= length;
         }
 
-        public static bool InDokkaebiZone(Vector2 foodNormalized, float holdSeconds, float anchorDeg, float along)
+        // dir: +1 lướt sang phải (nhấn nửa phải), -1 lướt sang trái (nhấn nửa trái).
+        public static bool InDokkaebiZone(Vector2 foodNormalized, float holdSeconds, float anchorDeg, float along, float dir = 1f)
         {
-            float angle = anchorDeg + DokkaSweep(holdSeconds);
+            float angle = anchorDeg + dir * DokkaSweep(holdSeconds);
             return Vector2.Distance(foodNormalized, Point(angle, along)) <= DokkaRadius;
         }
 

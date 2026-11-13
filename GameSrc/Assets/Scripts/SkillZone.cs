@@ -6,9 +6,34 @@ namespace MotMam
     {
         [SerializeField] Transform fill;
 
+        SpriteRenderer paint;
+        Color baseColor;
+        bool ready;
+
         void Awake()
         {
             if (fill == null) fill = transform;
+        }
+
+        // Báo vùng đã đủ điều kiện kích hoạt (Mê: dải đủ dài để lướt). Sáng hơn và đậm hơn.
+        public void SetReady(bool on)
+        {
+            if (paint == null)
+            {
+                paint = GetComponentInChildren<SpriteRenderer>();
+                if (paint == null) return;
+                baseColor = paint.color;
+            }
+            if (on == ready) return;
+            ready = on;
+            if (!on)
+            {
+                paint.color = baseColor;
+                return;
+            }
+            var lit = Color.Lerp(baseColor, Color.white, 0.35f);
+            lit.a = Mathf.Min(1f, baseColor.a * 1.6f + 0.1f);
+            paint.color = lit;
         }
 
         public void PlaceCircle(Vector2 worldCenter, float radiusNorm)

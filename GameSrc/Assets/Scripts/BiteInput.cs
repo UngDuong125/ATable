@@ -22,12 +22,19 @@ namespace MotMam
 
         bool tracking;
         bool split;
+        bool sideTag;
         ScreenSide side;
         readonly List<RaycastResult> uiHits = new();
 
         public void UseSplit(bool value)
         {
             split = value;
+        }
+
+        // Báo bên màn hình lúc nhấn nhưng không hủy khi kéo sang bên kia.
+        public void UseSideTag(bool value)
+        {
+            sideTag = value;
         }
 
         void Update()
@@ -37,7 +44,7 @@ namespace MotMam
             {
                 if (OverUi(pos)) return;
                 tracking = true;
-                side = split ? SideOf(pos) : ScreenSide.Any;
+                side = split || sideTag ? SideOf(pos) : ScreenSide.Any;
                 Pressed?.Invoke(side);
             }
             else if (held && tracking)
@@ -61,7 +68,9 @@ namespace MotMam
             var data = new PointerEventData(EventSystem.current) { position = pos };
             uiHits.Clear();
             EventSystem.current.RaycastAll(data, uiHits);
-            return uiHits.Count > 0;
+            if (uiHits.Count == 0) return false;
+            var top = uiHits[0].gameObject;
+            return top == null || top.GetComponentInParent<UiPassThrough>() == null;
         }
 
         static ScreenSide SideOf(Vector2 pos)
